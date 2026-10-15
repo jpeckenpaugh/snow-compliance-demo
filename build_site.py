@@ -140,15 +140,17 @@ def build_index():
 <section id="poc">
   <div class="section-kicker">Proof of concept</div>
   <h2>Working POC and interactive demo</h2>
-  <p class="lead">The board asked for a simple login experience, an examination of the first 20 CUAD
-  documents, and Python scaffolding adaptable to Snowflake. All three are done and staged here.</p>
+  <p class="lead">The board asked for a simple login experience, an examination of the CUAD sample, and
+  Python scaffolding adaptable to Snowflake. All three are built and staged here.</p>
   <div class="cards">
     <div class="card"><h3>Interactive demo</h3><p>Sign in as a hypothetical attorney and see only your
-      documents; sign in as admin to review who accessed which files. <a href="demo/index.html">Open the demo &rarr;</a></p></div>
-    <div class="card"><h3>Python + SQLite POC</h3><p>A real enforcement layer (<code>poc/access.py</code>)
-      with a governed query path, a web server, and a functional audit log. <a href="poc.html">POC &amp; CUAD findings &rarr;</a></p></div>
-    <div class="card"><h3>First 20 CUAD documents</h3><p>Extracted and analyzed. Two assumptions in the
-      original plan needed correcting. <a href="poc.html#findings">See the findings &rarr;</a></p></div>
+      documents; sign in as admin to review who accessed which files. Includes a simulated Snowflake
+      console and risk register. <a href="demo/index.html">Open the demo &rarr;</a></p></div>
+    <div class="card"><h3>Python + SQLite POC</h3><p>A real enforcement layer (<code>poc/access.py</code>),
+      a shared risk engine (<code>poc/risk.py</code>), the simulated Snowflake engine, and an
+      evidence pack. <a href="poc.html">POC &amp; CUAD findings &rarr;</a></p></div>
+    <div class="card"><h3>30 CUAD documents</h3><p>Extracted, analyzed, and modeled. Two assumptions in
+      the original plan needed correcting. <a href="poc.html#findings">See the findings &rarr;</a></p></div>
   </div>
 </section>
 
@@ -775,8 +777,8 @@ def build_roadmap():
     <li data-step="0"><h4>Enablement <span class="badge low">done (simulated)</span></h4><p>Database/role DDL written; the simulated engine (<code>poc/snowflake_sim.py</code>) stands in for the account; this review site live on <code>main</code>.</p></li>
     <li data-step="1"><h4>Ingest &amp; organize <span class="badge low">done</span></h4><p>CUAD loader, synthetic generator, CORE model, and data-quality assertions implemented in the POC.</p></li>
     <li data-step="2"><h4>Confidentiality <span class="badge low">done (simulated)</span></h4><p>Roles, mapping, row access policy, and masking demonstrated offline; real policies on the trial later.</p></li>
-    <li data-step="3"><h4>Risk analytics <span class="badge med">in progress</span></h4><p>Rule table and scoring view exist; expanding the register and clause detail in the demo.</p></li>
-    <li data-step="4"><h4>Verify &amp; audit <span class="badge med">in progress</span></h4><p>Multi-role tests and query history work in simulation; producing an evidence pack.</p></li>
+    <li data-step="3"><h4>Risk analytics <span class="badge low">done (simulated)</span></h4><p>Rule engine (<code>poc/risk.py</code>), scoring, and a risk register in the demo (High 4 / Medium 19 / Low 7).</p></li>
+    <li data-step="4"><h4>Verify &amp; audit <span class="badge low">done (simulated)</span></h4><p>Role × matter verification matrix and evidence pack; offline SQL harness + CI for the DDL.</p></li>
     <li data-step="5"><h4>Review <span class="badge med">ongoing</span></h4><p>Refreshed site published; the board walks the demo and reviews each increment.</p></li>
   </ol>
 </section>
@@ -849,7 +851,7 @@ def build_poc():
     header = """<section class="hero"><div class="wrap">
   <p class="eyebrow">Proof of concept</p>
   <h1>POC &amp; CUAD findings</h1>
-  <p class="lede">We extracted the first 20 CUAD documents, examined their real shape against the
+  <p class="lede">We extracted a 30-document CUAD sample, examined its real shape against the
   original plan, and built a Python + SQLite proof of concept that maps directly to Snowflake.</p>
   <p style="margin-top:18px"><a href="demo/index.html" style="display:inline-block;background:#0d9488;color:#fff;font-weight:700;padding:11px 18px;border-radius:10px;text-decoration:none">Open the interactive demo &rarr;</a></p>
 </div></section>"""
@@ -863,26 +865,30 @@ def build_poc():
     <tbody>
       <tr><td>CUAD extractor</td><td><code>poc/extract_cuad.py</code></td><td>Downloads CUAD, normalizes the first N docs, emits the shape report</td></tr>
       <tr><td>SQLite schema</td><td><code>poc/schema.sql</code></td><td>Mirrors the Snowflake model: dims, fact, bridge, authorization, audit</td></tr>
-      <tr><td>Seeder</td><td><code>poc/seed.py</code></td><td>Loads 20 contracts + synthetic users/matters; exports the static demo data</td></tr>
+      <tr><td>Seeder</td><td><code>poc/seed.py</code></td><td>Loads 30 contracts + synthetic users/matters; exports the static demo data</td></tr>
+      <tr><td>Risk engine</td><td><code>poc/risk.py</code></td><td>Shared, rule-based rubric (real CUAD categories); mirrors <code>sql/04</code></td></tr>
       <tr><td>Access layer</td><td><code>poc/access.py</code></td><td><strong>The enforcement point</strong> &mdash; authorization check + audit logging</td></tr>
       <tr><td>POC web server</td><td><code>poc/server.py</code></td><td>Standard-library HTTP server; real login, real denials, real audit</td></tr>
-      <tr><td><strong>Simulated Snowflake</strong></td><td><code>poc/snowflake_sim.py</code></td><td>Emulates role context, row access policy, masking, and query history offline (see <a href="snowflake-options.html">Snowflake options</a>)</td></tr>
-      <tr><td>Static demo</td><td><code>demo/index.html</code></td><td>Board-clickable login/audit demo + Snowflake console, hosted on Pages</td></tr>
-      <tr><td>Shape report</td><td><code>poc/analysis/cuad_shape_report.md</code></td><td>Full statistics over the 20-document sample</td></tr>
+      <tr><td><strong>Simulated Snowflake</strong></td><td><code>poc/snowflake_sim.py</code></td><td>Emulates role context, row access policy, masking, query history, and a risk register offline (see <a href="snowflake-options.html">Snowflake options</a>)</td></tr>
+      <tr><td>Offline SQL harness + CI</td><td><code>scripts/run_sql_offline.py</code>, <code>.github/workflows/ci.yml</code></td><td>Runs <code>sql/01…05</code> through fakesnow (DuckDB) in CI; reports supported vs. governance statements</td></tr>
+      <tr><td>Static demo</td><td><code>demo/index.html</code></td><td>Board-clickable login/audit demo + Snowflake console + risk register, hosted on Pages</td></tr>
+      <tr><td>Shape report</td><td><code>poc/analysis/cuad_shape_report.md</code></td><td>Full statistics over the 30-document sample</td></tr>
+      <tr><td>Evidence pack</td><td><a href="https://github.com/jpeckenpaugh/snow-compliance-demo/blob/main/poc/analysis/evidence_pack.md"><code>poc/analysis/evidence_pack.md</code></a></td><td>Role × matter verification matrix (expected vs observed) with reproduction steps</td></tr>
     </tbody>
   </table></div>
-  <pre><code>python3 poc/extract_cuad.py --limit 20   # fetch + normalize first 20 docs
+  <pre><code>python3 poc/extract_cuad.py --limit 30   # fetch + normalize the sample
 python3 poc/seed.py                      # build SQLite DB + demo data
 python3 poc/build_demo.py                # regenerate the static Pages demo
-python3 poc/server.py                    # functional POC at http://localhost:8000</code></pre>
+python3 poc/server.py                    # functional POC at http://localhost:8000
+python3 scripts/run_sql_offline.py       # run sql/01…05 offline via fakesnow (CI)</code></pre>
 </section>
 
 <section id="findings">
   <div class="section-kicker">Analysis</div>
   <h2>How the real data aligns with the plan</h2>
   <div class="kpis">
-    <div class="kpi"><div class="n">20</div><div class="l">documents extracted</div></div>
-    <div class="kpi"><div class="n">820</div><div class="l">annotations (20&times;41)</div></div>
+    <div class="kpi"><div class="n">30</div><div class="l">documents extracted</div></div>
+    <div class="kpi"><div class="n">1,230</div><div class="l">annotations (30&times;41)</div></div>
     <div class="kpi"><div class="n">41</div><div class="l">clause categories</div></div>
     <div class="kpi"><div class="n">1&ndash;175k</div><div class="l">chars per contract</div></div>
   </div>
@@ -1013,7 +1019,7 @@ def build_options():
         <td>Same as above; some AWS infra costs may apply.</td></tr>
     </tbody>
   </table></div>
-  <p>Our footprint is tiny (20 contracts, X-Small warehouses, 60-second auto-suspend), so $400 of credits is
+  <p>Our footprint is tiny (30 contracts, X-Small warehouses, 60-second auto-suspend), so $400 of credits is
   far more than the demo needs. The trial is the only faithful way to validate row access policies and masking
   end-to-end.</p>
 </section>

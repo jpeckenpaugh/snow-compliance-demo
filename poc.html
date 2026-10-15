@@ -20,7 +20,7 @@
 <section class="hero"><div class="wrap">
   <p class="eyebrow">Proof of concept</p>
   <h1>POC &amp; CUAD findings</h1>
-  <p class="lede">We extracted the first 20 CUAD documents, examined their real shape against the
+  <p class="lede">We extracted a 30-document CUAD sample, examined its real shape against the
   original plan, and built a Python + SQLite proof of concept that maps directly to Snowflake.</p>
   <p style="margin-top:18px"><a href="demo/index.html" style="display:inline-block;background:#0d9488;color:#fff;font-weight:700;padding:11px 18px;border-radius:10px;text-decoration:none">Open the interactive demo &rarr;</a></p>
 </div></section>
@@ -38,26 +38,30 @@
     <tbody>
       <tr><td>CUAD extractor</td><td><code>poc/extract_cuad.py</code></td><td>Downloads CUAD, normalizes the first N docs, emits the shape report</td></tr>
       <tr><td>SQLite schema</td><td><code>poc/schema.sql</code></td><td>Mirrors the Snowflake model: dims, fact, bridge, authorization, audit</td></tr>
-      <tr><td>Seeder</td><td><code>poc/seed.py</code></td><td>Loads 20 contracts + synthetic users/matters; exports the static demo data</td></tr>
+      <tr><td>Seeder</td><td><code>poc/seed.py</code></td><td>Loads 30 contracts + synthetic users/matters; exports the static demo data</td></tr>
+      <tr><td>Risk engine</td><td><code>poc/risk.py</code></td><td>Shared, rule-based rubric (real CUAD categories); mirrors <code>sql/04</code></td></tr>
       <tr><td>Access layer</td><td><code>poc/access.py</code></td><td><strong>The enforcement point</strong> &mdash; authorization check + audit logging</td></tr>
       <tr><td>POC web server</td><td><code>poc/server.py</code></td><td>Standard-library HTTP server; real login, real denials, real audit</td></tr>
-      <tr><td><strong>Simulated Snowflake</strong></td><td><code>poc/snowflake_sim.py</code></td><td>Emulates role context, row access policy, masking, and query history offline (see <a href="snowflake-options.html">Snowflake options</a>)</td></tr>
-      <tr><td>Static demo</td><td><code>demo/index.html</code></td><td>Board-clickable login/audit demo + Snowflake console, hosted on Pages</td></tr>
-      <tr><td>Shape report</td><td><code>poc/analysis/cuad_shape_report.md</code></td><td>Full statistics over the 20-document sample</td></tr>
+      <tr><td><strong>Simulated Snowflake</strong></td><td><code>poc/snowflake_sim.py</code></td><td>Emulates role context, row access policy, masking, query history, and a risk register offline (see <a href="snowflake-options.html">Snowflake options</a>)</td></tr>
+      <tr><td>Offline SQL harness + CI</td><td><code>scripts/run_sql_offline.py</code>, <code>.github/workflows/ci.yml</code></td><td>Runs <code>sql/01…05</code> through fakesnow (DuckDB) in CI; reports supported vs. governance statements</td></tr>
+      <tr><td>Static demo</td><td><code>demo/index.html</code></td><td>Board-clickable login/audit demo + Snowflake console + risk register, hosted on Pages</td></tr>
+      <tr><td>Shape report</td><td><code>poc/analysis/cuad_shape_report.md</code></td><td>Full statistics over the 30-document sample</td></tr>
+      <tr><td>Evidence pack</td><td><a href="https://github.com/jpeckenpaugh/snow-compliance-demo/blob/main/poc/analysis/evidence_pack.md"><code>poc/analysis/evidence_pack.md</code></a></td><td>Role × matter verification matrix (expected vs observed) with reproduction steps</td></tr>
     </tbody>
   </table></div>
-  <pre><code>python3 poc/extract_cuad.py --limit 20   # fetch + normalize first 20 docs
+  <pre><code>python3 poc/extract_cuad.py --limit 30   # fetch + normalize the sample
 python3 poc/seed.py                      # build SQLite DB + demo data
 python3 poc/build_demo.py                # regenerate the static Pages demo
-python3 poc/server.py                    # functional POC at http://localhost:8000</code></pre>
+python3 poc/server.py                    # functional POC at http://localhost:8000
+python3 scripts/run_sql_offline.py       # run sql/01…05 offline via fakesnow (CI)</code></pre>
 </section>
 
 <section id="findings">
   <div class="section-kicker">Analysis</div>
   <h2>How the real data aligns with the plan</h2>
   <div class="kpis">
-    <div class="kpi"><div class="n">20</div><div class="l">documents extracted</div></div>
-    <div class="kpi"><div class="n">820</div><div class="l">annotations (20&times;41)</div></div>
+    <div class="kpi"><div class="n">30</div><div class="l">documents extracted</div></div>
+    <div class="kpi"><div class="n">1,230</div><div class="l">annotations (30&times;41)</div></div>
     <div class="kpi"><div class="n">41</div><div class="l">clause categories</div></div>
     <div class="kpi"><div class="n">1&ndash;175k</div><div class="l">chars per contract</div></div>
   </div>
