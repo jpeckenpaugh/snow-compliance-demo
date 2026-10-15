@@ -97,10 +97,10 @@ def build_index():
   data (CUAD) enriched with synthetic law-firm records, then shows matter-level
   confidentiality, row-level security, clause-risk analysis, and a full audit trail.</p>
   <div class="pills">
+    <span class="pill">Plan approved 2026-10-15</span>
     <span class="pill">Public research data only</span>
     <span class="pill">No real client or privileged material</span>
-    <span class="pill">Reproducible SQL, no hidden steps</span>
-    <span class="pill">Staged here for review</span>
+    <span class="pill">Snowflake simulated for now</span>
   </div>
   <p style="margin-top:22px"><a href="demo/index.html" style="display:inline-block;background:#0d9488;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Open the interactive access-control demo &rarr;</a>
   &nbsp;<a href="poc.html" style="display:inline-block;color:#c3d3e4;font-weight:600;padding:12px 8px">POC &amp; CUAD findings</a></p>
@@ -221,16 +221,21 @@ def build_index():
 </section>
 
 <section id="decisions">
-  <div class="section-kicker">Ask</div>
-  <h2>What we need from the board</h2>
+  <div class="section-kicker">Approved</div>
+  <h2>Board decisions</h2>
+  <div class="callout ok"><strong>Approved 2026-10-15</strong>
+    The board approved the four-phase scope, CUAD + synthetic data sourcing, and continued hosting on
+    this repo. Per later board direction, the <strong>Snowflake component is simulated for now</strong>
+    (no account); the same DDL will be validated on a free 30-day trial when an account is approved.
+    Build tasks are in progress.</div>
   <div class="table-scroll"><table>
-    <thead><tr><th>Decision</th><th>Options</th><th>Our recommendation</th></tr></thead>
+    <thead><tr><th>Decision</th><th>Resolution</th></tr></thead>
     <tbody>
-      <tr><td>Scope of the demo</td><td>4-phase flow as written / narrower / broader</td><td>Build all four phases against 20&ndash;30 contracts</td></tr>
-      <tr><td>Data sourcing</td><td>CUAD + synthetic / synthetic only</td><td>CUAD + synthetic, with full attribution</td></tr>
-      <tr><td>Snowflake account</td><td>New trial / existing account</td><td>Isolated demo account, X-Small warehouses</td></tr>
-      <tr><td>Hosting of this review site</td><td>This Pages repo / other</td><td>Continue here on <code>main</code></td></tr>
-      <tr><td>Risk rubric framing</td><td>Simulated / none</td><td>Simulated and prominently disclaimed</td></tr>
+      <tr><td>Scope of the demo</td><td><span class="badge low">Full four phases</span> against the CUAD sample</td></tr>
+      <tr><td>Data sourcing</td><td><span class="badge low">CUAD + synthetic</span>, with full attribution</td></tr>
+      <tr><td>Snowflake component</td><td><span class="badge med">Simulated now</span>; trial validation deferred</td></tr>
+      <tr><td>Hosting of this review site</td><td><span class="badge low">This repo</span> (<code>main</code> auto-deploys)</td></tr>
+      <tr><td>Risk rubric framing</td><td><span class="badge low">Simulated</span> and prominently disclaimed</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -762,13 +767,17 @@ def build_roadmap():
 <section id="plan">
   <div class="section-kicker">Schedule</div>
   <h2>Phased delivery</h2>
+  <div class="callout ok"><strong>Approved &amp; in progress</strong>
+    Plan approved 2026-10-15. Snowflake is simulated for now (no account). Phases 0&ndash;2 are working
+    in the offline POC; phases 3&ndash;4 are being deepened now; the real trial-account build is deferred
+    until an account is approved.</div>
   <ol class="timeline">
-    <li data-step="0"><h4>Enablement &middot; Platform</h4><p>Snowflake demo account, database/role DDL, secrets wired, this review site live on <code>main</code>.</p></li>
-    <li data-step="1"><h4>Ingest &amp; organize &middot; Prototype</h4><p>CUAD loader, Faker generator, CORE model, data-quality assertions. <em>Accept:</em> all FK checks pass.</p></li>
-    <li data-step="2"><h4>Confidentiality &middot; Platform + Prototype</h4><p>Roles, mapping table, row access policy on every <code>matter_id</code> table, masking. <em>Accept:</em> cross-matter query returns 0 rows.</p></li>
-    <li data-step="3"><h4>Risk analytics &middot; Prototype</h4><p>Risk-rule table, scoring view, high-risk register. <em>Accept:</em> bands render for loaded contracts.</p></li>
-    <li data-step="4"><h4>Verify &amp; audit &middot; Platform</h4><p>Multi-role test run, query-history evidence capture, GOV views. <em>Accept:</em> evidence pack produced.</p></li>
-    <li data-step="5"><h4>Review &middot; CEO + Design</h4><p>Publish refreshed site, walk the demo, collect board decisions.</p></li>
+    <li data-step="0"><h4>Enablement <span class="badge low">done (simulated)</span></h4><p>Database/role DDL written; the simulated engine (<code>poc/snowflake_sim.py</code>) stands in for the account; this review site live on <code>main</code>.</p></li>
+    <li data-step="1"><h4>Ingest &amp; organize <span class="badge low">done</span></h4><p>CUAD loader, synthetic generator, CORE model, and data-quality assertions implemented in the POC.</p></li>
+    <li data-step="2"><h4>Confidentiality <span class="badge low">done (simulated)</span></h4><p>Roles, mapping, row access policy, and masking demonstrated offline; real policies on the trial later.</p></li>
+    <li data-step="3"><h4>Risk analytics <span class="badge med">in progress</span></h4><p>Rule table and scoring view exist; expanding the register and clause detail in the demo.</p></li>
+    <li data-step="4"><h4>Verify &amp; audit <span class="badge med">in progress</span></h4><p>Multi-role tests and query history work in simulation; producing an evidence pack.</p></li>
+    <li data-step="5"><h4>Review <span class="badge med">ongoing</span></h4><p>Refreshed site published; the board walks the demo and reviews each increment.</p></li>
   </ol>
 </section>
 
@@ -822,10 +831,11 @@ def build_roadmap():
   <h2>Definition of done</h2>
   <ul>
     <li>Site published at <a href="https://jpeckenpaugh.github.io/snow-compliance-demo/">jpeckenpaugh.github.io/snow-compliance-demo</a>.</li>
-    <li>Snowflake demo rebuildable end-to-end from <code>sql/</code> + <code>ingest/</code>.</li>
+    <li>Snowflake behaviour rebuildable from <code>sql/</code> and demonstrable offline in the simulation.</li>
     <li>Cross-matter access denied and demonstrated for at least two attorney roles.</li>
     <li>Audit evidence captured and linked from the audit page.</li>
     <li>High-risk-by-matter report produced.</li>
+    <li><em>Deferred:</em> real row access policies / masking validated on a Snowflake trial once an account is approved.</li>
   </ul>
 </section>
 """

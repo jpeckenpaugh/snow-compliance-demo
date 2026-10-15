@@ -24,10 +24,10 @@
   data (CUAD) enriched with synthetic law-firm records, then shows matter-level
   confidentiality, row-level security, clause-risk analysis, and a full audit trail.</p>
   <div class="pills">
+    <span class="pill">Plan approved 2026-10-15</span>
     <span class="pill">Public research data only</span>
     <span class="pill">No real client or privileged material</span>
-    <span class="pill">Reproducible SQL, no hidden steps</span>
-    <span class="pill">Staged here for review</span>
+    <span class="pill">Snowflake simulated for now</span>
   </div>
   <p style="margin-top:22px"><a href="demo/index.html" style="display:inline-block;background:#0d9488;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Open the interactive access-control demo &rarr;</a>
   &nbsp;<a href="poc.html" style="display:inline-block;color:#c3d3e4;font-weight:600;padding:12px 8px">POC &amp; CUAD findings</a></p>
@@ -152,16 +152,21 @@
 </section>
 
 <section id="decisions">
-  <div class="section-kicker">Ask</div>
-  <h2>What we need from the board</h2>
+  <div class="section-kicker">Approved</div>
+  <h2>Board decisions</h2>
+  <div class="callout ok"><strong>Approved 2026-10-15</strong>
+    The board approved the four-phase scope, CUAD + synthetic data sourcing, and continued hosting on
+    this repo. Per later board direction, the <strong>Snowflake component is simulated for now</strong>
+    (no account); the same DDL will be validated on a free 30-day trial when an account is approved.
+    Build tasks are in progress.</div>
   <div class="table-scroll"><table>
-    <thead><tr><th>Decision</th><th>Options</th><th>Our recommendation</th></tr></thead>
+    <thead><tr><th>Decision</th><th>Resolution</th></tr></thead>
     <tbody>
-      <tr><td>Scope of the demo</td><td>4-phase flow as written / narrower / broader</td><td>Build all four phases against 20&ndash;30 contracts</td></tr>
-      <tr><td>Data sourcing</td><td>CUAD + synthetic / synthetic only</td><td>CUAD + synthetic, with full attribution</td></tr>
-      <tr><td>Snowflake account</td><td>New trial / existing account</td><td>Isolated demo account, X-Small warehouses</td></tr>
-      <tr><td>Hosting of this review site</td><td>This Pages repo / other</td><td>Continue here on <code>main</code></td></tr>
-      <tr><td>Risk rubric framing</td><td>Simulated / none</td><td>Simulated and prominently disclaimed</td></tr>
+      <tr><td>Scope of the demo</td><td><span class="badge low">Full four phases</span> against the CUAD sample</td></tr>
+      <tr><td>Data sourcing</td><td><span class="badge low">CUAD + synthetic</span>, with full attribution</td></tr>
+      <tr><td>Snowflake component</td><td><span class="badge med">Simulated now</span>; trial validation deferred</td></tr>
+      <tr><td>Hosting of this review site</td><td><span class="badge low">This repo</span> (<code>main</code> auto-deploys)</td></tr>
+      <tr><td>Risk rubric framing</td><td><span class="badge low">Simulated</span> and prominently disclaimed</td></tr>
     </tbody>
   </table></div>
 </section>

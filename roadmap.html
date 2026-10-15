@@ -32,13 +32,17 @@
 <section id="plan">
   <div class="section-kicker">Schedule</div>
   <h2>Phased delivery</h2>
+  <div class="callout ok"><strong>Approved &amp; in progress</strong>
+    Plan approved 2026-10-15. Snowflake is simulated for now (no account). Phases 0&ndash;2 are working
+    in the offline POC; phases 3&ndash;4 are being deepened now; the real trial-account build is deferred
+    until an account is approved.</div>
   <ol class="timeline">
-    <li data-step="0"><h4>Enablement &middot; Platform</h4><p>Snowflake demo account, database/role DDL, secrets wired, this review site live on <code>main</code>.</p></li>
-    <li data-step="1"><h4>Ingest &amp; organize &middot; Prototype</h4><p>CUAD loader, Faker generator, CORE model, data-quality assertions. <em>Accept:</em> all FK checks pass.</p></li>
-    <li data-step="2"><h4>Confidentiality &middot; Platform + Prototype</h4><p>Roles, mapping table, row access policy on every <code>matter_id</code> table, masking. <em>Accept:</em> cross-matter query returns 0 rows.</p></li>
-    <li data-step="3"><h4>Risk analytics &middot; Prototype</h4><p>Risk-rule table, scoring view, high-risk register. <em>Accept:</em> bands render for loaded contracts.</p></li>
-    <li data-step="4"><h4>Verify &amp; audit &middot; Platform</h4><p>Multi-role test run, query-history evidence capture, GOV views. <em>Accept:</em> evidence pack produced.</p></li>
-    <li data-step="5"><h4>Review &middot; CEO + Design</h4><p>Publish refreshed site, walk the demo, collect board decisions.</p></li>
+    <li data-step="0"><h4>Enablement <span class="badge low">done (simulated)</span></h4><p>Database/role DDL written; the simulated engine (<code>poc/snowflake_sim.py</code>) stands in for the account; this review site live on <code>main</code>.</p></li>
+    <li data-step="1"><h4>Ingest &amp; organize <span class="badge low">done</span></h4><p>CUAD loader, synthetic generator, CORE model, and data-quality assertions implemented in the POC.</p></li>
+    <li data-step="2"><h4>Confidentiality <span class="badge low">done (simulated)</span></h4><p>Roles, mapping, row access policy, and masking demonstrated offline; real policies on the trial later.</p></li>
+    <li data-step="3"><h4>Risk analytics <span class="badge med">in progress</span></h4><p>Rule table and scoring view exist; expanding the register and clause detail in the demo.</p></li>
+    <li data-step="4"><h4>Verify &amp; audit <span class="badge med">in progress</span></h4><p>Multi-role tests and query history work in simulation; producing an evidence pack.</p></li>
+    <li data-step="5"><h4>Review <span class="badge med">ongoing</span></h4><p>Refreshed site published; the board walks the demo and reviews each increment.</p></li>
   </ol>
 </section>
 
@@ -92,10 +96,11 @@
   <h2>Definition of done</h2>
   <ul>
     <li>Site published at <a href="https://jpeckenpaugh.github.io/snow-compliance-demo/">jpeckenpaugh.github.io/snow-compliance-demo</a>.</li>
-    <li>Snowflake demo rebuildable end-to-end from <code>sql/</code> + <code>ingest/</code>.</li>
+    <li>Snowflake behaviour rebuildable from <code>sql/</code> and demonstrable offline in the simulation.</li>
     <li>Cross-matter access denied and demonstrated for at least two attorney roles.</li>
     <li>Audit evidence captured and linked from the audit page.</li>
     <li>High-risk-by-matter report produced.</li>
+    <li><em>Deferred:</em> real row access policies / masking validated on a Snowflake trial once an account is approved.</li>
   </ul>
 </section>
 
