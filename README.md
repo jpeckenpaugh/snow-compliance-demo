@@ -36,7 +36,14 @@ python3 poc/server.py                    # functional POC at http://localhost:80
 Users: `alice`, `bob`, `carol`, `admin`, `auditor` — password `demo`.
 
 - `poc/access.py` is the enforcement point (authorization check + audit).
+- `poc/snowflake_sim.py` simulates Snowflake role context, row access policy, masking,
+  and query history offline — no Snowflake account required.
 - `poc/analysis/cuad_shape_report.md` documents the real CUAD shape vs. the plan.
+
+The Snowflake component is **simulated for now** (see `snowflake-options.html` on the site):
+offline emulators (fakesnow, LocalStack, snowflake-emulator, DuckDB) run SQL but do *not*
+enforce governance; a free 30-day Snowflake trial is the only faithful way to validate row
+access policies and masking. We simulate now and validate on a trial when approved.
 
 ## Data & disclaimers
 

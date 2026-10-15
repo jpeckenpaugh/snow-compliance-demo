@@ -158,6 +158,8 @@ def main() -> None:
         "matters": [{"matter_id": m[0], "name": m[2], "client": client_by_id[m[1]][1],
                      "confidentiality": m[3]} for m in MATTERS],
         "authorizations": {u[1]: [a[0] for a in AUTHORIZATIONS if a[1] == u[0]] for u in USERS},
+        "clients": [{"client_id": c[0], "client_name": c[1], "industry": c[2],
+                     "contact_email": c[4], "contact_phone": c[5]} for c in CLIENTS],
         "documents": docs,
         "seed_audit": [{"at": a[0], "user": a[1], "role": a[2], "action": a[3],
                         "target": a[4], "outcome": a[5]} for a in seed_audit],

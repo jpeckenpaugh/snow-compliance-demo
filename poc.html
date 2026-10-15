@@ -14,7 +14,7 @@
       <span class="mark" aria-hidden="true">SC</span>
       <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
     </a>
-    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="poc.html" class="active">POC & findings</a><a href="demo/index.html">Interactive demo</a><a href="roadmap.html">Roadmap</a></nav>
+    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="poc.html" class="active">POC & findings</a><a href="demo/index.html">Interactive demo</a><a href="snowflake-options.html">Snowflake options</a><a href="roadmap.html">Roadmap</a></nav>
   </div>
 </header>
 <section class="hero"><div class="wrap">
@@ -41,7 +41,8 @@
       <tr><td>Seeder</td><td><code>poc/seed.py</code></td><td>Loads 20 contracts + synthetic users/matters; exports the static demo data</td></tr>
       <tr><td>Access layer</td><td><code>poc/access.py</code></td><td><strong>The enforcement point</strong> &mdash; authorization check + audit logging</td></tr>
       <tr><td>POC web server</td><td><code>poc/server.py</code></td><td>Standard-library HTTP server; real login, real denials, real audit</td></tr>
-      <tr><td>Static demo</td><td><code>demo/index.html</code></td><td>Board-clickable login/audit demo hosted on Pages</td></tr>
+      <tr><td><strong>Simulated Snowflake</strong></td><td><code>poc/snowflake_sim.py</code></td><td>Emulates role context, row access policy, masking, and query history offline (see <a href="snowflake-options.html">Snowflake options</a>)</td></tr>
+      <tr><td>Static demo</td><td><code>demo/index.html</code></td><td>Board-clickable login/audit demo + Snowflake console, hosted on Pages</td></tr>
       <tr><td>Shape report</td><td><code>poc/analysis/cuad_shape_report.md</code></td><td>Full statistics over the 20-document sample</td></tr>
     </tbody>
   </table></div>

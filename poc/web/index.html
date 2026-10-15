@@ -62,11 +62,42 @@ function renderLogin() {
 async function renderApp() {
   app.innerHTML = `<div class="card"><div class="row">
     <strong>${user.name}</strong> <span class="muted">${user.role}</span>
-    <button id="out" style="margin-left:auto;background:#334155">Sign out</button></div></div>
+    <span style="margin-left:auto">
+      <button id="console" style="background:#334155">Snowflake console</button>
+      <button id="out" style="background:#334155">Sign out</button></span></div></div>
     <div id="content"></div>`;
   document.getElementById('out').onclick = async () => { await api('/api/logout', { method: 'POST' }); token = null; user = null; renderLogin(); };
+  document.getElementById('console').onclick = renderConsole;
   if (user.role === 'compliance_admin' || user.role === 'auditor') await renderAdmin();
   else await renderDocs();
+}
+
+async function renderConsole() {
+  const c = document.getElementById('content');
+  const meta = await api('/api/snowflake');
+  const roles = meta.body.roles, queries = meta.body.queries;
+  c.innerHTML = `<div class="card"><h3>Simulated Snowflake console</h3>
+    <p class="muted">Row access policy, masking, and query history simulated without a Snowflake account.</p>
+    <div class="row">
+      <select id="srole">${roles.map(r => `<option>${r}</option>`).join('')}</select>
+      <select id="squery">${queries.map(q => `<option value="${q.key}">${q.label}</option>`).join('')}</select>
+      <button id="srun">Run query</button>
+    </div>
+    <div id="sout"></div></div>`;
+  document.getElementById('srun').onclick = async () => {
+    const r = await api('/api/snowflake/query', { method: 'POST', body: JSON.stringify({
+      role: document.getElementById('srole').value, key: document.getElementById('squery').value }) });
+    const b = r.body, out = document.getElementById('sout');
+    if (b.status !== 'SUCCESS') {
+      out.innerHTML = `<pre style="background:#0e1e2e;color:#d8e6f2;padding:12px;border-radius:8px;overflow:auto">${b.sql || ''}</pre>
+        <p class="denied">STATUS: ${b.status} &mdash; ${b.error}</p><p class="muted">${b.policy || ''}</p>`;
+      return;
+    }
+    out.innerHTML = `<pre style="background:#0e1e2e;color:#d8e6f2;padding:12px;border-radius:8px;overflow:auto">${b.sql}</pre>
+      <p class="muted">${b.policy} &middot; <strong>${b.rows.length}</strong> rows</p>
+      <table><thead><tr>${b.columns.map(x => `<th>${x}</th>`).join('')}</tr></thead>
+      <tbody>${b.rows.slice(0, 40).map(row => `<tr>${row.map(v => `<td>${v}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  };
 }
 
 async function renderDocs() {

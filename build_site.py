@@ -18,6 +18,7 @@ NAV = [
     ("audit-verification.html", "Audit"),
     ("poc.html", "POC & findings"),
     ("demo/index.html", "Interactive demo"),
+    ("snowflake-options.html", "Snowflake options"),
     ("roadmap.html", "Roadmap"),
 ]
 
@@ -855,7 +856,8 @@ def build_poc():
       <tr><td>Seeder</td><td><code>poc/seed.py</code></td><td>Loads 20 contracts + synthetic users/matters; exports the static demo data</td></tr>
       <tr><td>Access layer</td><td><code>poc/access.py</code></td><td><strong>The enforcement point</strong> &mdash; authorization check + audit logging</td></tr>
       <tr><td>POC web server</td><td><code>poc/server.py</code></td><td>Standard-library HTTP server; real login, real denials, real audit</td></tr>
-      <tr><td>Static demo</td><td><code>demo/index.html</code></td><td>Board-clickable login/audit demo hosted on Pages</td></tr>
+      <tr><td><strong>Simulated Snowflake</strong></td><td><code>poc/snowflake_sim.py</code></td><td>Emulates role context, row access policy, masking, and query history offline (see <a href="snowflake-options.html">Snowflake options</a>)</td></tr>
+      <tr><td>Static demo</td><td><code>demo/index.html</code></td><td>Board-clickable login/audit demo + Snowflake console, hosted on Pages</td></tr>
       <tr><td>Shape report</td><td><code>poc/analysis/cuad_shape_report.md</code></td><td>Full statistics over the 20-document sample</td></tr>
     </tbody>
   </table></div>
@@ -927,6 +929,107 @@ python3 poc/server.py                    # functional POC at http://localhost:80
     ])
 
 
+def build_options():
+    header = """<section class="hero"><div class="wrap">
+  <p class="eyebrow">Snowflake options</p>
+  <h1>Simulating Snowflake offline &amp; sandbox accounts</h1>
+  <p class="lede">Per board direction, the Snowflake component is simulated for now. Here are the
+  offline tooling and sandbox-account options, and our recommendation.</p>
+</div></section>"""
+
+    content = """
+<section id="bottom-line">
+  <div class="section-kicker">Bottom line</div>
+  <h2>There is no true offline Snowflake</h2>
+  <p>Snowflake is a hosted service; nothing runs the real engine locally. What exists falls into two
+  buckets: <strong>emulators</strong> that accept Snowflake SQL/drivers but do <em>not</em> implement
+  governance, and a <strong>free trial account</strong> that is the genuine article. Because the whole
+  point of this demo is <em>governance</em> (row access policies, masking, audit), the emulators can carry
+  the SQL while a simulation layer or a trial account carries the behaviour.</p>
+  <div class="callout ok"><strong>Recommendation</strong>
+    Proceed now with our own simulation layer (<code>poc/snowflake_sim.py</code>) for governance behaviour
+    and use an emulator only for SQL/DDL portability and CI. When the board approves, validate the same
+    <code>sql/01…05</code> unchanged on a free 30-day Snowflake trial.</div>
+</section>
+
+<section id="offline">
+  <div class="section-kicker">Offline / local</div>
+  <h2>Offline emulation options</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Option</th><th>What it is</th><th>Governance?</th><th>Best for</th></tr></thead>
+    <tbody>
+      <tr><td><strong>fakesnow</strong> <span class="tag">Apache-2.0</span></td>
+        <td>Patches the Snowflake Python connector (or runs an HTTP server) and executes against DuckDB, translating SQL with sqlglot. Persists to disk.</td>
+        <td><span class="badge high">No</span> row access / masking</td>
+        <td>Running our DDL/scripts locally; SQL portability; CI</td></tr>
+      <tr><td><strong>LocalStack for Snowflake</strong></td>
+        <td>Managed, Docker-based Snowflake-compatible endpoint; works with the Snowflake CLI (<code>snow</code>). Free Hobby tier for non-commercial use.</td>
+        <td><span class="badge med">Partial</span></td>
+        <td>Driver/CLI compatibility, local dev</td></tr>
+      <tr><td><strong>snowflake-emulator</strong> <span class="tag">MIT · Rust</span></td>
+        <td>DataFusion-backed engine speaking the Snowflake SQL API v2; Docker image.</td>
+        <td><span class="badge high">No</span> (GRANT/REVOKE are no-ops)</td>
+        <td>Driver/SQL compatibility testing</td></tr>
+      <tr><td><strong>DuckDB</strong> <span class="tag">MIT</span></td>
+        <td>The analytical engine underneath fakesnow; excellent local SQL.</td>
+        <td><span class="badge high">No</span></td>
+        <td>Local analytics on the CORE/MARTS layer</td></tr>
+      <tr><td><strong>dbt-duckdb</strong></td>
+        <td>Runs the transformation layer (RAW &rarr; CORE &rarr; MARTS) offline; swap the adapter to <code>dbt-snowflake</code> later.</td>
+        <td><span class="badge high">No</span></td>
+        <td>Portable modeling / tests</td></tr>
+      <tr><td><strong>Snowpark local testing framework</strong> <span class="tag">official</span></td>
+        <td>Emulates Snowpark Python DataFrames locally without a connection.</td>
+        <td><span class="badge high">No</span></td>
+        <td>Unit-testing Snowpark DataFrame code</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn"><strong>The catch</strong>
+    Every emulator above explicitly omits access control. They can prove our SQL <em>runs</em>; they cannot
+    prove a matter wall <em>holds</em>. That is exactly why we built the simulation layer.</div>
+</section>
+
+<section id="sandbox">
+  <div class="section-kicker">Sandbox account</div>
+  <h2>Free trial / sandbox account</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Option</th><th>What you get</th><th>Limits</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Snowflake 30-day trial</strong></td>
+        <td>$400 in free credits; <strong>Enterprise Edition</strong> features incl. <em>row access policies</em> and <em>dynamic data masking</em>; no credit card required; AWS/Azure/GCP + region choice; sample data preloaded.</td>
+        <td>30 days or until credits run out; external network access, hybrid tables, Openflow limited; AI features off without a card; account suspended at end.</td></tr>
+      <tr><td><strong>AWS Marketplace trial</strong></td>
+        <td>Equivalent $400 / 30-day Snowflake offer through AWS Marketplace.</td>
+        <td>Same as above; some AWS infra costs may apply.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Our footprint is tiny (20 contracts, X-Small warehouses, 60-second auto-suspend), so $400 of credits is
+  far more than the demo needs. The trial is the only faithful way to validate row access policies and masking
+  end-to-end.</p>
+</section>
+
+<section id="plan">
+  <div class="section-kicker">Plan</div>
+  <h2>How we'll simulate now, validate later</h2>
+  <ol class="timeline">
+    <li data-step="1"><h4>Now &mdash; govern in simulation</h4>
+      <p><code>poc/snowflake_sim.py</code> emulates role context, the row access policy, masking, and query
+      history offline. Demonstrated in the <a href="demo/index.html">interactive demo</a>'s Snowflake console.</p></li>
+    <li data-step="2"><h4>Now &mdash; prove SQL portability</h4>
+      <p>Run <code>sql/01…05</code> through fakesnow (or LocalStack) to catch syntax/portability issues in CI,
+      and optionally model MARTS with dbt-duckdb.</p></li>
+    <li data-step="3"><h4>When approved &mdash; validate for real</h4>
+      <p>Stand up the 30-day trial, run the same DDL unchanged, and capture real
+      <code>QUERY_HISTORY</code> / <code>POLICY_REFERENCES</code> evidence.</p></li>
+  </ol>
+</section>
+"""
+    page("snowflake-options.html", "Snowflake options", header, content, [
+        ("bottom-line", "Bottom line"), ("offline", "Offline emulation"),
+        ("sandbox", "Trial / sandbox account"), ("plan", "Simulate now, validate later"),
+    ])
+
+
 if __name__ == "__main__":
     build_index()
     build_data()
@@ -936,4 +1039,5 @@ if __name__ == "__main__":
     build_audit()
     build_roadmap()
     build_poc()
+    build_options()
     print("site build complete")

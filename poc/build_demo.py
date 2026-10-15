@@ -57,7 +57,8 @@ TEMPLATE = r"""<!doctype html>
     <strong>Simulated security.</strong> This hosted page simulates the access model in the
     browser so the board can click through it. The same authorization map and denial rules are
     enforced for real by the SQLite POC (<code>poc/access.py</code>, <code>poc/server.py</code>)
-    and port directly to Snowflake row access policies.
+    and port directly to Snowflake row access policies. The <strong>Snowflake console</strong> tab
+    simulates row access policies, masking, and query history with no Snowflake account.
   </div>
   <div id="app"></div>
 </main>
@@ -101,18 +102,23 @@ function renderLogin() {
 
 function renderDashboard() {
   const user = current;
-  const auditTab = OVERSIGHT.includes(user.role)
-    ? `<button class="btn ghost" id="tab-audit">View audit log</button>` : '';
+  const isOver = OVERSIGHT.includes(user.role);
+  const homeLabel = isOver ? 'Audit log' : 'My documents';
   app.innerHTML = `
     <div class="panel"><div class="row">
       <strong>${esc(user.name)}</strong>
       <span class="pill-role">${esc(user.role)}</span>
-      <span style="margin-left:auto">${auditTab}<button class="btn" id="out">Sign out</button></span>
+      <span style="margin-left:auto">
+        <button class="btn ghost" id="tab-home">${homeLabel}</button>
+        <button class="btn ghost" id="tab-console">Snowflake console</button>
+        <button class="btn" id="out">Sign out</button>
+      </span>
     </div></div>
     <div id="body"></div>`;
   document.getElementById('out').onclick = renderLogin;
-  if (document.getElementById('tab-audit')) document.getElementById('tab-audit').onclick = renderAudit;
-  if (OVERSIGHT.includes(user.role)) renderAudit(); else renderDocs();
+  document.getElementById('tab-home').onclick = () => isOver ? renderAudit() : renderDocs();
+  document.getElementById('tab-console').onclick = renderConsole;
+  document.getElementById('tab-home').click();
 }
 
 function renderDocs() {
@@ -176,6 +182,97 @@ function renderAudit() {
     <div class="table-scroll"><table><thead><tr><th>When</th><th>User</th><th>Role</th><th>Action</th><th>Target</th><th>Outcome</th></tr></thead>
     <tbody>${rows.map(a => `<tr><td>${esc(a.at)}</td><td>${esc(a.user)}</td><td>${esc(a.role)}</td><td>${esc(a.action)}</td><td>${esc(a.target||'')}</td><td class="${a.outcome}">${esc(a.outcome)}</td></tr>`).join('')}
     </tbody></table></div></div>`;
+}
+
+/* ---------- Simulated Snowflake console ---------- */
+const OVERSIGHT_ROLES = ['COMPLIANCE_ADMIN', 'AUDITOR'];
+const SIM_ROLES = [
+  ['ATTORNEY_ALICE', 'Alice (attorney)'], ['ATTORNEY_BOB', 'Bob (attorney)'],
+  ['PARALEGAL_CAROL', 'Carol (paralegal)'], ['COMPLIANCE_ADMIN', 'Compliance admin'],
+  ['AUDITOR', 'Auditor']];
+const SIM_QUERIES = {
+  documents: { label: 'Documents per matter',
+    sql: 'SELECT matter_id, matter_name, contract_id, contract_type\nFROM marts.v_matter_documents;',
+    policy: 'row access: sec.matter_access_policy ON (matter_id)' },
+  clauses: { label: 'Clause categories present',
+    sql: 'SELECT contract_id, matter_id, category\nFROM core.fact_clause WHERE present = 1;',
+    policy: 'row access: sec.matter_access_policy ON (matter_id)' },
+  clients: { label: 'Client contacts (masked)',
+    sql: 'SELECT client_id, client_name, contact_email, contact_phone\nFROM core.dim_client;',
+    policy: 'masking: sec.pii_mask ON (contact_email, contact_phone)' },
+  query_history: { label: 'Query history',
+    sql: 'SELECT query_id, role_name, query_text, rows_produced, status\nFROM snowflake.account_usage.query_history ORDER BY start_time DESC;',
+    policy: 'governed view: oversight roles only' }
+};
+const AUTH_BY_ROLE = { ATTORNEY_ALICE: 'alice', ATTORNEY_BOB: 'bob', PARALEGAL_CAROL: 'carol' };
+let simHistory = [
+  { qid: 'sim_a1b2c3', role: 'COMPLIANCE_ADMIN', sql: 'SELECT * FROM core.fact_clause;', rows: 231, status: 'SUCCESS' }
+];
+function simQid() { return 'sim_' + Math.random().toString(16).slice(2, 8); }
+function mattersFor(role) {
+  return AUTH_BY_ROLE[role] ? (D.authorizations[AUTH_BY_ROLE[role]] || []) : D.matters.map(m => m.matter_id);
+}
+function simRows(role, key) {
+  const oversight = OVERSIGHT_ROLES.includes(role);
+  const mset = new Set(mattersFor(role));
+  if (key === 'query_history') {
+    if (!oversight) return { denied: "insufficient privileges to operate on view 'QUERY_HISTORY'" };
+    return { columns: ['query_id', 'role_name', 'query_text', 'rows_produced', 'status'],
+             rows: simHistory.map(h => [h.qid, h.role, h.sql.replace(/\n/g, ' ').slice(0, 46) + '…', h.rows, h.status]) };
+  }
+  if (key === 'documents') {
+    return { columns: ['matter_id', 'matter_name', 'contract_id', 'contract_type'],
+      rows: D.documents.filter(d => mset.has(d.matter_id)).map(d => [d.matter_id, d.matter_name, d.contract_id, d.contract_type]),
+      filtered: !oversight };
+  }
+  if (key === 'clauses') {
+    const rows = [];
+    D.documents.filter(d => mset.has(d.matter_id)).forEach(d =>
+      d.present_categories.forEach(c => rows.push([d.contract_id, d.matter_id, c])));
+    return { columns: ['contract_id', 'matter_id', 'category'], rows, filtered: !oversight };
+  }
+  if (key === 'clients') {
+    const mask = !oversight;
+    return { columns: ['client_id', 'client_name', 'contact_email', 'contact_phone'],
+      rows: D.clients.map(c => [c.client_id, c.client_name,
+        mask ? '***REDACTED***' : c.contact_email, mask ? '***REDACTED***' : c.contact_phone]),
+      masked: mask };
+  }
+}
+function renderConsole() {
+  document.getElementById('body').innerHTML = `
+    <div class="panel">
+      <h3>Simulated Snowflake console</h3>
+      <p class="muted">No account required. Pick a role and run a statement; the simulated engine applies the
+        row access policy, masking, and query history exactly as the warehouse DDL would.</p>
+      <div class="row">
+        <label>Role <select id="srole">${SIM_ROLES.map(r => `<option value="${r[0]}">${esc(r[1])} (${r[0]})</option>`).join('')}</select></label>
+        <label>Statement <select id="squery">${Object.keys(SIM_QUERIES).map(k => `<option value="${k}">${esc(SIM_QUERIES[k].label)}</option>`).join('')}</select></label>
+        <button class="btn" id="srun">Run query</button>
+      </div>
+      <div id="sout"></div>
+    </div>`;
+  document.getElementById('srun').onclick = () => {
+    const role = document.getElementById('srole').value;
+    const key = document.getElementById('squery').value;
+    const spec = SIM_QUERIES[key];
+    const res = simRows(role, key) || {};
+    const out = document.getElementById('sout');
+    if (res.denied) {
+      simHistory.push({ qid: simQid(), role, sql: spec.sql, rows: 0, status: 'DENIED' });
+      out.innerHTML = `<pre><code>${esc(spec.sql)}</code></pre>
+        <div class="flash denied"><span class="denied">STATUS: DENIED</span> — ${esc(res.denied)}
+        <br><span class="muted">${esc(spec.policy)}</span></div>`;
+      return;
+    }
+    simHistory.push({ qid: simQid(), role, sql: spec.sql, rows: res.rows.length, status: 'SUCCESS' });
+    const note = res.masked ? 'Columns masked for this role.' : res.filtered ? 'Rows filtered by row access policy.' : 'Oversight role: no filtering.';
+    out.innerHTML = `<pre><code>${esc(spec.sql)}</code></pre>
+      <p class="muted">${esc(spec.policy)} &middot; <strong>${res.rows.length}</strong> rows &middot; ${note}</p>
+      <div class="table-scroll"><table><thead><tr>${res.columns.map(c => `<th>${esc(c)}</th>`).join('')}</tr></thead>
+      <tbody>${res.rows.slice(0, 40).map(r => `<tr>${r.map(v => `<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+      ${res.rows.length > 40 ? `<p class="muted">+ ${res.rows.length - 40} more rows</p>` : ''}`;
+  };
 }
 
 renderLogin();

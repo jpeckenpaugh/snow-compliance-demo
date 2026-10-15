@@ -137,7 +137,22 @@ A working Python + SQLite POC is in `poc/`, with a board-clickable demo at
 `matter_authorization`; `audit_log` ↔ append-only table + `QUERY_HISTORY`/`ACCESS_HISTORY`;
 `seed.py` risk scoring ↔ `CORE.ref_risk_rule` + `MARTS.mart_matter_risk`.
 
-## 12. Board decisions requested
+## 12. Snowflake: simulated now, validated later (board direction)
+
+Per board direction the Snowflake component is **simulated** for now.
+
+- `poc/snowflake_sim.py` simulates role context, the row access policy, masking, and
+  query history offline. Exposed in the interactive demo's Snowflake console.
+- Offline emulators (fakesnow, LocalStack for Snowflake, snowflake-emulator, DuckDB,
+  dbt-duckdb, Snowpark local testing) run Snowflake-style SQL but **do not enforce access
+  control** — so they can prove SQL portability, not the matter wall.
+- A free **30-day Snowflake trial** ($400 credits, Enterprise Edition with row access
+  policies and masking, no credit card) is the only faithful end-to-end validation. Our
+  footprint is tiny (X-Small, 60s auto-suspend), so credits are ample.
+- Plan: simulate governance now; run `sql/01…05` through an emulator for portability/CI;
+  validate unchanged on a trial when approved. Full comparison on `snowflake-options.html`.
+
+## 13. Board decisions requested
 
 1. Scope: full four-phase flow vs. narrower.
 2. Data sourcing: CUAD + synthetic (recommended) vs. synthetic only.

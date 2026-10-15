@@ -83,6 +83,43 @@
   "admin": [],
   "auditor": []
  },
+ "clients": [
+  {
+   "client_id": "CL-001",
+   "client_name": "SYNTHETIC Northwind Pharma",
+   "industry": "Pharmaceuticals",
+   "contact_email": "not.real@example.invalid",
+   "contact_phone": "+1-555-0100"
+  },
+  {
+   "client_id": "CL-002",
+   "client_name": "SYNTHETIC Helios Energy",
+   "industry": "Energy",
+   "contact_email": "not.real@example.invalid",
+   "contact_phone": "+1-555-0101"
+  },
+  {
+   "client_id": "CL-003",
+   "client_name": "SYNTHETIC Blue Harbor Bank",
+   "industry": "Financial Services",
+   "contact_email": "not.real@example.invalid",
+   "contact_phone": "+1-555-0102"
+  },
+  {
+   "client_id": "CL-004",
+   "client_name": "SYNTHETIC Vector Robotics",
+   "industry": "Manufacturing",
+   "contact_email": "not.real@example.invalid",
+   "contact_phone": "+1-555-0103"
+  },
+  {
+   "client_id": "CL-005",
+   "client_name": "SYNTHETIC Cedar Health",
+   "industry": "Healthcare",
+   "contact_email": "not.real@example.invalid",
+   "contact_phone": "+1-555-0104"
+  }
+ ],
  "documents": [
   {
    "contract_id": "CUAD-0000",

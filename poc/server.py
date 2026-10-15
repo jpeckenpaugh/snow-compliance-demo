@@ -19,6 +19,7 @@ import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import access
+import snowflake_sim as sf
 
 ROOT = pathlib.Path(__file__).resolve().parent
 DB_PATH = ROOT / "db" / "poc.db"
@@ -90,6 +91,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(403, {"error": str(e)})
             finally:
                 con.close()
+        if path == "/api/snowflake":
+            return self._send(200, {"roles": sf.list_roles(), "queries": sf.list_queries(),
+                                    "policies": sf.policy_references(None)})
         return self._send(404, {"error": "not found"})
 
     def do_POST(self):
@@ -110,6 +114,15 @@ class Handler(BaseHTTPRequestHandler):
             auth = self.headers.get("Authorization", "")
             SESSIONS.pop(auth[7:] if auth.startswith("Bearer ") else None, None)
             return self._send(200, {"ok": True})
+        if path == "/api/snowflake/query":
+            body = self._read_json()
+            con = sf.connect(DB_PATH)
+            try:
+                result = sf.run(con, body.get("role", ""), body.get("key", ""))
+            finally:
+                con.close()
+            code = 200 if result.get("status") == "SUCCESS" else 403 if result.get("status") == "DENIED" else 400
+            return self._send(code, result)
         return self._send(404, {"error": "not found"})
 
     def _serve_file(self, p: pathlib.Path):
