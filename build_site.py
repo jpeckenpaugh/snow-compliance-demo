@@ -227,9 +227,9 @@ def build_index():
   <h2>Board decisions</h2>
   <div class="callout ok"><strong>Approved 2026-10-15</strong>
     The board approved the four-phase scope, CUAD + synthetic data sourcing, and continued hosting on
-    this repo. Per later board direction, the <strong>Snowflake component is simulated for now</strong>
-    (no account); the same DDL will be validated on a free 30-day trial when an account is approved.
-    Build tasks are in progress.</div>
+    this repo. Per later board direction, the <strong>Snowflake component is simulated</strong> (no account).
+    The simulated build is <strong>complete and signed off 2026-10-15</strong>; validating the same DDL on a
+    free 30-day trial is tracked as a separate, account-gated task.</div>
   <div class="table-scroll"><table>
     <thead><tr><th>Decision</th><th>Resolution</th></tr></thead>
     <tbody>
@@ -779,7 +779,7 @@ def build_roadmap():
     <li data-step="2"><h4>Confidentiality <span class="badge low">done (simulated)</span></h4><p>Roles, mapping, row access policy, and masking demonstrated offline; real policies on the trial later.</p></li>
     <li data-step="3"><h4>Risk analytics <span class="badge low">done (simulated)</span></h4><p>Rule engine (<code>poc/risk.py</code>), scoring, and a risk register in the demo (High 4 / Medium 19 / Low 7).</p></li>
     <li data-step="4"><h4>Verify &amp; audit <span class="badge low">done (simulated)</span></h4><p>Role × matter verification matrix and evidence pack; offline SQL harness + CI for the DDL.</p></li>
-    <li data-step="5"><h4>Review <span class="badge med">ongoing</span></h4><p>Refreshed site published; the board walks the demo and reviews each increment.</p></li>
+    <li data-step="5"><h4>Review <span class="badge low">signed off (simulated)</span></h4><p>Board reviewed the refreshed demo and signed off on the simulated phase 2026-10-15.</p></li>
   </ol>
 </section>
 
