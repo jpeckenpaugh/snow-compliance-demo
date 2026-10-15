@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview · Snow Compliance Demo</title>
+<meta name="description" content="Board-review recommendations for a Snowflake legal-compliance demonstration built on the public CUAD dataset plus synthetic law-firm records.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">SC</span>
+      <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="index.html" class="active">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="roadmap.html">Roadmap</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Snowflake integration &middot; demo proposal</p>
+  <h1>A Snowflake compliance demo the board can actually inspect</h1>
+  <p class="lede">A self-contained Snowflake demonstration that ingests real, public contract
+  data (CUAD) enriched with synthetic law-firm records, then shows matter-level
+  confidentiality, row-level security, clause-risk analysis, and a full audit trail.</p>
+  <div class="pills">
+    <span class="pill">Public research data only</span>
+    <span class="pill">No real client or privileged material</span>
+    <span class="pill">Reproducible SQL, no hidden steps</span>
+    <span class="pill">Staged here for review</span>
+  </div>
+</div></section>
+<main class="main">
+  <div class="wrap">
+    <div class="grid">
+      <aside class="toc"><h2>On this page</h2><ul><li><a href="#purpose">Purpose</a></li><li><a href="#outcomes">Outcomes</a></li><li><a href="#why">Why CUAD</a></li><li><a href="#architecture-at-a-glance">Architecture at a glance</a></li><li><a href="#recommendations">Ten recommendations</a></li><li><a href="#phases">Delivery phases</a></li><li><a href="#decisions">What we need from the board</a></li></ul></aside>
+      <div class="content">
+        
+<section id="purpose">
+  <div class="section-kicker">Purpose</div>
+  <h2>What this project delivers</h2>
+  <p class="lead">This is the recommendation and design package for a demonstrable Snowflake
+  capability in a legal-services context. It is deliberately scoped to be built and
+  shown quickly, while exercising the Snowflake features that matter to a compliance
+  audience: <strong>governed access, data protection, and auditability</strong>.</p>
+  <p>Everything here is a <em>starting point for discussion</em>. The board is asked to
+  confirm scope, the data-sourcing approach, and the security posture before we build.</p>
+</section>
+
+<section id="outcomes">
+  <div class="section-kicker">Outcomes</div>
+  <h2>Four things the demo proves</h2>
+  <div class="cards">
+    <div class="card"><h3>1. Governed ingestion</h3><p>Real contract text and CUAD clause
+      annotations are loaded and joined to synthetic clients, matters, and staff with
+      validated foreign-key relationships.</p></div>
+    <div class="card"><h3>2. Matter-level confidentiality</h3><p>Attorneys see only the
+      matters they are authorized for. Snowflake row access policies and masking enforce
+      the wall at query time, not in application code.</p></div>
+    <div class="card"><h3>3. Contract-risk analytics</h3><p>CUAD clause categories feed a
+      transparent, rule-based risk rubric that flags termination, indemnification,
+      liability, and governing-law exposure.</p></div>
+    <div class="card"><h3>4. Verifiable audit</h3><p>We run the same query under multiple
+      roles, capture allowed and denied access, and reconstruct it from Snowflake's own
+      query and access history.</p></div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-kicker">Rationale</div>
+  <h2>Why CUAD plus synthetic records</h2>
+  <p>Fabricated clause text produces a demo that feels fake and can misrepresent the
+  strength of the platform. The <a href="https://github.com/The-Atticus-Project/cuad">Contract
+  Understanding Atticus Dataset</a> gives us 510 real commercial contracts with 41
+  expert-annotated clause categories &mdash; genuine language and genuine labels.</p>
+  <p>CUAD is <strong>public research data released under CC&nbsp;BY&nbsp;4.0</strong>. We attach
+  fictional matters and confidentiality labels strictly to demonstrate the mechanics.
+  We will never present these documents as genuinely privileged, and we will carry the
+  license attribution wherever the data appears.</p>
+  <div class="callout warn"><strong>Non-negotiable framing</strong>
+    Public documents, fictional matters, and a <em>simulated</em> legal-review rubric. The demo
+    must not imply real legal advice, real privilege, or real client confidentiality.</div>
+</section>
+
+<section id="architecture-at-a-glance">
+  <div class="section-kicker">At a glance</div>
+  <h2>Proposed architecture</h2>
+  <p>A single demo database landing <code>RAW</code> &rarr; <code>CORE</code> &rarr;
+  <code>MARTS</code>, with a dedicated <code>SECURITY</code> schema for policies and a
+  <code>GOV</code> schema for the audit/reporting views.</p>
+  <pre><code>CUAD JSON + Faker seeds
+        |
+        v
+  RAW     raw_cuad_contracts, raw_cuad_clauses, raw_synthetic_*
+        |
+        v
+  CORE    dim_client, dim_employee, dim_matter, dim_contract, fact_clause,
+          bridge_matter_contract, matter_authorization, ref_*
+        |
+        v
+  MARTS   mart_matter_risk, mart_high_risk_register   <-- board-facing queries
+        |
+  SECURITY  matter_access_policy (row access), pii masks, classification tags
+  GOV       audit_summary, denied_access_log, query_history views</code></pre>
+</section>
+
+<section id="recommendations">
+  <div class="section-kicker">Recommendations</div>
+  <h2>Ten recommendations</h2>
+  <ol>
+    <li><strong>Use CUAD as the factual spine.</strong> 20&ndash;30 contracts for the demo core, with the option to scale to all 510.</li>
+    <li><strong>Synthesize the business layer, not the legal text.</strong> Faker generates clients, matters, staff, assignments, and approvals.</li>
+    <li><strong>Model matters as the confidentiality boundary.</strong> Every access decision keys off <code>matter_id</code>.</li>
+    <li><strong>Enforce with row access policies on a mapping table.</strong> No matter-based filtering in application SQL.</li>
+    <li><strong>Centralize policy in a <code>SECURITY</code> schema</strong> owned by a compliance role, applied consistently across tables.</li>
+    <li><strong>Mask sensitive metadata by role</strong> (client PII, deal values) with dynamic data masking and classification tags.</li>
+    <li><strong>Keep the risk rubric transparent and editable.</strong> Rules live as data in a reference table, so thresholds are reviewable &mdash; and clearly labeled simulated.</li>
+    <li><strong>Prove governance through Snowflake's own logs.</strong> Query history, access history, and policy references are the evidence.</li>
+    <li><strong>Ship the review site from this repo.</strong> GitHub Pages from <code>main</code> is the board's staging surface.</li>
+    <li><strong>Keep costs near zero.</strong> X-Small warehouses with aggressive auto-suspend, and a small data footprint.</li>
+  </ol>
+</section>
+
+<section id="phases">
+  <div class="section-kicker">Plan</div>
+  <h2>Delivery phases</h2>
+  <ol class="timeline">
+    <li data-step="0"><h4>Enablement</h4><p>Snowflake account/trial, roles, database skeleton, CI for this Pages site. <a href="architecture.html">Architecture &rarr;</a></p></li>
+    <li data-step="1"><h4>Ingest &amp; organize</h4><p>Load 20&ndash;30 CUAD contracts + annotations, generate synthetic records, validate relationships. <a href="data-foundation.html">Data foundation &rarr;</a></p></li>
+    <li data-step="2"><h4>Enforce matter confidentiality</h4><p>Attorney/compliance roles, row access policies, masking, classification tags. <a href="security.html">Confidentiality &rarr;</a></p></li>
+    <li data-step="3"><h4>Analyze contractual risk</h4><p>Clause-category analytics and the rule-based risk rubric. <a href="risk-analysis.html">Risk analysis &rarr;</a></p></li>
+    <li data-step="4"><h4>Verify &amp; audit</h4><p>Multi-role access tests, query-history evidence, high-risk register. <a href="audit-verification.html">Audit &rarr;</a></p></li>
+    <li data-step="5"><h4>Board review</h4><p>Publish this site, walk the demo, collect decisions. <a href="roadmap.html">Roadmap &rarr;</a></p></li>
+  </ol>
+</section>
+
+<section id="decisions">
+  <div class="section-kicker">Ask</div>
+  <h2>What we need from the board</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Decision</th><th>Options</th><th>Our recommendation</th></tr></thead>
+    <tbody>
+      <tr><td>Scope of the demo</td><td>4-phase flow as written / narrower / broader</td><td>Build all four phases against 20&ndash;30 contracts</td></tr>
+      <tr><td>Data sourcing</td><td>CUAD + synthetic / synthetic only</td><td>CUAD + synthetic, with full attribution</td></tr>
+      <tr><td>Snowflake account</td><td>New trial / existing account</td><td>Isolated demo account, X-Small warehouses</td></tr>
+      <tr><td>Hosting of this review site</td><td>This Pages repo / other</td><td>Continue here on <code>main</code></td></tr>
+      <tr><td>Risk rubric framing</td><td>Simulated / none</td><td>Simulated and prominently disclaimed</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <strong>Snow Compliance Demo</strong> &mdash; internal staging for board review.<br>
+      Built on the public <a href="https://github.com/The-Atticus-Project/cuad">CUAD</a> dataset (CC&nbsp;BY&nbsp;4.0) plus synthetic records.
+    </div>
+    <div>Prepared by the CEO office &middot; For discussion only &mdash; not legal advice.</div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture · Snow Compliance Demo</title>
+<meta name="description" content="Board-review recommendations for a Snowflake legal-compliance demonstration built on the public CUAD dataset plus synthetic law-firm records.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">SC</span>
+      <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html" class="active">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="roadmap.html">Roadmap</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Phase 0 &amp; platform</p>
+  <h1>Snowflake architecture</h1>
+  <p class="lede">One demo database, three medallion layers, two tiny warehouses, and a role
+  model that separates administration from compliance from legal work.</p>
+</div></section>
+<main class="main">
+  <div class="wrap">
+    <div class="grid">
+      <aside class="toc"><h2>On this page</h2><ul><li><a href="#topology">Database &amp; schema layout</a></li><li><a href="#warehouses">Warehouses</a></li><li><a href="#roles">Role model</a></li><li><a href="#deploy">Deployment &amp; environments</a></li><li><a href="#cost">Cost posture</a></li></ul></aside>
+      <div class="content">
+        
+<section id="topology">
+  <div class="section-kicker">Topology</div>
+  <h2>Database &amp; schema layout</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Object</th><th>Type</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td><code>SNOW_COMPLIANCE_DEMO</code></td><td>Database</td><td>Everything for the demo</td></tr>
+      <tr><td><code>RAW</code></td><td>Schema</td><td>Landing JSON / CSVs, no transformation</td></tr>
+      <tr><td><code>CORE</code></td><td>Schema</td><td>Modeled dimensions, facts, bridges</td></tr>
+      <tr><td><code>MARTS</code></td><td>Schema</td><td>Curated views for the demo queries</td></tr>
+      <tr><td><code>SECURITY</code></td><td>Schema</td><td>Row access policies, masks, mapping tables</td></tr>
+      <tr><td><code>GOV</code></td><td>Schema</td><td>Audit summary views over Snowflake metadata</td></tr>
+    </tbody>
+  </table></div>
+  <p>DDL: <code>sql/01_database_and_roles.sql</code>.</p>
+</section>
+
+<section id="warehouses">
+  <div class="section-kicker">Compute</div>
+  <h2>Warehouses</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Warehouse</th><th>Size</th><th>Auto-suspend</th><th>Used for</th></tr></thead>
+    <tbody>
+      <tr><td><code>WH_LOAD</code></td><td>X-Small</td><td>60s</td><td>Ingest / generation (build only)</td></tr>
+      <tr><td><code>WH_ANALYTICS</code></td><td>X-Small</td><td>60s</td><td>Demo queries and reporting</td></tr>
+    </tbody>
+  </table></div>
+  <p>X-Small with 60-second auto-suspend keeps an idle demo effectively free. The dataset
+  is tiny (well under a gigabyte), so compute, not storage, is the only cost lever.</p>
+</section>
+
+<section id="roles">
+  <div class="section-kicker">Access</div>
+  <h2>Role model</h2>
+  <pre><code>ACCOUNTADMIN
+  SYSADMIN
+    DEMO_ADMIN          -- builds RAW/CORE/MARTS
+    COMPLIANCE_ADMIN    -- owns SECURITY schema (policies, masks, mapping)
+    ATTORNEY            -- matter-scoped reads via row access policy
+    PARALEGAL           -- matter-scoped reads, reduced columns
+    AUDITOR             -- reads GOV audit views; no data mutation</code></pre>
+  <div class="callout"><strong>Principle</strong>
+    Administrators never use <code>ACCOUNTADMIN</code> for demo work. Analysts never see
+    unfiltered matter data. Policy objects live in <code>SECURITY</code> and are owned by
+    <code>COMPLIANCE_ADMIN</code>, not by whoever builds the tables.</div>
+</section>
+
+<section id="deploy">
+  <div class="section-kicker">Delivery</div>
+  <h2>Deployment &amp; environments</h2>
+  <ul>
+    <li><strong>Snowflake:</strong> scripts in <code>sql/</code> run in order; <code>ingest/</code> scripts populate data. Idempotent (CREATE OR REPLACE, MERGE) so the demo can be rebuilt from scratch.</li>
+    <li><strong>Review site:</strong> this repo. GitHub Pages serves <code>main:/</code> &mdash; any push to <code>main</code> republishes automatically. It is the staging surface for board review.</li>
+    <li><strong>Secrets:</strong> Snowflake credentials are stored as Paperclip secrets and injected at run time &mdash; never committed to this repo or pasted into documents.</li>
+  </ul>
+</section>
+
+<section id="cost">
+  <div class="section-kicker">Cost</div>
+  <h2>Cost posture</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Item</th><th>Estimate</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Snowflake compute</td><td>&lt; $5 while actively building/demoing</td><td>X-Small, auto-suspend; a trial credit covers it</td></tr>
+      <tr><td>Snowflake storage</td><td>Negligible</td><td>Sub-GB dataset</td></tr>
+      <tr><td>GitHub Pages</td><td>$0</td><td>Public repo, static site</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <strong>Snow Compliance Demo</strong> &mdash; internal staging for board review.<br>
+      Built on the public <a href="https://github.com/The-Atticus-Project/cuad">CUAD</a> dataset (CC&nbsp;BY&nbsp;4.0) plus synthetic records.
+    </div>
+    <div>Prepared by the CEO office &middot; For discussion only &mdash; not legal advice.</div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit &amp; verification · Snow Compliance Demo</title>
+<meta name="description" content="Board-review recommendations for a Snowflake legal-compliance demonstration built on the public CUAD dataset plus synthetic law-firm records.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">SC</span>
+      <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html" class="active">Audit</a><a href="roadmap.html">Roadmap</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Phase 4</p>
+  <h1>Verify &amp; audit</h1>
+  <p class="lede">The claim of governance is only credible if it is provable. We run the same
+  queries under several roles and reconstruct what happened from Snowflake's own logs.</p>
+</div></section>
+<main class="main">
+  <div class="wrap">
+    <div class="grid">
+      <aside class="toc"><h2>On this page</h2><ul><li><a href="#matrix">Test matrix</a></li><li><a href="#evidence">Evidence sources</a></li><li><a href="#report">High-risk report</a></li><li><a href="#monitoring">Continuous governance</a></li></ul></aside>
+      <div class="content">
+        
+<section id="matrix">
+  <div class="section-kicker">Test plan</div>
+  <h2>Role &times; matter test matrix</h2>
+  <p>For each role we run an identical query and record the row count and whether rows
+  were filtered by policy.</p>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Query</th><th>ATTORNEY (Matter A)</th><th>ATTORNEY (Matter B)</th><th>AUDITOR</th></tr></thead>
+    <tbody>
+      <tr><td>Select clauses for Matter A</td><td>Rows returned</td><td>0 rows (policy)</td><td>Rows returned</td></tr>
+      <tr><td>Select clauses for Matter B</td><td>0 rows (policy)</td><td>Rows returned</td><td>Rows returned</td></tr>
+      <tr><td>Select client contact email</td><td>Masked</td><td>Masked</td><td>Visible</td></tr>
+      <tr><td>Read GOV audit views</td><td>Denied</td><td>Denied</td><td>Allowed</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><strong>Key point</strong>
+    A policy-filtered query returns <em>zero rows</em>, not an error. Verification therefore
+    records row counts alongside the query ID, and confirms the policy is attached via
+    <code>INFORMATION_SCHEMA.POLICY_REFERENCES</code>.</div>
+</section>
+
+<section id="evidence">
+  <div class="section-kicker">Evidence</div>
+  <h2>Where the proof comes from</h2>
+  <ul>
+    <li><code>SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY</code> &mdash; who ran what, as which role, and when (note: ~45 min latency).</li>
+    <li><code>SNOWFLAKE.ACCOUNT_USAGE.ACCESS_HISTORY</code> &mdash; which columns/tables were touched.</li>
+    <li><code>INFORMATION_SCHEMA.POLICY_REFERENCES</code> &mdash; which policy is attached to which column/table.</li>
+    <li><code>SNOWFLAKE.ACCOUNT_USAGE.ROW_ACCESS_POLICIES</code> &mdash; policy definitions in effect.</li>
+  </ul>
+  <pre><code>SELECT query_id, user_name, role_name, start_time, query_text
+FROM snowflake.account_usage.query_history
+WHERE role_name IN ('ATTORNEY','AUDITOR')
+  AND query_text ILIKE '%fact_clause%'
+ORDER BY start_time DESC;</code></pre>
+  <p>Full queries: <code>sql/05_audit_queries.sql</code>.</p>
+</section>
+
+<section id="report">
+  <div class="section-kicker">Deliverable</div>
+  <h2>Unresolved high-risk clauses by authorized matter</h2>
+  <p>The closing artifact of the demo: for the signed-in role, list high-risk clauses on
+  the matters they are authorized to see, with the contract, clause category, and score.</p>
+  <pre><code>SELECT matter_id, matter_name, contract_type, clause_category,
+       risk_score, risk_band
+FROM marts.mart_matter_risk
+WHERE risk_band = 'High'
+ORDER BY risk_score DESC;</code></pre>
+  <p>Run as <code>ATTORNEY_A</code> and <code>ATTORNEY_B</code>, the same statement yields
+  two different, correctly scoped reports &mdash; the single clearest demonstration of the wall.</p>
+</section>
+
+<section id="monitoring">
+  <div class="section-kicker">Ongoing</div>
+  <h2>Continuous governance</h2>
+  <ul>
+    <li>Alerts on policy changes (<code>POLICY_REFERENCES</code> diffs) and on unexpected role grants.</li>
+    <li>A weekly access-review report listing authorizations expiring within 30 days.</li>
+    <li>Row-access tests re-run on a schedule so regressions are caught, not hoped for.</li>
+  </ul>
+</section>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <strong>Snow Compliance Demo</strong> &mdash; internal staging for board review.<br>
+      Built on the public <a href="https://github.com/The-Atticus-Project/cuad">CUAD</a> dataset (CC&nbsp;BY&nbsp;4.0) plus synthetic records.
+    </div>
+    <div>Prepared by the CEO office &middot; For discussion only &mdash; not legal advice.</div>
+  </div>
+</footer>
+</body>
+</html>

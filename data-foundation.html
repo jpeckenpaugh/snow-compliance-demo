@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data foundation · Snow Compliance Demo</title>
+<meta name="description" content="Board-review recommendations for a Snowflake legal-compliance demonstration built on the public CUAD dataset plus synthetic law-firm records.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">SC</span>
+      <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html" class="active">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="roadmap.html">Roadmap</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Phase 1</p>
+  <h1>Data foundation</h1>
+  <p class="lede">CUAD supplies real contract language and clause annotations. Faker supplies
+  the fictional business context that turns contracts into matters a law firm would recognize.</p>
+</div></section>
+<main class="main">
+  <div class="wrap">
+    <div class="grid">
+      <aside class="toc"><h2>On this page</h2><ul><li><a href="#cuad">The CUAD dataset</a></li><li><a href="#synthetic">Synthetic layer</a></li><li><a href="#model">Logical model</a></li><li><a href="#quality">Data-quality checks</a></li><li><a href="#attribution">Attribution &amp; disclaimers</a></li></ul></aside>
+      <div class="content">
+        
+<section id="cuad">
+  <div class="section-kicker">Source A</div>
+  <h2>The CUAD dataset</h2>
+  <p>The Contract Understanding Atticus Dataset is a legal AI benchmark: <strong>510
+  commercial contracts</strong> annotated across <strong>41 clause categories</strong>
+  (the CUAD v1 distribution ships the contracts and annotations as JSON). Each
+  annotation carries the clause text span plus an expert Yes/No answer for whether the
+  clause type is present.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="n">510</div><div class="l">contracts available</div></div>
+    <div class="kpi"><div class="n">41</div><div class="l">clause categories</div></div>
+    <div class="kpi"><div class="n">20&ndash;30</div><div class="l">contracts in demo core</div></div>
+    <div class="kpi"><div class="n">CC BY 4.0</div><div class="l">license (attribution)</div></div>
+  </div>
+  <div class="callout"><strong>License obligation</strong>
+    CUAD is distributed under CC&nbsp;BY&nbsp;4.0. We retain the attribution notice, link to the
+    source repository, and never imply the documents are client-confidential.</div>
+  <h3>What we extract per contract</h3>
+  <ul>
+    <li><code>contract_name</code>, <code>contract_type</code> (NDA, license, service, etc.), party names.</li>
+    <li>Per clause category: <code>answer</code> (Yes/No/NA), annotated <code>text</code> span, character offsets.</li>
+  </ul>
+  <p>Parsing reference: <code>ingest/load_cuad.py</code> in this repo.</p>
+</section>
+
+<section id="synthetic">
+  <div class="section-kicker">Source B</div>
+  <h2>The synthetic law-firm layer (Faker)</h2>
+  <p>Faker (Python) generates deterministic, obviously-fictional records. We fix a random
+  seed so every rebuild is reproducible and board reviewers see stable data.</p>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Entity</th><th>Representative fields</th><th>Purpose in the demo</th></tr></thead>
+    <tbody>
+      <tr><td><code>client</code></td><td>client_id, name, industry, region, contact</td><td>Owns matters; drives PII masking</td></tr>
+      <tr><td><code>employee</code></td><td>employee_id, name, title, practice, role</td><td>Attorneys, paralegals, compliance officers</td></tr>
+      <tr><td><code>matter</code></td><td>matter_id, client_id, name, confidentiality_level, opened_on, lead_attorney</td><td>The confidentiality boundary</td></tr>
+      <tr><td><code>matter_assignment</code></td><td>matter_id, employee_id, assignment_role</td><td>Working assignments (for reporting)</td></tr>
+      <tr><td><code>matter_authorization</code></td><td>matter_id, employee_id, access_level, valid_from, valid_to</td><td><strong>Source of truth for row access</strong></td></tr>
+      <tr><td><code>contract_attachment</code></td><td>matter_id, contract_id, executed_on</td><td>Links a CUAD contract to a fictional matter</td></tr>
+      <tr><td><code>access_approval</code></td><td>matter_id, employee_id, approved_by, approved_on</td><td>Shows governance workflow</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn"><strong>Clearly fictional</strong>
+    Names, matters, and approvals are generated. Client and matter names are prefixed to
+    make their synthetic nature unmistakable in screenshots.</div>
+</section>
+
+<section id="model">
+  <div class="section-kicker">Data model</div>
+  <h2>Logical relationships</h2>
+  <p>Contracts and the business layer meet at a bridge, because a contract can serve
+  more than one matter and a matter can hold more than one contract.</p>
+  <pre><code>client 1---* matter *---* contract (via contract_attachment)
+  matter 1---* fact_clause *---1 dim_contract
+  matter 1---* matter_authorization *---1 employee
+  matter 1---* matter_assignment   *---1 employee
+  contract 1---* fact_clause *---1 dim_clause_category</code></pre>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Schema</th><th>Object</th><th>Grain / notes</th></tr></thead>
+    <tbody>
+      <tr><td>RAW</td><td><code>raw_cuad_contracts</code>, <code>raw_cuad_clauses</code></td><td>VARIANT JSON as landed; no logic</td></tr>
+      <tr><td>RAW</td><td><code>raw_synthetic_*</code></td><td>Faker CSV/JSON staging</td></tr>
+      <tr><td>CORE</td><td><code>dim_client</code>, <code>dim_employee</code>, <code>dim_matter</code>, <code>dim_contract</code>, <code>dim_clause_category</code></td><td>Conformed dimensions</td></tr>
+      <tr><td>CORE</td><td><code>fact_clause</code></td><td>One row per (contract, clause category)</td></tr>
+      <tr><td>CORE</td><td><code>bridge_matter_contract</code></td><td>Resolves the many-to-many</td></tr>
+      <tr><td>CORE</td><td><code>matter_authorization</code></td><td>Row access mapping table</td></tr>
+      <tr><td>MARTS</td><td><code>mart_matter_risk</code>, <code>mart_high_risk_register</code></td><td>Board-facing outputs</td></tr>
+    </tbody>
+  </table></div>
+  <p>Full DDL: <code>sql/02_data_model.sql</code>.</p>
+</section>
+
+<section id="quality">
+  <div class="section-kicker">Trust</div>
+  <h2>Data-quality checks</h2>
+  <p>Every load ends with referential-integrity and completeness assertions. Failures
+  are surfaced, never silently dropped.</p>
+  <pre><code>-- Orphaned clauses (no matching contract)
+SELECT f.contract_id, COUNT(*)
+FROM core.fact_clause f
+LEFT JOIN core.dim_contract c USING (contract_id)
+WHERE c.contract_id IS NULL
+GROUP BY 1;
+
+-- Matters with no authorized attorney (governance gap)
+SELECT m.matter_id
+FROM core.dim_matter m
+LEFT JOIN core.matter_authorization a USING (matter_id)
+WHERE a.matter_id IS NULL;
+
+-- Clause coverage vs CUAD's 41 categories
+SELECT COUNT(DISTINCT clause_category_id) AS categories_present
+FROM core.fact_clause;
+
+-- Contracts attached to more than one matter (expected for the bridge)
+SELECT contract_id, COUNT(DISTINCT matter_id) AS matters
+FROM core.bridge_matter_contract GROUP BY 1 HAVING matters > 1;</code></pre>
+</section>
+
+<section id="attribution">
+  <div class="section-kicker">Compliance</div>
+  <h2>Attribution &amp; disclaimers</h2>
+  <ul>
+    <li>CUAD: The Atticus Project, CC&nbsp;BY&nbsp;4.0 &mdash; linked on every page footer and in the raw tables.</li>
+    <li>Contract-to-matter assignments are fictional and exist only to demonstrate the data model.</li>
+    <li>No personal data of real people is used; all individuals are synthetic.</li>
+  </ul>
+</section>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <strong>Snow Compliance Demo</strong> &mdash; internal staging for board review.<br>
+      Built on the public <a href="https://github.com/The-Atticus-Project/cuad">CUAD</a> dataset (CC&nbsp;BY&nbsp;4.0) plus synthetic records.
+    </div>
+    <div>Prepared by the CEO office &middot; For discussion only &mdash; not legal advice.</div>
+  </div>
+</footer>
+</body>
+</html>

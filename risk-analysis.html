@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risk analysis · Snow Compliance Demo</title>
+<meta name="description" content="Board-review recommendations for a Snowflake legal-compliance demonstration built on the public CUAD dataset plus synthetic law-firm records.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">SC</span>
+      <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html" class="active">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="roadmap.html">Roadmap</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Phase 3</p>
+  <h1>Contract risk analysis</h1>
+  <p class="lede">CUAD's annotated clause categories feed a transparent, rule-based risk
+  rubric. Rules are data, so the board can inspect and adjust them.</p>
+</div></section>
+<main class="main">
+  <div class="wrap">
+    <div class="grid">
+      <aside class="toc"><h2>On this page</h2><ul><li><a href="#disclaimer">Simulated review</a></li><li><a href="#clauses">Clause categories</a></li><li><a href="#rubric">Rule-based scoring</a></li><li><a href="#views">Analytics views</a></li><li><a href="#sample">Illustrative output</a></li></ul></aside>
+      <div class="content">
+        
+<section id="disclaimer">
+  <div class="callout danger"><strong>Simulated legal review</strong>
+    This rubric is a demonstration of analytics mechanics, not legal advice. It encodes a
+    plausible but simplified set of review criteria and must be labeled as simulated
+    everywhere it appears.</div>
+</section>
+
+<section id="clauses">
+  <div class="section-kicker">Inputs</div>
+  <h2>Clause categories used</h2>
+  <p>A subset of CUAD's 41 categories carries the contract-risk story. Weights below
+  drive the score; they are stored as data, not hard-coded.</p>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Clause category</th><th>Risk theme</th><th>Weight</th></tr></thead>
+    <tbody>
+      <tr><td>Limitation of liability</td><td>Uncapped exposure</td><td><span class="badge high">High</span></td></tr>
+      <tr><td>Indemnification</td><td>One-sided / unlimited indemnity</td><td><span class="badge high">High</span></td></tr>
+      <tr><td>Termination for convenience</td><td>Counterparty-only exit</td><td><span class="badge med">Medium</span></td></tr>
+      <tr><td>Assignment</td><td>Assignment without consent / change of control</td><td><span class="badge med">Medium</span></td></tr>
+      <tr><td>Renewal / auto-renewal</td><td>Long notice windows</td><td><span class="badge med">Medium</span></td></tr>
+      <tr><td>Governing law</td><td>Unfavorable or foreign forum</td><td><span class="badge med">Medium</span></td></tr>
+      <tr><td>Non-compete / exclusivity</td><td>Restricted scope</td><td><span class="badge low">Low</span></td></tr>
+      <tr><td>Confidentiality</td><td>Duration / residuals</td><td><span class="badge low">Low</span></td></tr>
+      <tr><td>Warranties</td><td>Broad or missing disclaimers</td><td><span class="badge low">Low</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="rubric">
+  <div class="section-kicker">Rubric</div>
+  <h2>Rule-based scoring</h2>
+  <p>Each rule evaluates an annotation (presence, absence, or a keyword signal) and
+  contributes points. Scores roll up per contract and per matter.</p>
+  <pre><code>CREATE TABLE core.ref_risk_rule (
+  rule_id     STRING,
+  clause_category STRING,
+  signal      STRING,   -- PRESENT | ABSENT | KEYWORD
+  pattern     STRING,
+  points      INT,
+  rationale   STRING
+);
+
+-- Examples
+-- ('R1','Limitation of liability','ABSENT', NULL, 40,'No cap on liability')
+-- ('R2','Indemnification','PRESENT', NULL, 25,'Indemnity present; review scope')
+-- ('R3','Governing law','KEYWORD','foreign|arbitration', 10,'Offshore forum')</code></pre>
+  <p>Risk bands: <span class="badge high">High &ge; 60</span>
+  <span class="badge med">Medium 30&ndash;59</span>
+  <span class="badge low">Low &lt; 30</span>.</p>
+</section>
+
+<section id="views">
+  <div class="section-kicker">Outputs</div>
+  <h2>Analytics views</h2>
+  <pre><code>CREATE OR REPLACE VIEW marts.mart_matter_risk AS
+SELECT m.matter_id, m.matter_name, c.contract_id, c.contract_type,
+       SUM(CASE WHEN r.signal='ABSENT'  AND f.answer='No'  THEN r.points
+                WHEN r.signal='PRESENT' AND f.answer='Yes' THEN r.points
+                WHEN r.signal='KEYWORD' AND f.clause_text ILIKE '%'||r.pattern||'%'
+                     THEN r.points ELSE 0 END) AS risk_score
+FROM core.dim_matter m
+JOIN core.bridge_matter_contract b USING (matter_id)
+JOIN core.dim_contract c USING (contract_id)
+JOIN core.fact_clause f ON f.contract_id = c.contract_id
+JOIN core.ref_risk_rule r ON r.clause_category = f.clause_category
+GROUP BY 1,2,3,4;</code></pre>
+  <p>Because <code>dim_matter</code> and <code>fact_clause</code> carry
+  <code>matter_id</code>, the same row access policy scopes these analytics &mdash; an
+  attorney's risk report only covers their authorized matters.</p>
+  <p>Full SQL: <code>sql/04_risk_views.sql</code>.</p>
+</section>
+
+<section id="sample">
+  <div class="section-kicker">Illustration</div>
+  <h2>Illustrative output</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Matter</th><th>Contract type</th><th>Score</th><th>Band</th><th>Driving clauses</th></tr></thead>
+    <tbody>
+      <tr><td>SYN-1042</td><td>Service Agreement</td><td>72</td><td><span class="badge high">High</span></td><td>No liability cap; broad indemnity</td></tr>
+      <tr><td>SYN-1088</td><td>License Agreement</td><td>45</td><td><span class="badge med">Medium</span></td><td>Auto-renewal; assignment consent</td></tr>
+      <tr><td>SYN-1103</td><td>NDA</td><td>18</td><td><span class="badge low">Low</span></td><td>Residuals clause</td></tr>
+    </tbody>
+  </table></div>
+  <p class="disclaimer">Values are illustrative; the demo generates them from the loaded contracts.</p>
+</section>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <strong>Snow Compliance Demo</strong> &mdash; internal staging for board review.<br>
+      Built on the public <a href="https://github.com/The-Atticus-Project/cuad">CUAD</a> dataset (CC&nbsp;BY&nbsp;4.0) plus synthetic records.
+    </div>
+    <div>Prepared by the CEO office &middot; For discussion only &mdash; not legal advice.</div>
+  </div>
+</footer>
+</body>
+</html>

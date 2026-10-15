@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidentiality · Snow Compliance Demo</title>
+<meta name="description" content="Board-review recommendations for a Snowflake legal-compliance demonstration built on the public CUAD dataset plus synthetic law-firm records.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">SC</span>
+      <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html" class="active">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="roadmap.html">Roadmap</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Phase 2</p>
+  <h1>Matter confidentiality</h1>
+  <p class="lede">The confidentiality wall is enforced by Snowflake itself: row access
+  policies scope every row to an authorized matter, and masking hides sensitive metadata
+  from roles that should not see it.</p>
+</div></section>
+<main class="main">
+  <div class="wrap">
+    <div class="grid">
+      <aside class="toc"><h2>On this page</h2><ul><li><a href="#goal">Goal</a></li><li><a href="#mapping">Authorization mapping</a></li><li><a href="#policies">Row access policy</a></li><li><a href="#masking">Dynamic data masking</a></li><li><a href="#gotchas">Implementation notes</a></li></ul></aside>
+      <div class="content">
+        
+<section id="goal">
+  <div class="section-kicker">Goal</div>
+  <h2>Prevent cross-matter access at query time</h2>
+  <p>If an attorney queries a contract table, the result must contain only rows for
+  matters they are authorized for &mdash; with no dependence on the application adding a
+  <code>WHERE</code> clause. The authorization mapping is data, so access changes are
+  auditable business events, not code deployments.</p>
+</section>
+
+<section id="mapping">
+  <div class="section-kicker">Mechanism</div>
+  <h2>The authorization mapping</h2>
+  <p>Row access policies evaluate per query. The mapping table links a role (or an
+  employee identity) to the matters they may see.</p>
+  <pre><code>CREATE TABLE security.matter_access_map (
+  role_name  STRING,
+  matter_id  STRING,
+  access_level STRING,      -- READ | WRITE
+  valid_from DATE,
+  valid_to   DATE
+);</code></pre>
+</section>
+
+<section id="policies">
+  <div class="section-kicker">Policy</div>
+  <h2>Row access policy</h2>
+  <p>Applied to every table that carries <code>matter_id</code>. Administrators bypass it
+  by design; everyone else is scoped.</p>
+  <pre><code>CREATE OR REPLACE ROW ACCESS POLICY security.matter_access_policy
+  AS (matter_id STRING) RETURNS BOOLEAN ->
+    CURRENT_ROLE() IN ('ACCOUNTADMIN','SYSADMIN','COMPLIANCE_ADMIN','AUDITOR')
+    OR EXISTS (
+        SELECT 1
+        FROM security.matter_access_map m
+        WHERE m.role_name = CURRENT_ROLE()
+          AND m.matter_id = matter_id
+          AND CURRENT_DATE() BETWEEN m.valid_from AND COALESCE(m.valid_to,'9999-12-31')
+    );
+
+ALTER TABLE core.fact_clause
+  ADD ROW ACCESS POLICY security.matter_access_policy ON (matter_id);</code></pre>
+  <div class="callout ok"><strong>Recommended variant</strong>
+    Map by <em>role</em> for a clean demo, and note the production upgrade path: map by
+    <code>employee_id</code> resolved from the session, so each named attorney has their own
+    wall rather than a shared role.</div>
+</section>
+
+<section id="masking">
+  <div class="section-kicker">Protection</div>
+  <h2>Dynamic data masking</h2>
+  <p>Row policies hide <em>rows</em>; masking policies hide <em>columns</em>. Applied to
+  client PII and commercially sensitive metadata.</p>
+  <pre><code>CREATE OR REPLACE MASKING POLICY security.pii_mask
+  AS (val STRING) RETURNS STRING ->
+    CASE
+      WHEN CURRENT_ROLE() IN ('COMPLIANCE_ADMIN','ACCOUNTADMIN') THEN val
+      WHEN CURRENT_ROLE() IN ('ATTORNEY','PARALEGAL') THEN '***REDACTED***'
+      ELSE NULL
+    END;
+
+ALTER TABLE core.dim_client
+  MODIFY COLUMN contact_email SET MASKING POLICY security.pii_mask;
+ALTER TABLE core.dim_client
+  MODIFY COLUMN contact_phone SET MASKING POLICY security.pii_mask;</code></pre>
+  <h3>Classification tags</h3>
+  <p>Tag columns once (<code>PII</code>, <code>CONFIDENTIAL</code>, <code>ATTORNEY_WORK_PRODUCT</code>)
+  and attach tag-based masking for consistent, self-documenting protection.</p>
+</section>
+
+<section id="gotchas">
+  <div class="section-kicker">Details</div>
+  <h2>Implementation notes</h2>
+  <ul>
+    <li>Row access policies and certain constraints are mutually exclusive &mdash; model keys without relying on blocked constraint types on protected tables.</li>
+    <li>Policy-protected data must be read through secure views or the base tables directly; never copy unfiltered rows into a permissive table.</li>
+    <li>Attach policies to <em>every</em> table carrying <code>matter_id</code>, including bridges, to avoid a leak through a join.</li>
+    <li>Include an <code>AUDITOR</code> bypass so verification can enumerate the full picture.</li>
+    <li>Document role reachability: which roles inherit the bypass, and why.</li>
+  </ul>
+  <p>Full DDL: <code>sql/03_row_access_and_masking.sql</code>.</p>
+</section>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <strong>Snow Compliance Demo</strong> &mdash; internal staging for board review.<br>
+      Built on the public <a href="https://github.com/The-Atticus-Project/cuad">CUAD</a> dataset (CC&nbsp;BY&nbsp;4.0) plus synthetic records.
+    </div>
+    <div>Prepared by the CEO office &middot; For discussion only &mdash; not legal advice.</div>
+  </div>
+</footer>
+</body>
+</html>
