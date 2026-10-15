@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the SQLite POC database and export the static demo dataset.
 
-Reads poc/data/cuad_first20.json (produced by extract_cuad.py), generates the
+Reads poc/data/cuad_sample.json (produced by extract_cuad.py), generates the
 synthetic law-firm layer, and writes:
   - poc/db/poc.db        (functional POC backend)
   - demo/demo_data.json  (compact dataset for the static Pages demo)
@@ -13,8 +13,13 @@ import json
 import pathlib
 import sqlite3
 
+try:
+    from risk import score_contract
+except ImportError:  # imported as a package (poc.seed)
+    from poc.risk import score_contract
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DATA = ROOT / "poc" / "data" / "cuad_first20.json"
+DATA = ROOT / "poc" / "data" / "cuad_sample.json"
 DB_PATH = ROOT / "poc" / "db" / "poc.db"
 SCHEMA = ROOT / "poc" / "schema.sql"
 DEMO_JSON = ROOT / "demo" / "demo_data.json"
@@ -52,33 +57,6 @@ AUTHORIZATIONS = [
     ("SYN-1004", "EMP-002"),
     ("SYN-1005", "EMP-001"), ("SYN-1005", "EMP-003"),
 ]
-
-# Rubric uses CUAD's ACTUAL category names (verified against CUADv1.json):
-#   liability exposure -> "Uncapped Liability" (present) / "Cap On Liability" (absent)
-#   there is NO "Indemnification" or "Limitation of Liability" category in CUAD v1.
-def risk_for(annotations_by_contract, contract_id):
-    present = {a["category"] for a in annotations_by_contract.get(contract_id, []) if a["present"]}
-    score = 0
-    drivers = []
-    if "Uncapped Liability" in present:
-        score += 40; drivers.append("Uncapped liability")
-    if "Cap On Liability" not in present:
-        score += 20; drivers.append("No cap on liability")
-    if "Termination For Convenience" in present:
-        score += 15; drivers.append("Termination for convenience")
-    if "Anti-Assignment" in present:
-        score += 10; drivers.append("Anti-assignment")
-    if "Change Of Control" in present:
-        score += 10; drivers.append("Change of control")
-    if "Minimum Commitment" in present:
-        score += 10; drivers.append("Minimum commitment")
-    if "Governing Law" not in present:
-        score += 10; drivers.append("No governing law")
-    if "Non-Compete" in present or "Exclusivity" in present:
-        score += 5; drivers.append("Restrictive covenant")
-    band = "High" if score >= 60 else "Medium" if score >= 30 else "Low"
-    return score, band, drivers
-
 
 def main() -> None:
     payload = json.loads(DATA.read_text())
@@ -122,11 +100,21 @@ def main() -> None:
     # --- Export compact dataset for the static Pages demo -------------------
     matter_by_id = {m[0]: m for m in MATTERS}
     client_by_id = {c[0]: c for c in CLIENTS}
+    present_by_contract = {
+        cid: {a["category"] for a in anns if a["present"]}
+        for cid, anns in ann_by_contract.items()
+    }
     docs = []
     for c in contracts:
         mid = attachment[c["contract_id"]]
-        score, band, drivers = risk_for(ann_by_contract, c["contract_id"])
-        cats = sorted(a["category"] for a in ann_by_contract.get(c["contract_id"], []) if a["present"])
+        cats = sorted(present_by_contract.get(c["contract_id"], set()))
+        score, band, drivers = score_contract(cats)
+        clauses = sorted(
+            ({"category": a["category"], "snippet": a["snippet"].strip()}
+             for a in ann_by_contract.get(c["contract_id"], [])
+             if a["present"] and (a["snippet"] or "").strip()),
+            key=lambda x: x["category"],
+        )
         docs.append({
             "contract_id": c["contract_id"],
             "title": c["title"],
@@ -139,6 +127,7 @@ def main() -> None:
             "risk_band": band,
             "risk_drivers": drivers,
             "present_categories": cats,
+            "clauses": clauses,
         })
 
     # A small pre-seeded audit history so the admin view is meaningful on first load.

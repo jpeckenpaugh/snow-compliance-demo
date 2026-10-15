@@ -19,6 +19,11 @@ import sqlite3
 import uuid
 from datetime import datetime, timezone
 
+try:
+    from risk import score_contract
+except ImportError:  # imported as a package (poc.snowflake_sim)
+    from poc.risk import score_contract
+
 OVERSIGHT_ROLES = {"COMPLIANCE_ADMIN", "AUDITOR", "ACCOUNTADMIN", "SYSADMIN"}
 MASKED_ROLES = {"ATTORNEY_ALICE", "ATTORNEY_BOB", "PARALEGAL_CAROL"}
 
@@ -45,6 +50,14 @@ QUERIES = {
         "label": "Clause categories present",
         "sql": ("SELECT contract_id, matter_id, category\n"
                 "FROM core.fact_clause WHERE present = 1;"),
+        "policy": "row access: sec.matter_access_policy ON (matter_id)",
+    },
+    "risk_register": {
+        "label": "Risk register (high-risk clauses by matter)",
+        "sql": ("SELECT matter_id, matter_name, contract_id, contract_type,\n"
+                "       risk_score, risk_band, high_risk_clauses\n"
+                "FROM marts.mart_high_risk_register\n"
+                "ORDER BY risk_score DESC;"),
         "policy": "row access: sec.matter_access_policy ON (matter_id)",
     },
     "clients": {
@@ -140,6 +153,23 @@ def run(con, role, key):
             "SELECT f.contract_id, b.matter_id, f.category FROM fact_clause f "
             "JOIN bridge_matter_contract b ON b.contract_id=f.contract_id WHERE f.present=1").fetchall()
         rows = [list(r) for r in raw if r[1] in mset]        # matter_id at index 1
+    elif key == "risk_register":
+        cols = ["matter_id", "matter_name", "contract_id", "contract_type",
+                "risk_score", "risk_band", "high_risk_clauses"]
+        present = {}
+        for cid, cat in con.execute("SELECT contract_id, category FROM fact_clause WHERE present=1"):
+            present.setdefault(cid, set()).add(cat)
+        raw = con.execute(
+            "SELECT m.matter_id, m.matter_name, c.contract_id, c.contract_type "
+            "FROM dim_matter m JOIN bridge_matter_contract b ON b.matter_id=m.matter_id "
+            "JOIN dim_contract c ON c.contract_id=b.contract_id").fetchall()
+        rows = []
+        for mid, mname, cid, ctype in raw:
+            if mid not in mset:                              # row access at matter_id (index 0)
+                continue
+            score, band, drivers = score_contract(present.get(cid, set()))
+            rows.append([mid, mname, cid, ctype, score, band, ", ".join(drivers)])
+        rows.sort(key=lambda r: (-r[4], r[0], r[2]))
     elif key == "clients":
         cols = ["client_id", "client_name", "contact_email", "contact_phone"]
         rows = [list(r) for r in con.execute(

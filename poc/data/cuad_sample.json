@@ -1,6 +1,6 @@
 {
  "source": "The Atticus Project CUAD, CUADv1.json, CC BY 4.0",
- "limit": 20,
+ "limit": 30,
  "contracts": [
   {
    "contract_id": "CUAD-0000",
@@ -121,6 +121,66 @@
    "title": "SIBANNAC,INC_12_04_2017-EX-2.1-Strategic Alliance Agreement",
    "contract_type": "STRATEGIC ALLIANCE AGREEMENT",
    "context_chars": 8380
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "title": "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement",
+   "contract_type": "STRATEGIC ALLIANCE AGREEMENT",
+   "context_chars": 52967
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "title": "BONTONSTORESINC_04_20_2018-EX-99.3-AGENCY AGREEMENT",
+   "contract_type": "AGENCY AGREEMENT",
+   "context_chars": 161626
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "title": "ON2TECHNOLOGIES,INC_11_17_2006-EX-10.3-SUPPORT AND MAINTENANCE AGREEMENT",
+   "contract_type": "SUPPORT AND MAINTENANCE AGREEMENT",
+   "context_chars": 61392
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "title": "Freecook_20180605_S-1_EX-10.3_11233807_EX-10.3_Hosting Agreement",
+   "contract_type": "10.3_HOSTING AGREEMENT",
+   "context_chars": 6341
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "title": "OPERALTD_04_30_2020-EX-4.14-SERVICE AGREEMENT",
+   "contract_type": "SERVICE AGREEMENT",
+   "context_chars": 20983
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "title": "BORROWMONEYCOM,INC_06_11_2020-EX-10.1-JOINT VENTURE AGREEMENT",
+   "contract_type": "JOINT VENTURE AGREEMENT",
+   "context_chars": 21450
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "title": "ZEBRATECHNOLOGIESCORP_04_16_2014-EX-10.1-INTELLECTUAL PROPERTY AGREEMENT",
+   "contract_type": "INTELLECTUAL PROPERTY AGREEMENT",
+   "context_chars": 127205
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "title": "ChinaRealEstateInformationCorp_20090929_F-1_EX-10.32_4771615_EX-10.32_Content License Agreement",
+   "contract_type": "10.32_CONTENT LICENSE AGREEMENT",
+   "context_chars": 49191
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "title": "HERTZGLOBALHOLDINGS,INC_07_07_2016-EX-10.4-INTELLECTUAL PROPERTY AGREEMENT",
+   "contract_type": "INTELLECTUAL PROPERTY AGREEMENT",
+   "context_chars": 30968
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "title": "GLOBALTECHNOLOGIESLTD_06_08_2020-EX-10.16-CONSULTING AGREEMENT",
+   "contract_type": "CONSULTING AGREEMENT",
+   "context_chars": 20805
   }
  ],
  "annotations": [
@@ -5859,6 +5919,2876 @@
   },
   {
    "contract_id": "CUAD-0019",
+   "category": "Third Party Beneficiary",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Document Name",
+   "present": true,
+   "snippet": "Strategic Alliance Agreement (SAA) outlines the principles and the understanding of the parties and defines related terms and conditions.     WHEREAS, Dynamic Hearing has developed technology useful for products in the Hearing Health (HH) Assisted Listening Device  (ALD) and Professional Communicati",
+   "answer_start": 890
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Parties",
+   "present": true,
+   "snippet": "Dynamic Hearing Pty Ltd  2 Chapel Street, Richmond, VIC 3121  AUSTRALIA\n\n\n\n\n\n      AGREEMENT     This Agreement is entered into and is effective as of the 1st day of October, 2008 (Commencement Date) by and between IntriCon  Corporation, a Pennsylvania Corporation having a place of business at 1260 ",
+   "answer_start": 235
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Agreement Date",
+   "present": true,
+   "snippet": "1st day of October, 2008 (Commencement Date) by and between IntriCon  Corporation, a Pennsylvania Corporation having a place of business at 1260 Red Fox Road, Arden Hills, Minnesota 55112 USA (hereinafter  IntriCon) and Dynamic Hearing Pty Ltd a Corporation organized under the laws of Victoria, Aust",
+   "answer_start": 390
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Effective Date",
+   "present": true,
+   "snippet": "1st day of October, 2008 (Commencement Date) by and between IntriCon  Corporation, a Pennsylvania Corporation having a place of business at 1260 Red Fox Road, Arden Hills, Minnesota 55112 USA (hereinafter  IntriCon) and Dynamic Hearing Pty Ltd a Corporation organized under the laws of Victoria, Aust",
+   "answer_start": 390
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Expiration Date",
+   "present": true,
+   "snippet": "The initial term of this Agreement shall be five (5) years from the date of execution and may be extended subject to satisfactory  agreement on ongoing commercial terms, to be agreed two (2) months prior to the expiration of this Agreement.     3.2 Dynamic Hearing grants to IntriCon in accordance wi",
+   "answer_start": 10067
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Renewal Term",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Notice Period To Terminate Renewal",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Governing Law",
+   "present": true,
+   "snippet": "This Agreement is governed by the laws of Victoria, Australia and the parties submit to the jurisdiction of the courts of Victoria,  Australia. The 1980 United Nations Convention on Contracts for the International Sale of Goods does not apply to this Agreement.\n\n            20\n\n            DYNAMIC H",
+   "answer_start": 46737
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Most Favored Nation",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Non-Compete",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Exclusivity",
+   "present": true,
+   "snippet": "Commencing on the Exclusivity Date, and continuing for so long as IntriCon continues to make such payments, the license granted to  IntriCon under this Agreement will, subject to the terms and conditions of this Agreement, be exclusive for Hearing Aids. The exclusivity shall not  prevent Dynamic Hea",
+   "answer_start": 11065
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "No-Solicit Of Customers",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Competitive Restriction Exception",
+   "present": true,
+   "snippet": "The rights granted under such agreements shall  be included as exceptions to the exclusivity of IntriCon's License Grant, if such agreements are executed by Dynamic Hearing and the third party  before January 1, 2009. Such third parties and their relevant subsidiaries will be Identified Parties and ",
+   "answer_start": 12929
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "No-Solicit Of Employees",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Non-Disparagement",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Termination For Convenience",
+   "present": true,
+   "snippet": "Subject to the provisions of 11.1, Dynamic Hearing may terminate this Agreement upon three (3) months written notice  to IntriCon of such termination.\n\n       11.6    Termination or expiry of this Agreement will not affect:\n\n       (a)    any rights or remedies of the parties which may have accrued ",
+   "answer_start": 39971
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Rofr/Rofo/Rofn",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Change Of Control",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Anti-Assignment",
+   "present": true,
+   "snippet": "IntriCon may not assign or transfer any of its rights or obligations under this Agreement without the prior written consent of  Dynamic Hearing. Likewise, Dynamic Hearing may not assign or transfer any of its rights or obligations under this Agreement without the prior  written consent of IntriCon. ",
+   "answer_start": 46286
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Revenue/Profit Sharing",
+   "present": true,
+   "snippet": "A 2% royalty rate per Base Product Unit shall be added to the initial base rate for each DSP feature/module  that is based on Dynamic Hearing Technology and that is added to a Base Product Unit. However, such additional Royalty Payments when added  to the initial base rate shall not exceed in total ",
+   "answer_start": 23362
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Price Restrictions",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Minimum Commitment",
+   "present": true,
+   "snippet": "The Minimum Payment consists of the Access Fee of US$300,000 per annum and  the Second Component that increases from year to year.     Minimum Payment Schedule (All amounts are in US Dollars):\n\n   The Minimum Payments will be paid quarterly in advance in equal installments at the beginning of each r",
+   "answer_start": 18511
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Volume Restriction",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Ip Ownership Assignment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Joint Ip Ownership",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "License Grant",
+   "present": true,
+   "snippet": "Dynamic Hearing grants to IntriCon in accordance with this Agreement, for the Term, a license, to Use Dynamic Hearing's  Technology, Software and Documentation developed as of the Commencement Date to manufacture, import, sell and offer for sale throughout the  Territory, Products containing Dynamic",
+   "answer_start": 10316
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Non-Transferable License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Affiliate License-Licensor",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Affiliate License-Licensee",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Unlimited/All-You-Can-Eat-License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Irrevocable Or Perpetual License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Source Code Escrow",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Post-Termination Services",
+   "present": true,
+   "snippet": "(a)    such inspection, copying or audit must only be made after at least one Business Day's written notice;\n\n       (b)    such audit must not unreasonably interfere with the day to day operations of IntriCon; and\n\n       (c)    such audit must be at Dynamic Hearing's expense unless the auditor fin",
+   "answer_start": 27867
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Audit Rights",
+   "present": true,
+   "snippet": "such audit must be at Dynamic Hearing's expense unless the auditor finds an underpayment royalty due under this  Agreement in excess of 5% in which case IntriCon must reimburse Dynamic Hearing's reasonable cost of such audit;  and\n\n       (d)    Audits will be limited to one audit in any calendar ye",
+   "answer_start": 28097
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Uncapped Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Cap On Liability",
+   "present": true,
+   "snippet": "IntriCon is not liable in any way to Dynamic Hearing for any indirect, consequential, third party, special or incidental  harm, liability, expense, cost, loss or damage, loss of profits, loss of data, exemplary damages or any other indirect  commercial or economic loss of any kind whatsoever incurre",
+   "answer_start": 35924
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Liquidated Damages",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Warranty Duration",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Insurance",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Covenant Not To Sue",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "category": "Third Party Beneficiary",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Document Name",
+   "present": true,
+   "snippet": "AGENCY AGREEMENT This Agency Agreement (\"Agreement\") is made as of April 18, 2018, by and between The Bon-Ton Stores, Inc. and its associated chapter 11 debtors in possession (collectively, \"Merchant\"),1 on the one hand, and (a) a contractual joint venture comprised of GA Retail, Inc. (\"GA\") and Tig",
+   "answer_start": 71
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Parties",
+   "present": true,
+   "snippet": "Notes Trustee\" and collectively with Agent, \"Purchaser\"). Purchaser and Merchant are collectively the \"Parties.\"\n\nSection 1. Recitals\n\nWHEREAS, on February 4, 2018, the entities comprising Merchant commenced ten voluntary chapter 11 bankruptcy cases (the \"Bankruptcy Cases\") in the United States Bank",
+   "answer_start": 675
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Agreement Date",
+   "present": true,
+   "snippet": "April 18, 2018, by and between The Bon-Ton Stores, Inc. and its associated chapter 11 debtors in possession (collectively, \"Merchant\"),1 on the one hand, and (a) a contractual joint venture comprised of GA Retail, Inc. (\"GA\") and Tiger Capital Group, LLC (\"Tiger\" and collectively with GA, the \"Agent",
+   "answer_start": 138
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Effective Date",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Expiration Date",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Renewal Term",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Notice Period To Terminate Renewal",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Governing Law",
+   "present": true,
+   "snippet": "This Agreement shall be governed by and interpreted in accordance with the laws of the State of Delaware without reference to any conflict of laws provisions thereof, except where governed by the Bankruptcy Code. Each of the Parties irrevocably and unconditionally submits, for itself and its propert",
+   "answer_start": 104235
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Most Favored Nation",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Non-Compete",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Exclusivity",
+   "present": true,
+   "snippet": "assignees of (which may in certain circumstances be Purchaser, any of the entities comprising Purchaser, any of their respective affiliates, and/or a new entity created by any of the foregoing), any or all of the Assets free and clear of all liens, claims, and encumbrances thereon, without further o",
+   "answer_start": 100525
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "No-Solicit Of Customers",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Competitive Restriction Exception",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "No-Solicit Of Employees",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Non-Disparagement",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Termination For Convenience",
+   "present": true,
+   "snippet": "Subject to the Wind-Down Budget and payment of Expenses, Agent shall use the E-Commerce Platform in connection with the GOB Sale to fulfill customer orders made during the GOB Sale Term and otherwise promote the GOB Sale (in Agent's capacity as Agent hereunder), provided that Agent shall have the op",
+   "answer_start": 67047
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Rofr/Rofo/Rofn",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Change Of Control",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Anti-Assignment",
+   "present": true,
+   "snippet": "This Agreement shall inure to the benefit of and be binding upon the Parties and their respective successors and assigns, including, but not limited to, any chapter 11 or chapter 7 trustee; provided, however, that this Agreement may not be assigned by any of the Parties without the prior written con",
+   "answer_start": 105765
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Revenue/Profit Sharing",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Price Restrictions",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Minimum Commitment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Volume Restriction",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Ip Ownership Assignment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Joint Ip Ownership",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "License Grant",
+   "present": true,
+   "snippet": "Agent is granted a limited license and right to use all Intellectual Property for purposes of conducting the GOB Sale and otherwise marketing any or all of the Assets;\n\n(xxvii) unless otherwise ordered by the Bankruptcy Court, all newspapers and other advertising media in which the GOB Sale is adver",
+   "answer_start": 20642
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Non-Transferable License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Affiliate License-Licensor",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Affiliate License-Licensee",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Unlimited/All-You-Can-Eat-License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Irrevocable Or Perpetual License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Source Code Escrow",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Post-Termination Services",
+   "present": true,
+   "snippet": "To the extent that there is Merchandise remaining at the Sale Termination Date (the \"Remaining Merchandise\"), such Remaining Merchandise shall be deemed automatically transferred to Agent free and clear of all liens, claims, and encumbrances. Agent and its affiliates shall be authorized to sell or o",
+   "answer_start": 36330
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Audit Rights",
+   "present": true,
+   "snippet": "Merchant shall make its books and records available to Purchaser at all times;\n\n(xxxii) Purchaser shall not be liable for any claims against Merchant except as expressly provided for in this Agreement;\n\n8\n\n\n\n\n\nCase 18-10248- MFW Doc 632-1 Filed 04/18/18 Page 10 of 60\n\n(xxxiii) all payments made by M",
+   "answer_start": 21941
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Uncapped Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Cap On Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Liquidated Damages",
+   "present": true,
+   "snippet": "In the event the Closing fails to occur, then, only upon entry of a final and non-appealable order of the Bankruptcy Court determining that such failure was the result of Purchaser's sole, material, non-excusable breach of this Agreement, then Merchant shall be entitled to retain the Deposit as liqu",
+   "answer_start": 108834
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Warranty Duration",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Insurance",
+   "present": true,
+   "snippet": "Until the Designation Rights Termination Date or as otherwise directed by Purchaser or set forth in this Agreement, Merchant shall continue to maintain, subject to the Wind-Down Budget and the Wind-Down Cap, in such amounts as it currently has in effect, all of its liability insurance policies, incl",
+   "answer_start": 90205
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Covenant Not To Sue",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "category": "Third Party Beneficiary",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Document Name",
+   "present": true,
+   "snippet": "SUPPORT AND MAINTENANCE AGREEMENT dated as of April __, 2005 (the \"Effective Date\"), between On2 Technologies, Inc., a Delaware corporation (\"On2\"), and Wildform, Inc., a California corporation (\"Wildform\"). Capitalized terms used herein and not defined herein shall have the meanings given to them i",
+   "answer_start": 161
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Parties",
+   "present": true,
+   "snippet": "On2 Technologies, Inc., a Delaware corporation (\"On2\"), and Wildform, Inc., a California corporation (\"Wildform\"). Capitalized terms used herein and not defined herein shall have the meanings given to them in Asset Purchase Agreement (as defined below).\n\n                                   WITNESSETH",
+   "answer_start": 254
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Agreement Date",
+   "present": true,
+   "snippet": "April __, 2005 (the \"Effective Date\"), between On2 Technologies, Inc., a Delaware corporation (\"On2\"), and Wildform, Inc., a California corporation (\"Wildform\"). Capitalized terms used herein and not defined herein shall have the meanings given to them in Asset Purchase Agreement (as defined below).",
+   "answer_start": 207
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Effective Date",
+   "present": true,
+   "snippet": "April __, 2005 (the \"Effective Date\"), between On2 Technologies, Inc., a Delaware corporation (\"On2\"), and Wildform, Inc., a California corporation (\"Wildform\"). Capitalized terms used herein and not defined herein shall have the meanings given to them in Asset Purchase Agreement (as defined below).",
+   "answer_start": 207
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Expiration Date",
+   "present": true,
+   "snippet": "Except as otherwise set forth in Sections 9.2 and 9.3 or Exhibit A hereof, the term of this Agreement shall be eighteen (18) months (\"Term\").\n\n      9.2 Termination. Either of Wildform or On2 may terminate this Agreement if the other Party is in material breach of this Agreement and fails to cure su",
+   "answer_start": 25851
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Renewal Term",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Notice Period To Terminate Renewal",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Governing Law",
+   "present": true,
+   "snippet": "This Agreement shall be governed by and construed in accordance with the laws of the State of New York, without giving effect to any choice of law or conflict of law provision or rule whether such provision or rule is that of the State of New York or any other jurisdiction.\n\n      10.8 Dispute Resol",
+   "answer_start": 30507
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Most Favored Nation",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Non-Compete",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Exclusivity",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "No-Solicit Of Customers",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Competitive Restriction Exception",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "No-Solicit Of Employees",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Non-Disparagement",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Termination For Convenience",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Rofr/Rofo/Rofn",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Change Of Control",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Anti-Assignment",
+   "present": true,
+   "snippet": "Neither party will have the right to assign, pledge or transfer all or any part of this Agreement without the prior written consent of the other, and any such purported assignment, pledge or transfer by a party without such prior written consent shall be void ab initio; provided, however, that eithe",
+   "answer_start": 34514
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Revenue/Profit Sharing",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Price Restrictions",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Minimum Commitment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Volume Restriction",
+   "present": true,
+   "snippet": "The foregoing obligations of Wildform, following the initial 30 day period, shall be limited to a maximum of twenty (20) hours, or up to a maximum of one hundred twenty five (125) emails, whichever accumulates first.\n\n5. PR & Marketing During the first twelve (12) months of the Term (except as expre",
+   "answer_start": 41664
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Ip Ownership Assignment",
+   "present": true,
+   "snippet": "The Incorporated Technology Works shall be the sole property of On2, and all right, title and interest therein shall vest solely in On2 and shall be deemed to be a work made for hire. To the extent that title to any of the Incorporated Technology Works may not, by operation of law, vest in On2 or su",
+   "answer_start": 22240
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Joint Ip Ownership",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "License Grant",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Non-Transferable License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Affiliate License-Licensor",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Affiliate License-Licensee",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Unlimited/All-You-Can-Eat-License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Irrevocable Or Perpetual License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Source Code Escrow",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Post-Termination Services",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Audit Rights",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Uncapped Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Cap On Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Liquidated Damages",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Warranty Duration",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Insurance",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Covenant Not To Sue",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "category": "Third Party Beneficiary",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Document Name",
+   "present": true,
+   "snippet": "Website Design, Development and Hosting Agreement the (\"Agreement\") is entered into on January 11, 2018 by and between Natalija Tunevic, director of FreeCook (hereinafter referred to as \"Client\") and Mitchell Vitalis, director of Mitchell's Web Advance, PLC (hereinafter referred to as \"Company\").\n\n1",
+   "answer_start": 89
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Parties",
+   "present": true,
+   "snippet": "FreeCook (hereinafter referred to as \"Client\") and Mitchell Vitalis, director of Mitchell's Web Advance, PLC (hereinafter referred to as \"Company\").\n\n1. Website Design and Development. Client agrees to pay to Company the sum of $5,000 (the \"Contract Price\") to design and develop a website for Client",
+   "answer_start": 238
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Agreement Date",
+   "present": true,
+   "snippet": "January 11, 2018 by and between Natalija Tunevic, director of FreeCook (hereinafter referred to as \"Client\") and Mitchell Vitalis, director of Mitchell's Web Advance, PLC (hereinafter referred to as \"Company\").\n\n1. Website Design and Development. Client agrees to pay to Company the sum of $5,000 (th",
+   "answer_start": 176
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Effective Date",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Expiration Date",
+   "present": true,
+   "snippet": "Terms of the project: 12 weeks from February 8, 2018 to May 3, 2018. Client acknowledges and agrees that any due dates set forth in the Scope of Work are subject to delay if Company does not receive the required materials or documentation in a timely manner or in the required format or if approvals ",
+   "answer_start": 1432
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Renewal Term",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Notice Period To Terminate Renewal",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Governing Law",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Most Favored Nation",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Non-Compete",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Exclusivity",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "No-Solicit Of Customers",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Competitive Restriction Exception",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "No-Solicit Of Employees",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Non-Disparagement",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Termination For Convenience",
+   "present": true,
+   "snippet": "Company at its sole discretion may at any time alter or cease providing the Customer Service which it has agreed to provide to Client relating to Client Website pursuant to this Agreement without any liability to Company.\n\nAGREED AND ACCEPTED:\n\nDate: Jan. 11, 2018\n\nSource: FREECOOK, S-1, 6/5/2018\n\n\n",
+   "answer_start": 4924
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Rofr/Rofo/Rofn",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Change Of Control",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Anti-Assignment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Revenue/Profit Sharing",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Price Restrictions",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Minimum Commitment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Volume Restriction",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Ip Ownership Assignment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Joint Ip Ownership",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "License Grant",
+   "present": true,
+   "snippet": "Client further agrees that Company may use and display the graphics and other web design elements of Client's website as examples of Company website design and development work. To maintain Company's portfolio credentials, and the integrity of any applicable copyrights, Company shall be entitled to ",
+   "answer_start": 3234
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Non-Transferable License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Affiliate License-Licensor",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Affiliate License-Licensee",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Unlimited/All-You-Can-Eat-License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Irrevocable Or Perpetual License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Source Code Escrow",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Post-Termination Services",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Audit Rights",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Uncapped Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Cap On Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Liquidated Damages",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Warranty Duration",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Insurance",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Covenant Not To Sue",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "category": "Third Party Beneficiary",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Document Name",
+   "present": true,
+   "snippet": "Service Agreement (\"Agreement\") is entered into on April. 1st 2019 (\"Effective Date\") by and between: PC Financial Services Private Limited, a India company with an address at Building RZ-2, Pole No.-3, G/F Kapashera, Near HDFC Bank, New Delhi (\"PC Financial\"), a registered Non-banking Financial Com",
+   "answer_start": 36
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Parties",
+   "present": true,
+   "snippet": "PC Financial Services Private Limited, a India company with an address at Building RZ-2, Pole No.-3, G/F Kapashera, Near HDFC Bank, New Delhi (\"PC Financial\"), a registered Non-banking Financial Company (NBFC) in India; and Mobimagic Co., Ltd., a company Incorporated under the laws of the People 's ",
+   "answer_start": 138
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Agreement Date",
+   "present": true,
+   "snippet": "April. 1st 2019 (\"Effective Date\") by and between: PC Financial Services Private Limited, a India company with an address at Building RZ-2, Pole No.-3, G/F Kapashera, Near HDFC Bank, New Delhi (\"PC Financial\"), a registered Non-banking Financial Company (NBFC) in India; and Mobimagic Co., Ltd., a co",
+   "answer_start": 87
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Effective Date",
+   "present": true,
+   "snippet": "April. 1st 2019 (\"Effective Date\") by and between: PC Financial Services Private Limited, a India company with an address at Building RZ-2, Pole No.-3, G/F Kapashera, Near HDFC Bank, New Delhi (\"PC Financial\"), a registered Non-banking Financial Company (NBFC) in India; and Mobimagic Co., Ltd., a co",
+   "answer_start": 87
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Expiration Date",
+   "present": true,
+   "snippet": "The Agreement shall commence on the Effective Date and continue in effect for the Service Period, unless terminated earlier as provided in this Section. This Agreement is a memorialization of an earlier oral Agreement and shall be deemed to apply for the entire Service Period. The Agreement may be e",
+   "answer_start": 15967
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Renewal Term",
+   "present": true,
+   "snippet": "4.7 Data protection. Each Party agrees to comply with all applicable data protection and privacy laws arising from its obligations, if any, under the Agreement and to reasonably co-operate with the other Party in order to allow the other Party to comply with any laws as deemed necessary from time to",
+   "answer_start": 10015
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Notice Period To Terminate Renewal",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Governing Law",
+   "present": true,
+   "snippet": "This Agreement (and any question about its subsistence, effect or termination) is to be interpreted in accordance with the laws of India, save for that body of law which governs the conflict of laws. The courts of New Delhi shall have exclusive jurisdiction to settle any dispute between the Parties ",
+   "answer_start": 18652
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Most Favored Nation",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Non-Compete",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Exclusivity",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "No-Solicit Of Customers",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Competitive Restriction Exception",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "No-Solicit Of Employees",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Non-Disparagement",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Termination For Convenience",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Rofr/Rofo/Rofn",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Change Of Control",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Anti-Assignment",
+   "present": true,
+   "snippet": "This Agreement may not be assigned, delegated, or otherwise transferred, in whole or in part, by operation of law or otherwise, by a Party without the other Party's express prior written consent. Any attempted assignment, delegation, or transfer in violation of the foregoing will be null and void. 1",
+   "answer_start": 19779
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Revenue/Profit Sharing",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Price Restrictions",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Minimum Commitment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Volume Restriction",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Ip Ownership Assignment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Joint Ip Ownership",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "License Grant",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Non-Transferable License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Affiliate License-Licensor",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Affiliate License-Licensee",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Unlimited/All-You-Can-Eat-License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Irrevocable Or Perpetual License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Source Code Escrow",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Post-Termination Services",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Audit Rights",
+   "present": true,
+   "snippet": "Both Parties acknowledge and confirm that the Reserve Bank of India (hereafter \"RBI\") or persons authorized by it has right to access and inspect the PC Financial's documents, records of Service transactions and other necessary information related to the Services or Activity given to, stored or proc",
+   "answer_start": 10714
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Uncapped Liability",
+   "present": true,
+   "snippet": "Subject to the foregoing as wen as Mobimagic's obligations under this Agreement, Mobimagic shall not in any manner be held or be responsible or liable for any unforeseen contingency, claims, liabilities, demands. losses, damages or expenses arising due to absence of storage or retention of any PC Fi",
+   "answer_start": 8238
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Cap On Liability",
+   "present": true,
+   "snippet": "Neither Party shall be liable to the other Party in contract, tort or otherwise, whatever the cause, for any loss of profit, business or goodwill or any indirect, incidental or consequential costs, damages or expenses of any kind, except for such loss attributable to breach of confidentiality. 9. TE",
+   "answer_start": 15646
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Liquidated Damages",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Warranty Duration",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Insurance",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Covenant Not To Sue",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "category": "Third Party Beneficiary",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Document Name",
+   "present": true,
+   "snippet": "JOINT VENTURE AGREEMENT (the \"Agreement\") made and entered into this 20th day of Friday, March 2020 (the \"Execution Date\"), BETWEEN: BorrowMoney.com, inc of 512 Bayshore DR, suite 201 Fort Lauderdale FL 33304, and JVLS, LLC dba Vaccines 2Go of 4060 Johns Creek Parkway Suite H Suwanee, GA 30024 (indi",
+   "answer_start": 43
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Parties",
+   "present": true,
+   "snippet": "JVLS, LLC dba Vaccines 2Go of 4060 Johns Creek Parkway Suite H Suwanee, GA 30024 (individually the \"Member\" and collectively the \"Members\"). BACKGROUND: A. The Members wish to enter into an association of mutual benefit and agree to jointly invest and set up a joint venture enterprise. B. This Agree",
+   "answer_start": 257
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Agreement Date",
+   "present": true,
+   "snippet": "20th day of Friday, March 2020 (the \"Execution Date\"), BETWEEN: BorrowMoney.com, inc of 512 Bayshore DR, suite 201 Fort Lauderdale FL 33304, and JVLS, LLC dba Vaccines 2Go of 4060 Johns Creek Parkway Suite H Suwanee, GA 30024 (individually the \"Member\" and collectively the \"Members\"). BACKGROUND: A.",
+   "answer_start": 112
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Effective Date",
+   "present": true,
+   "snippet": "The duration of this Venture (the \"Term\") will begin on March 1, 2020 and continue in full force and effect until February 28, 2025 or as otherwise provided in this Agreement. 5. The Term may be extended with the unanimous consent of all Members. Place of Business 6. The principal office of the busi",
+   "answer_start": 1379
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Expiration Date",
+   "present": true,
+   "snippet": "The duration of this Venture (the \"Term\") will begin on March 1, 2020 and continue in full force and effect until February 28, 2025 or as otherwise provided in this Agreement. 5. The Term may be extended with the unanimous consent of all Members. Place of Business 6. The principal office of the busi",
+   "answer_start": 1379
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Renewal Term",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Notice Period To Terminate Renewal",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Governing Law",
+   "present": true,
+   "snippet": "By this Agreement the Members enter into a joint venture (the \"Venture\") in accordance with the laws of the State of Florida. The rights and obligations of the Members will be as stated in the applicable legislation of the State of Florida (the \"Act\") except as otherwise provided here. Name 2. The b",
+   "answer_start": 852
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Most Favored Nation",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Non-Compete",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Exclusivity",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "No-Solicit Of Customers",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Competitive Restriction Exception",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "No-Solicit Of Employees",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Non-Disparagement",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Termination For Convenience",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Rofr/Rofo/Rofn",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Change Of Control",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Anti-Assignment",
+   "present": true,
+   "snippet": "Assignment of Member status, under this clause, including any management and voting interests, will require the consent of all the remaining Members. Page 8 of 13\n\n\n\n\n\nManagement Voting 42. Any management vote required will be determined such that each Manager receives one vote carrying equal weight",
+   "answer_start": 12747
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Revenue/Profit Sharing",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Price Restrictions",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Minimum Commitment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Volume Restriction",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Ip Ownership Assignment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Joint Ip Ownership",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "License Grant",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Non-Transferable License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Affiliate License-Licensor",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Affiliate License-Licensee",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Unlimited/All-You-Can-Eat-License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Irrevocable Or Perpetual License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Source Code Escrow",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Post-Termination Services",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Audit Rights",
+   "present": true,
+   "snippet": "Accurate and complete books of account of the transactions of the Venture will be kept in accordance with generally accepted accounting principles (GAAP) and at all reasonable times will be available and open to inspection and examination by any Member. The books and records of the Venture will refl",
+   "answer_start": 7213
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Uncapped Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Cap On Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Liquidated Damages",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Warranty Duration",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Insurance",
+   "present": true,
+   "snippet": "The Venture may acquire insurance on behalf of any Member, employee, agent or other person engaged in the business interest of the Venture against any liability asserted against them or incurred by them while acting in good faith on behalf of the Venture. Covenant of Good Faith 52. Members will use ",
+   "answer_start": 15634
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Covenant Not To Sue",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "category": "Third Party Beneficiary",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Document Name",
+   "present": true,
+   "snippet": "INTELLECTUAL PROPERTY AGREEMENT (this \"IP Agreement\") is entered into as of April 14, 2014 (the \"Effective Date\"), by and between Motorola Solutions, Inc., a Delaware corporation (the \"Seller\"), and Zebra Technologies Corporation, a Delaware corporation (the \"Purchaser\").\n\nRECITALS\n\nWHEREAS, the Sel",
+   "answer_start": 52
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Parties",
+   "present": true,
+   "snippet": "Zebra Technologies Corporation, a Delaware corporation (the \"Purchaser\").\n\nRECITALS\n\nWHEREAS, the Seller, directly and through certain of its Affiliates, is engaged in the Business;\n\nWHEREAS, the Seller desires to sell and transfer to the Purchaser, and the Purchaser desires to acquire from the Sell",
+   "answer_start": 251
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Agreement Date",
+   "present": true,
+   "snippet": "April 14, 2014 (the \"Effective Date\"), by and between Motorola Solutions, Inc., a Delaware corporation (the \"Seller\"), and Zebra Technologies Corporation, a Delaware corporation (the \"Purchaser\").\n\nRECITALS\n\nWHEREAS, the Seller, directly and through certain of its Affiliates, is engaged in the Busin",
+   "answer_start": 128
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Effective Date",
+   "present": true,
+   "snippet": "April 14, 2014 (the \"Effective Date\"), by and between Motorola Solutions, Inc., a Delaware corporation (the \"Seller\"), and Zebra Technologies Corporation, a Delaware corporation (the \"Purchaser\").\n\nRECITALS\n\nWHEREAS, the Seller, directly and through certain of its Affiliates, is engaged in the Busin",
+   "answer_start": 128
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Expiration Date",
+   "present": true,
+   "snippet": "The term of this IP Agreement shall be from the Effective Date until all of the Intellectual Property licensed hereunder is in the public domain (provided, however, that in such event the representations and warranties in Article III shall survive (and terminate) in accordance with the Acquisition A",
+   "answer_start": 102700
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Renewal Term",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Notice Period To Terminate Renewal",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Governing Law",
+   "present": true,
+   "snippet": "The Laws of the State of Delaware (without reference to its principles of conflicts of law) shall govern the construction, interpretation and other matters arising out of or in connection with this IP Agreement and its schedules (whether arising in contract, tort, equity or otherwise).\n\n(b) Except w",
+   "answer_start": 119140
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Most Favored Nation",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Non-Compete",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Exclusivity",
+   "present": true,
+   "snippet": "If and to the extent that, as a matter of Law in any jurisdiction, ownership, title, or any rights or interest in or to any of the Assigned IP cannot be assigned as provided in Section 2.1(b)(i), (A) the Seller irrevocably agrees to (and shall cause the other Seller Parties to) assign and transfer, ",
+   "answer_start": 39603
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "No-Solicit Of Customers",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Competitive Restriction Exception",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "No-Solicit Of Employees",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Non-Disparagement",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Termination For Convenience",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Rofr/Rofo/Rofn",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Change Of Control",
+   "present": true,
+   "snippet": "Upon a merger or change of control of a party (including, for purposes of this Section 6.3, with respect to Purchaser any Purchaser Licensee and with respect to Seller any Seller Party) (a \"Change of Control Event\") with or to a Person (other than a Person that is a then-current Affiliate of such pa",
+   "answer_start": 113975
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Anti-Assignment",
+   "present": true,
+   "snippet": "If Purchaser or a Purchaser Assignee assigns or transfers any Intellectual Property licensed to the Seller Parties pursuant to Section 2.1(c) or Section 2.1(d), the Purchaser shall (or shall cause the applicable Purchaser Assignee to) expressly condition such assignment or transfer on the express ac",
+   "answer_start": 113044
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Revenue/Profit Sharing",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Price Restrictions",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Minimum Commitment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Volume Restriction",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Ip Ownership Assignment",
+   "present": true,
+   "snippet": "If the arbitrator determines that any Outstanding Patent should be or should have been, as applicable, an Assigned Patent, Seller shall (and shall cause the other Seller Parties to) assign such Patent to the Purchaser Assignees in accordance with Section 2.1(b)(iii)(E).\n\n(c) License-Back of Patents.",
+   "answer_start": 52854
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Joint Ip Ownership",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "License Grant",
+   "present": true,
+   "snippet": "(ii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Smart Sensing Network Equipment; and\n\n(iii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Public Safety LTE Smartphone Devices.\n\n(d) License-Back of Non-Patent, Non-Trademark IP. Ef",
+   "answer_start": 54401
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Non-Transferable License",
+   "present": true,
+   "snippet": "(ii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Smart Sensing Network Equipment; and\n\n(iii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Public Safety LTE Smartphone Devices.\n\n(d) License-Back of Non-Patent, Non-Trademark IP. Ef",
+   "answer_start": 54401
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Affiliate License-Licensor",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Affiliate License-Licensee",
+   "present": true,
+   "snippet": "Each Purchaser Licensee may grant sublicenses of the licenses granted to it pursuant to Section 2.2: (i) to any (for the avoidance of doubt, and without limiting any other provision of this IP Agreement, current or future) direct or indirect Subsidiary of Purchaser (but only for so long as such Pers",
+   "answer_start": 71018
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Unlimited/All-You-Can-Eat-License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Irrevocable Or Perpetual License",
+   "present": true,
+   "snippet": "Effective as of the Initial Closing Date the Seller hereby grants (and will cause each other Seller Party to grant, following each applicable Closing Date), to the Purchaser Licensees an irrevocable (except as expressly set forth herein), non-sublicenseable (except as expressly set forth herein), pe",
+   "answer_start": 62857
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Source Code Escrow",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Post-Termination Services",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Audit Rights",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Uncapped Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Cap On Liability",
+   "present": true,
+   "snippet": "The sole and exclusive remedy for any breach of this IP Agreement, including the representations and warranties and covenants herein, shall be as set forth in Article 8 of the Acquisition Agreement. The representations and warranties and covenants contained herein shall terminate in accordance with ",
+   "answer_start": 111395
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Liquidated Damages",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Warranty Duration",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Insurance",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Covenant Not To Sue",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "category": "Third Party Beneficiary",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Document Name",
+   "present": true,
+   "snippet": "DOMAIN NAME AND CONTENT LICENSE AGREEMENT\n\nThis Domain Name and Content License Agreement (the \"Agreement\") is made and entered into, by and between Beijing SINA Internet  Information Service Co., Ltd. ( ), a limited liability company organized under the laws of the People's Republic  of China (here",
+   "answer_start": 47
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Parties",
+   "present": true,
+   "snippet": "Beijing Yisheng Leju Information Services Co., Ltd., a limited liability company organized under the laws of  the People's Republic of China (\"Licensee\" and together with Licensor, the \"Parties\" and each a \"Party\") and is made effective as of the Effective  Date (defined below).\n\nRECITALS\n\nWHEREAS, ",
+   "answer_start": 371
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Agreement Date",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Effective Date",
+   "present": true,
+   "snippet": "\"Effective Date\" means the Closing Date as set forth in the Share Purchase Agreement.\n\n\"E-House Licensed Data and Information\" means the data and information licensed to CRIC Holdings Limited and its subsidiaries, for the  operation of the CRIC system pursuant to the Master Transaction Agreement.\n\n2",
+   "answer_start": 4981
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Expiration Date",
+   "present": true,
+   "snippet": "The initial term of this Agreement (the \"Initial Term\") shall commence on the Effective Date and shall continue for a period of ten (10)  years thereafter. Beginning twelve (12) months prior to the expiration of the Initial Term, the Parties shall use\n\n7\n\nSource: CHINA REAL ESTATE INFORMATION CORP, ",
+   "answer_start": 21014
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Renewal Term",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Notice Period To Terminate Renewal",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Governing Law",
+   "present": true,
+   "snippet": "This Termination Agreement shall be governed by the laws of the PRC, without regard to conflicts of law principles.\n\n4. This Termination Agreement may be executed in one or more counterparts, each of which shall be deemed an original but all of which together  will constitute one and the same instru",
+   "answer_start": 48274
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Most Favored Nation",
+   "present": true,
+   "snippet": "In the event E-House Research and Training Institute becomes entitled to charge, invoice, or otherwise receive from, Licensee any  royalties, fees or other remuneration for use of the E-House Licensed Data and Information pursuant to amendments to the Master Transaction  Agreement or through other m",
+   "answer_start": 12438
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Non-Compete",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Exclusivity",
+   "present": true,
+   "snippet": "Subject to the terms and conditions of this Agreement, Licensor hereby grants to Licensee, and Licensee hereby accepts from Licensor, an  exclusive, non-transferable (except as set forth in Section 10.7) and non-sublicensable (except as provided in Section 2.1(c)) license to use the  Licensed Domain",
+   "answer_start": 7857
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "No-Solicit Of Customers",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Competitive Restriction Exception",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "No-Solicit Of Employees",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Non-Disparagement",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Termination For Convenience",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Rofr/Rofo/Rofn",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Change Of Control",
+   "present": true,
+   "snippet": "This Agreement and any rights or authority granted hereunder shall not be assigned or transferred by either Party, including by  operation of law, merger or otherwise, without the express written consent of the other Party, provided that Licensor may assign this Agreement  without consent to any of ",
+   "answer_start": 38525
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Anti-Assignment",
+   "present": true,
+   "snippet": "Notwithstanding anything in this Agreement to the contrary, Licensee has no right to sublicense any rights granted hereunder to any third  party, or otherwise permit any third party to use any Licensed Domain Names or Licensed Content; provided, however, that any rights granted to  Licensee hereunde",
+   "answer_start": 9188
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Revenue/Profit Sharing",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Price Restrictions",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Minimum Commitment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Volume Restriction",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Ip Ownership Assignment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Joint Ip Ownership",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "License Grant",
+   "present": true,
+   "snippet": "Subject to the terms and conditions of this Agreement, Licensor hereby grants to Licensee, and Licensee hereby accepts from Licensor, an  exclusive, non-transferable (except as set forth in Section 10.7) and non-sublicensable (except as provided in Section 2.1(c)) license to use the  Licensed Domain",
+   "answer_start": 7857
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Non-Transferable License",
+   "present": true,
+   "snippet": "Notwithstanding anything in this Agreement to the contrary, Licensee has no right to sublicense any rights granted hereunder to any third  party, or otherwise permit any third party to use any Licensed Domain Names or Licensed Content; provided, however, that any rights granted to  Licensee hereunde",
+   "answer_start": 9188
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Affiliate License-Licensor",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Affiliate License-Licensee",
+   "present": true,
+   "snippet": "Notwithstanding anything in this Agreement to the contrary, Licensee has no right to sublicense any rights granted hereunder to any third  party, or otherwise permit any third party to use any Licensed Domain Names or Licensed Content; provided, however, that any rights granted to  Licensee hereunde",
+   "answer_start": 9188
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Unlimited/All-You-Can-Eat-License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Irrevocable Or Perpetual License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Source Code Escrow",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Post-Termination Services",
+   "present": true,
+   "snippet": "Upon termination (but not expiration) of this Agreement for any reason, Licensee shall be entitled to use the Licensed Domain Names and  Licensed Content for a limited period of time, not to exceed ninety (90) days, during which it shall diligently work to transition to another solution.  Upon expir",
+   "answer_start": 23829
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Audit Rights",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Uncapped Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Cap On Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Liquidated Damages",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Warranty Duration",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Insurance",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Covenant Not To Sue",
+   "present": true,
+   "snippet": "Except as expressly permitted under the Trademark License Agreement, Licensee shall not knowingly (a) use the Licensed  Domain Names in any manner that tarnishes, degrades, disparages or reflects adversely on Licensor or Licensor's business or reputation, (b) in  any jurisdiction, register or attemp",
+   "answer_start": 17217
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "category": "Third Party Beneficiary",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Document Name",
+   "present": true,
+   "snippet": "INTELLECTUAL PROPERTY AGREEMENT (this \"Agreement\" or \"IPA\"), effective as of this 30  day of June 2016 (the \"Effective Date\") among THE HERTZ CORPORATION, a Delaware corporation, with an address of 8501 Williams Road, Estero, Florida 33928 (hereinafter \"THC\"); HERTZ SYSTEM, INC., a Delaware corporat",
+   "answer_start": 54
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Parties",
+   "present": true,
+   "snippet": "(hereinafter referred to collectively as the \"Parties\" and individually as a \"Party\").   WITNESSETH   WHEREAS, both HSI and HERC are wholly-owned subsidiaries of THC, and THC is an indirect wholly-owned subsidiary of Hertz Global Holdings, Inc., a Delaware corporation (\"HGH\");   WHEREAS, THC is the ",
+   "answer_start": 639
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Agreement Date",
+   "present": true,
+   "snippet": "30  day of June 2016 (the \"Effective Date\") among THE HERTZ CORPORATION, a Delaware corporation, with an address of 8501 Williams Road, Estero, Florida 33928 (hereinafter \"THC\"); HERTZ SYSTEM, INC., a Delaware corporation, with an address of 8501 Williams Road, Estero, Florida 33928, United States o",
+   "answer_start": 136
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Effective Date",
+   "present": true,
+   "snippet": "30  day of June 2016 (the \"Effective Date\") among THE HERTZ CORPORATION, a Delaware corporation, with an address of 8501 Williams Road, Estero, Florida 33928 (hereinafter \"THC\"); HERTZ SYSTEM, INC., a Delaware corporation, with an address of 8501 Williams Road, Estero, Florida 33928, United States o",
+   "answer_start": 136
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Expiration Date",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Renewal Term",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Notice Period To Terminate Renewal",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Governing Law",
+   "present": true,
+   "snippet": "This Agreement and all disputes or controversies arising out of or relating to this Agreement or the transactions contemplated hereby shall be governed by, and construed in accordance with, the internal laws of the State of New York, without regard to the laws of any other jurisdiction that might be",
+   "answer_start": 24511
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Most Favored Nation",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Non-Compete",
+   "present": true,
+   "snippet": "During the Interim Period, neither HERC nor any of its affiliates or subsidiaries shall, directly or indirectly, engage in the business of renting or leasing cars, crossovers or light trucks (including sport utility vehicles and light commercial vehicles) in [any country in which THC or any of its a",
+   "answer_start": 23766
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Exclusivity",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "No-Solicit Of Customers",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Competitive Restriction Exception",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "No-Solicit Of Employees",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Non-Disparagement",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Termination For Convenience",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Rofr/Rofo/Rofn",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Change Of Control",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Anti-Assignment",
+   "present": true,
+   "snippet": "HERC may not assign, transfer, sublicense or delegate any of its rights hereunder or delegate its obligations hereunder without the prior written consent of HSI, and any such purported assignment, transfer, sublicense or delegation, in the absence of such consent, shall be void and without effect.  ",
+   "answer_start": 26321
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Revenue/Profit Sharing",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Price Restrictions",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Minimum Commitment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Volume Restriction",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Ip Ownership Assignment",
+   "present": true,
+   "snippet": "THC will assign all right, title and interest in and to the THC ERB Domains (those domains owned by THC related to the ERB that do not incorporate the mark/name HERTZ) as set forth on Schedule H to HERC and as more fully set forth in the Domain Name Assignment attached hereto as Exhibit D.   2.10 In",
+   "answer_start": 11369
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Joint Ip Ownership",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "License Grant",
+   "present": true,
+   "snippet": "HSI will retain ownership and will grant a royalty-free, non-exclusive, license to HERC to use the HSI (HERTZ) US ERB Trademarks (those US trademarks   3\n\n\n\n\n\n  owned by HSI related to the ERB that incorporate the mark/name HERTZ) as set forth on Schedule B, for the Interim Period, in the United Sta",
+   "answer_start": 7757
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Non-Transferable License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Affiliate License-Licensor",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Affiliate License-Licensee",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Unlimited/All-You-Can-Eat-License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Irrevocable Or Perpetual License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Source Code Escrow",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Post-Termination Services",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Audit Rights",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Uncapped Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Cap On Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Liquidated Damages",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Warranty Duration",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Insurance",
+   "present": true,
+   "snippet": "HERC shall provide for ten (10) days notice to THC and HSI in the event of any modification, cancellation or termination. HERC agrees to furnish THC and HSI Certificates of Insurance evidencing same within thirty (30) days after the execution of this Agreement. In no event shall HERC perform or prom",
+   "answer_start": 20423
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Covenant Not To Sue",
+   "present": true,
+   "snippet": "The Parties acknowledge and affirm their respective rights in and to the relevant trademark and related rights subject to this Agreement and neither Party shall directly or indirectly attack, challenge or impair the title and related rights of the other Party during the Interim Period or any time th",
+   "answer_start": 15823
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "category": "Third Party Beneficiary",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Document Name",
+   "present": true,
+   "snippet": "CONSULTING AGREEMENT This Consulting Agreement (the \"Agreement\") is made and entered into as of this 2nd day of January 2020, by and between Global Technologies, Ltd (hereinafter the \"Company\"), a Delaware corporation whose address is 501 1st Ave N., Suite 901, St. Petersburg, FL 33701 and Timothy C",
+   "answer_start": 14
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Parties",
+   "present": true,
+   "snippet": "Consultant\"), an individual whose address is 11718 SE Federal Hwy., Suite 372, Hobe Sound, FL 33455 (individually, a \"Party\"; collectively, the \"Parties\"). This Agreement is non-exclusive. RECITALS WHEREAS, the Company has asked to retain Consultant to provide various services to the Company as agre",
+   "answer_start": 339
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Agreement Date",
+   "present": true,
+   "snippet": "This Consulting Agreement (the \"Agreement\") is made and entered into as of this 2nd day of January 2020, by and between Global Technologies, Ltd (hereinafter the \"Company\"), a Delaware corporation whose address is 501 1st Ave N., Suite 901, St. Petersburg, FL 33701 and Timothy Cabrera (hereinafter t",
+   "answer_start": 35
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Effective Date",
+   "present": true,
+   "snippet": "2nd day of January 2020, by and between Global Technologies, Ltd (hereinafter the \"Company\"), a Delaware corporation whose address is 501 1st Ave N., Suite 901, St. Petersburg, FL 33701 and Timothy Cabrera (hereinafter the \"Consultant\"), an individual whose address is 11718 SE Federal Hwy., Suite 37",
+   "answer_start": 115
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Expiration Date",
+   "present": true,
+   "snippet": "This Agreement shall be in full force and effect commencing on January 2, 2020 and shall remain in effect for one (1) year or until Consultant completes the services requested. Either Party shall have the right to terminate this Agreement without notice in the event of the bankruptcy, insolvency, or",
+   "answer_start": 1772
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Renewal Term",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Notice Period To Terminate Renewal",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Governing Law",
+   "present": true,
+   "snippet": "This Agreement and the legal relations among the Parties hereto shall be governed by and construed in accordance with the laws of the State of Florida, without regard to its conflict of law doctrine. The Parties agree that the venue for the resolution of all disputes arising under the terms of this ",
+   "answer_start": 14855
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Most Favored Nation",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Non-Compete",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Exclusivity",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "No-Solicit Of Customers",
+   "present": true,
+   "snippet": "he Company further agrees that neither it nor its employees, affiliates or assigns, shall enter into, or otherwise arrange (either for it/him/herself, or any other person or entity) any business relationship, contact any person regarding such Opportunity, either directly or indirectly, or any of its",
+   "answer_start": 19658
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Competitive Restriction Exception",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "No-Solicit Of Employees",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Non-Disparagement",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Termination For Convenience",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Rofr/Rofo/Rofn",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Change Of Control",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Anti-Assignment",
+   "present": true,
+   "snippet": "Neither Party shall delegate the performance of its duties under this Agreement without the prior written consent of the other Party. (h) Publicity. Neither Consultant nor the Company shall make or issue or cause to be made or issued, any announcement or written statement concerning this Agreement, ",
+   "answer_start": 13291
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Revenue/Profit Sharing",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Price Restrictions",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Minimum Commitment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Volume Restriction",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Ip Ownership Assignment",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Joint Ip Ownership",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "License Grant",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Non-Transferable License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Affiliate License-Licensor",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Affiliate License-Licensee",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Unlimited/All-You-Can-Eat-License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Irrevocable Or Perpetual License",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Source Code Escrow",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Post-Termination Services",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Audit Rights",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Uncapped Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Cap On Liability",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Liquidated Damages",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Warranty Duration",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Insurance",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "category": "Covenant Not To Sue",
+   "present": false,
+   "snippet": "",
+   "answer_start": null
+  },
+  {
+   "contract_id": "CUAD-0029",
    "category": "Third Party Beneficiary",
    "present": false,
    "snippet": "",

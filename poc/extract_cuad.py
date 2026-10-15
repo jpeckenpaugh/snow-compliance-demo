@@ -16,7 +16,7 @@ This script downloads data.zip if needed, takes the first N docs, and writes a
 compact normalized JSON (short clause snippets, no full contract text) that the
 rest of the POC consumes. Run:
 
-    python3 poc/extract_cuad.py --limit 20
+    python3 poc/extract_cuad.py --limit 30
 """
 import argparse
 import json
@@ -60,9 +60,9 @@ def contract_type_from_title(title: str) -> str:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--limit", type=int, default=20)
+    ap.add_argument("--limit", type=int, default=30)
     ap.add_argument("--work", type=pathlib.Path, default=pathlib.Path("poc/.cuad_work"))
-    ap.add_argument("--out", type=pathlib.Path, default=pathlib.Path("poc/data/cuad_first20.json"))
+    ap.add_argument("--out", type=pathlib.Path, default=pathlib.Path("poc/data/cuad_sample.json"))
     args = ap.parse_args()
 
     zip_path = download(args.work / "data.zip")

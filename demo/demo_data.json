@@ -157,6 +157,84 @@
     "Renewal Term",
     "Rofr/Rofo/Rofn",
     "Warranty Duration"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "7th day of September, 1999.\n\n                                    RECITALS\n\n         A. The  Company's  Business.  The Company is  presently  engaged in the business  of selling an energy  efficiency  device,  which is  referred to as an \"Energy  Saver\"  which may be improved  or  otherwise  changed"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "No  assignment  of this  Agreement  or any  right                   accruing  hereunder  shall be made by the Distributor in whole                   or in part,  without the prior written consent of the Company,                   which  consent  shall  not  be  unreasonably  withheld.  As  a"
+    },
+    {
+     "category": "Covenant Not To Sue",
+     "snippet": "During the Term of this Agreement and                   for three  years  thereafter,  the  Distributor  (on behalf of                   itself and each of its affiliates) agrees not to commence,  or                   provide any  information to or otherwise  assist any person or                   e"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "DISTRIBUTOR AGREEMENT\n\n         THIS  DISTRIBUTOR  AGREEMENT (the  \"Agreement\")  is made by and between Electric City Corp.,  a Delaware  corporation  (\"Company\")  and Electric City of Illinois LLC (\"Distributor\") this 7th day of September, 1999.\n\n                                    RECITALS"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "The term of this  Agreement  shall be ten (10)                            years (the \"Term\")  which shall  commence on the date                            upon which the Company  delivers to  Distributor  the                            last Sample, as defined  hereinafter.  If Distributor"
+    },
+    {
+     "category": "Exclusivity",
+     "snippet": "The  Distributor  shall  not order or                   purchase Products from any source other than the Company.  All                   orders shall be subject to acceptance and  confirmation by the                   Company.  Distributor  may  cancel an order  that is  properly                   c"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The term of this  Agreement  shall be ten (10)                            years (the \"Term\")  which shall  commence on the date                            upon which the Company  delivers to  Distributor  the                            last Sample, as defined  hereinafter.  If Distributor"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement is to be construed according to the laws          of the State of Illinois.\n\n7.       NEW PRODUCTS\n\n         7.1      Right of Option.  Should Company  introduce  other products or                   devices as contemplated by recital paragraph \"A\",  Distributor                   shall"
+    },
+    {
+     "category": "Insurance",
+     "snippet": "Company will carry a reasonable                   amount of product  liability  insurance  through a  reasonably                   acceptable  products liability insurance company and will name                   the  Distributor  as an additional  insured under that policy.                   Company"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "Company  hereby   appoints                            Distributor as Company's exclusive distributor within                            the Market and grants to  Distributor  the  exclusive                            right  to sell and  distribute  Products  within  the                            Mar"
+    },
+    {
+     "category": "Minimum Commitment",
+     "snippet": "A minimum of a $250,000.00  purchase  order  must be  received  by Company by the first of each month for a total (12) month  period.  The Company may draw funds from the LC to pay for  Distributor's  purchases,  which are not paid according to the terms in Section 2.7. Prices for the EnergySaver un"
+    },
+    {
+     "category": "No-Solicit Of Customers",
+     "snippet": "Distributor further agrees that it will not interfere                            with or  otherwise  disrupt  the  business  relations                            between the Company or nay of its  affiliates and any                            of their current or prospective customers,  suppliers"
+    },
+    {
+     "category": "No-Solicit Of Employees",
+     "snippet": "During the Term of this Agreement and for a period of                            twelve (12) months  thereafter,  the  Distributor (on                            behalf of itself,  each of its affiliates and each of                            their respective representatives) agrees that it will"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Distributor\") this 7th day of September, 1999.\n\n                                    RECITALS\n\n         A. The  Company's  Business.  The Company is  presently  engaged in the business  of selling an energy  efficiency  device,  which is  referred to as an \"Energy  Saver\"  which may be improved  or"
+    },
+    {
+     "category": "Post-Termination Services",
+     "snippet": "Upon the expiration or termination of                   this  Agreement,  pursuant to Section  4.1 or 4.2 hereof,  the                   Company may, at its option to be  exercised  within 30 days of                   the date of the termination of this Agreement, and in its sole                   d"
+    },
+    {
+     "category": "Price Restrictions",
+     "snippet": "The Company  also  reserves  the right to                            increase  or  decrease  the price  per unit  based on                            Company   wide   changes   in  unit   prices  to  all                            distributors of the Company,  provided however,  that"
+    },
+    {
+     "category": "Renewal Term",
+     "snippet": "If Distributor                            complies with all of the terms of this Agreement, the                            Agreement  shall be  renewable on an annual basis for                            one (1) year terms for up to  another  ten (10) years                            on the same ter"
+    },
+    {
+     "category": "Rofr/Rofo/Rofn",
+     "snippet": "Distributor  shall exercise its option to                   become  exclusive  Distributor of other Products or devices by                   serving  written  notification  on Company of its  election to                   become  exclusive  distributor  within  thirty  (30) days upon"
+    },
+    {
+     "category": "Warranty Duration",
+     "snippet": "In the event that Company is unable or unwilling to                   promptly  perform any warranty work without  reasonable  cause                   and following  full and fair  opportunity  to do so, or in the                   event of the necessity  for  emergency  repairs of a defective"
+    }
    ]
   },
   {
@@ -187,6 +265,56 @@
     "Parties",
     "Uncapped Liability",
     "Warranty Duration"
+   ],
+   "clauses": [
+    {
+     "category": "Anti-Assignment",
+     "snippet": "[ * ] may [ * ]any of its rights or obligations under this Agreement without the prior written consent of [ * ]. For the  avoidance of doubt, a Change of Control shall be deemed an assignment hereunder unless [ * ] does not exercise its [ * ].\n\n11.4 Force Majeure. Neither party shall be liable for f"
+    },
+    {
+     "category": "Audit Rights",
+     "snippet": "During the Term, and for a period of [ * ] thereafter, Google may audit Distributor's relevant records to confirm  Distributor's compliance with this Agreement. Google's auditor will only have access to those books and records of Distributor  which are reasonably necessary to confirm such compliance"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "Subject to Clauses 9.1 and 9.2, each party's total liability under or in connection with this Agreement (whether in contract, tort or  otherwise) arising in any Contract Year is limited to the greater of:\n\n  (a) [ * ] Euros ([ * ] Euros); and\n\n  (b) [ * ]% of the total payment due to the Distributor"
+    },
+    {
+     "category": "Change Of Control",
+     "snippet": "[ * ] expected to experience, or [ * ] is experiencing, such  Change of Control shall notify [ * ] in writing of this before or within [ * ] after the Change of Control. If [ * ] has not exercised its right of  termination under this Clause within [ * ] following the later of (i) the receipt of noti"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "Promotion and Distribution Agreement including all exhibits (collectively referred to as the \"Agreement\"), effective as of 1 August 2011 (the  \"Effective Date\"), is made by and between Whitesmoke Inc., with registered offices/principle place of business at 501 Silverside Road, Suite 105,  Wilmington"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "1 August 2011 (the  \"Effective Date\"), is made by and between Whitesmoke Inc., with registered offices/principle place of business at 501 Silverside Road, Suite 105,  Wilmington DE 19809, USA, (\"Distributor\"), and Google Inc whose principle place of business is at 1600 Amphitheatre Parkway, Mountain"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "\"Term\" means the earlier of: (a) the end of the two year period from the Effective Date to 31 July 2013; or (b) the last day of the calendar month  within which the Maximum Distribution Commitment is reached.     \"Territory\" means those countries listed in Exhibit A, excluding any territory or state"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement is governed by English law and the parties submit to the exclusive jurisdiction of the English courts in  relation to any dispute (contractual or non-contractual) concerning this Agreement save that either party may apply to any court for an  injunction or other relief to protect its"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "Subject to the terms and conditions of this Agreement, Google grants to Distributor a limited, [ * ] license  during the Term to use the Google Trademarks, in accordance with Google's trademark usage guidelines, solely to market and promote the  Products consistent with this Agreement, provided that"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Distributor\"), and Google Inc whose principle place of business is at 1600 Amphitheatre Parkway, Mountain View,  CA 94043, USA (\"Google\").\n\n\n\n   \"Bundle\" means the Distribution Products bundled with the Distributor App(s).     \"Chrome Browser\" means the machine-readable binary code version of the Go"
+    },
+    {
+     "category": "Uncapped Liability",
+     "snippet": "Subject to Clauses 9.1 and 9.2, each party's total liability under or in connection with this Agreement (whether in contract, tort or  otherwise) arising in any Contract Year is limited to the greater of:\n\n  (a) [ * ] Euros ([ * ] Euros); and\n\n  (b) [ * ]% of the total payment due to the Distributor"
+    },
+    {
+     "category": "Warranty Duration",
+     "snippet": "Google warrants that the Distribution Products will for a period of [ * ] from the date of their supply to Distributor be free from any defect  which has a materially adverse effect on their use or operation.\n\n8.3 If any of the warranties in Clause 8.1 or 8.2 is breached by Google, Distributor must"
+    }
    ]
   },
   {
@@ -209,6 +337,32 @@
     "Insurance",
     "Parties",
     "Warranty Duration"
+   ],
+   "clauses": [
+    {
+     "category": "Document Name",
+     "snippet": "SUPPLY CONTRACT Contract No: Date: The buyer/End-User: Shenzhen LOHAS Supply Chain Management Co., Ltd. ADD: Tel No. : Fax No. : The seller: ADD: The Contract is concluded and signed by the Buyer and Seller on , in Hong Kong. 1. General provisions 1.1 This is a framework agreement, the terms and con"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The Contract is valid for 5 years, beginning from and ended on . This Contract is made out in three originals in both Chinese and English, each language being legally of the equal effect. Conflicts between these two languages arising there from, if any, shall be subject to Chinese version. One copy"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "It will be governed by the law of the People's Republic of China ,otherwise it is governed by United Nations Convention on Contract for the International Sale of Goods. 22. <<Incoterms 2000>> The terms in the contract are based on (INCOTERMS 2000) of the International Chamber of Commerce. 23. The Co"
+    },
+    {
+     "category": "Insurance",
+     "snippet": "To be covered by the Seller for 110% invoice value against All Risks and War Risk. 11. PAYMENT: Under Letter of Credit or T/T: Under the Letter of Credit: The Buyer shall open an irrevocable letter of credit with the bank within 30 days after signing the contract, in favor of the Seller, for 100% va"
+    },
+    {
+     "category": "Parties",
+     "snippet": "The seller: ADD: The Contract is concluded and signed by the Buyer and Seller on , in Hong Kong. 1. General provisions 1.1 This is a framework agreement, the terms and conditions are applied to all purchase orders which signed by this agreement (hereinafter referred to as the \"order\"). 1.2 If the pr"
+    },
+    {
+     "category": "Warranty Duration",
+     "snippet": "Within 7 days after the arrival of the goods at destination, should the quality, specification, or quantity be found not in conformity with the stipulations of the Contract except those claims for which the insurance company or the owners of the vessel are liable, the Buyers, on the strength of the"
+    }
    ]
   },
   {
@@ -235,6 +389,48 @@
     "Parties",
     "Renewal Term",
     "Termination For Convenience"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "6th day of April, 1999 by and between Centrack International, a Florida corporation (\"the Customer\"), and i-on interactive, a Florida corporation (\"i-on\").\n\nDEFINITIONS\n\nAs used in this Agreement, the term \"Web site\" shall mean a computer system intended to be accessed through the World Wide Web seg"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "i-on will not be liable under any circumstances for any lost profits or other consequential damages, even if i-on has been advised as to the possibility of such damages. i-on's liability for damages to the Customer for any cause whatsoever, regardless of the form of action, and whether in contract o"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "WEB SITE HOSTING AGREEMENT (\"this Agreement\") is entered into this 6th day of April, 1999 by and between Centrack International, a Florida corporation (\"the Customer\"), and i-on interactive, a Florida corporation (\"i-on\").\n\nDEFINITIONS\n\nAs used in this Agreement, the term \"Web site\" shall mean a com"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "The term of this Agreement for the Hosted Site shall commence upon April 1, 1999 and shall continue for a period of six (6) months, unless earlier terminated in accordance with provisions hereof. This Agreement shall automatically be renewed for one (1) or more one (1) month periods unless either th"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The term of this Agreement for the Hosted Site shall commence upon April 1, 1999 and shall continue for a period of six (6) months, unless earlier terminated in accordance with provisions hereof. This Agreement shall automatically be renewed for one (1) or more one (1) month periods unless either th"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement was entered into in the State of Florida, and its validity, construction, interpretation, and legal effect shall be governed by the laws and judicial decisions of the State of Florida applicable to contracts entered into and performed entirely within the State of Florida.\n\nNeither the"
+    },
+    {
+     "category": "Notice Period To Terminate Renewal",
+     "snippet": "This Agreement shall automatically be renewed for one (1) or more one (1) month periods unless either the Customer or i-on gives notice to the other party of its intention not to renew the\n\n4 Agreement, which notice must be given not less than fifteen (15) days before the end of the respective initi"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Centrack International, a Florida corporation (\"the Customer\"), and i-on interactive, a Florida corporation (\"i-on\").\n\nDEFINITIONS\n\nAs used in this Agreement, the term \"Web site\" shall mean a computer system intended to be accessed through the World Wide Web segment of the Internet, including softwa"
+    },
+    {
+     "category": "Renewal Term",
+     "snippet": "This Agreement shall automatically be renewed for one (1) or more one (1) month periods unless either the Customer or i-on gives notice to the other party of its intention not to renew the\n\n4 Agreement, which notice must be given not less than fifteen (15) days before the end of the respective initi"
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "Either party may terminate this Agreement without cause at any time effective upon thirty (30) days' written notice. Notwithstanding anything to the contrary contained in this Agreement, no termination of this Agreement for any reason whatsoever shall relieve the Customer of the obligation to pay al"
+    }
    ]
   },
   {
@@ -255,6 +451,20 @@
     "Agreement Date",
     "Document Name",
     "Parties"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "March 27, 2020.\n\n/s/ Shelby J. Butterfield Shelby J. Butterfield\n\nBUTTERFIELD FAMILY TRUST\n\nBy: /s/ Shelby J. Butterfield Shelby J. Butterfield Co-Trustee\n\n1"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "JOINT FILING AGREEMENT\n\nThe undersigned hereby agree to jointly prepare and file with the applicable regulatory authorities this Schedule 13G or Schedule 13D and any future amendments thereto reporting each of the undersigned's ownership of securities of the issuer named herein, and hereby affirm th"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Co-Trustee\n\n1"
+    }
    ]
   },
   {
@@ -287,6 +497,60 @@
     "Non-Compete",
     "Parties",
     "Volume Restriction"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "January 13, 2005 between professional golfer, TOM WATSON, (hereinafter referred to as \"CONSULTANT\") and ADAMS GOLF, LTD. (hereinafter referred to as \"ADAMS GOLF\").\n\nWITNESSETH\n\nWHEREAS, ADAMS GOLF desires to obtain the right to use the name, likeness and ENDORSEMENT of CONSULTANT in connection with"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "Neither ADAMS GOLF nor CONSULTANT shall have the right to grant sublicenses hereunder or to assign, alienate or otherwise transfer any of its rights or obligations hereunder.\n\n32. CONFIDENTIALITY\n\nBoth parties understand that the contents of this Agreement, including, but not limited to, all amounts"
+    },
+    {
+     "category": "Competitive Restriction Exception",
+     "snippet": "Notwithstanding paragraphs 4A, 4B and 4C above, CONSULTANT shall be entitled to endorse and play the [*****]. The parties expressly  agree that CONSULTANT may  permit [*****] the use of CONSULTANT'S  name and/or likeness in [*****] print and/or television advertisement provided that this is executed"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "ENDORSEMENT AGREEMENT\n\nThis Agreement is entered into on January 13, 2005 between professional golfer, TOM WATSON, (hereinafter referred to as \"CONSULTANT\") and ADAMS GOLF, LTD. (hereinafter referred to as \"ADAMS GOLF\").\n\nWITNESSETH\n\nWHEREAS, ADAMS GOLF desires to obtain the right to use the name, l"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "The Term of this Agreement shall be for a period of [* ****] years and [*****] months commencing the 1st day of September 2004 and terminating the [*****] day of [*****].\n\n2.   DEFINITIONS\n\nAs used in this Agreement, the following terms shall be defined as set forth below:\n\n    A. CONSULTANT'S \"ENDO"
+    },
+    {
+     "category": "Exclusivity",
+     "snippet": "During the term of this Agreement, CONSULTANT shall exclusively play/use the MANDATORY PRODUCT. (It is expressly understood by the parties that CONSULTANT may play [* ****] clubs in the bag other than ADAMS GOLF clubs including, but not limited to, a putter by a manufacturer other than ADAMS GOLF bu"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The Term of this Agreement shall be for a period of [* ****] years and [*****] months commencing the 1st day of September 2004 and terminating the [*****] day of [*****].\n\n2.   DEFINITIONS\n\nAs used in this Agreement, the following terms shall be defined as set forth below:\n\n    A. CONSULTANT'S \"ENDO"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement shall be governed and construed according to the laws of the State of Kansas.\n\n26. ENTIRE AGREEMENT\n\nThe provisions of this Agreement are intended by the parties as a complete, conclusive and final expression of their agreement concerning the subject matter hereof, which Agreement sup"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "CONSULTANT hereby gives and grants to ADAMS GOLF the exclusive right and license to use CONSULTANT'S ENDORSEMENT in connection with the manufacture, sale, distribution, advertising and promotion of PRODUCT in the CONTRACT TERRITORY.   4. EXCLUSIVITY OF ENDORSEMENT   During the term of this Agreement"
+    },
+    {
+     "category": "Minimum Commitment",
+     "snippet": "In each and every calendar year of this Agreement, CONSULTANT shall achieve a satisfactory record of play in a minimum of [* ****] professional golf association events on the SPGA and/or PGA tour (which shall include both the PGA and SPGA Tour Skins Games). If for any reason, CONSULTANT should achie"
+    },
+    {
+     "category": "Non-Compete",
+     "snippet": "When endorsing a non-competitive product, under no circumstances shall CONSULTANT wear, play, use, hold or in any way be associated with an ADAMS GOLF competitor's Product.\n\n7.   CONSULTANT'S SATISFACTION OF MANDATORY PRODUCT\n\nIt is particularly and expressly understood and agreed that if CONSULTANT"
+    },
+    {
+     "category": "Parties",
+     "snippet": "ADAMS GOLF, LTD. (hereinafter referred to as \"ADAMS GOLF\").\n\nWITNESSETH\n\nWHEREAS, ADAMS GOLF desires to obtain the right to use the name, likeness and ENDORSEMENT of CONSULTANT in connection with the advertisement and promotion of ADAMS GOLF'S PRODUCT;\n\nNOW THEREFORE, in consideration of the mutual"
+    },
+    {
+     "category": "Volume Restriction",
+     "snippet": "During  the term of this Agreement, CONSULTANT  shall make himself available on not more than [*****]  days for television and radio commercials, photo shoots, modeling and  promotional appearances compatible with CONSULTANT'S  own practice, play and personal time requirements. Said activities shall"
+    }
    ]
   },
   {
@@ -320,6 +584,64 @@
     "Post-Termination Services",
     "Termination For Convenience",
     "Volume Restriction"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "July 20, 2018\n\nGianluca Rotino\n\nDear Gianluca:\n\nKiromic, Inc, a Delaware corporation (the \"Company\"), is pleased to this offer to this Consulting Agreement (this \"Agreement\") to retain Gianluca Rotino (\"Consultant\") to perform certain consulting activities as described below on the following terms:"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "Neither this Agreement nor any right hereunder or interest herein may be assigned or transferred by Consultant without the express written consent of Company. Company may assign this Agreement to any entity that succeeds to substantially all of the business or assets of Company. This Agreement shall"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "CONSULTING AGREEMENT\n\nJuly 20, 2018\n\nGianluca Rotino\n\nDear Gianluca:\n\nKiromic, Inc, a Delaware corporation (the \"Company\"), is pleased to this offer to this Consulting Agreement (this \"Agreement\") to retain Gianluca Rotino (\"Consultant\") to perform certain consulting activities as described below on"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "This letter agreement will be effective as of July 1, 2018. This letter agreement and the Company's standard Proprietary Information and Inventions Agreement supersede and replace any prior agreements, representations or understandings (whether written, oral, implied or otherwise) between you and 84"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "This Agreement will commence on the Effective Date and will continue until termination as provided below.\n\nEither Consultant or Company may terminate this Agreement upon prior written notice thereof to the other party.\n\nUpon termination of this Agreement, all rights and duties of the parties hereund"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement shall be governed by the laws of the State of Texas, without reference to its conflicts of law principles. This Agreement may only be amended or modified by a writing signed by both parties. Waiver of any term or provision of this Agreement or forbearance to enforce any term or provis"
+    },
+    {
+     "category": "Ip Ownership Assignment",
+     "snippet": "Consultant hereby irrevocably assigns to Company all right, title and interest in and to any information (including, without limitation, business plans and/or business information), technology, know-how, materials, notes, records, designs, ideas, inventions, improvements, devices, developments, disc"
+    },
+    {
+     "category": "Irrevocable Or Perpetual License",
+     "snippet": "Consultant agrees that if, in the course of performing the Services, Consultant incorporates into any Invention developed hereunder any invention, improvement, development concept, discovery or other proprietary subject matter owned by Consultant or in which Consultant has an interest (\"Item\"), Cons"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "Consultant agrees that if, in the course of performing the Services, Consultant incorporates into any Invention developed hereunder any invention, improvement, development concept, discovery or other proprietary subject matter owned by Consultant or in which Consultant has an interest (\"Item\"), Cons"
+    },
+    {
+     "category": "Non-Compete",
+     "snippet": "Without limiting the foregoing, Consultant agrees to use his or her best efforts (A) to segregate Consultant's 844.KEY.CURE | www.kiromic.com PAGE 3\n\n\n\n\n\nServices performed under this Agreement from Consultant's work done for any other companies for whom Consultant is providing services so as to min"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Gianluca Rotino\n\nDear Gianluca:\n\nKiromic, Inc, a Delaware corporation (the \"Company\"), is pleased to this offer to this Consulting Agreement (this \"Agreement\") to retain Gianluca Rotino (\"Consultant\") to perform certain consulting activities as described below on the following terms:\n\n1. Services an"
+    },
+    {
+     "category": "Post-Termination Services",
+     "snippet": "Upon the termination of this Agreement, or upon Company's earlier requests, Consultant will deliver to Company all property relating to, and all tangible embodiments of, Inventions in Consultant's possession or control.\n\nConsultant agrees that if, in the course of performing the Services, Consultant"
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "Either Consultant or Company may terminate this Agreement upon prior written notice thereof to the other party.\n\nUpon termination of this Agreement, all rights and duties of the parties hereunder shall cease except:\n\nCompany shall be obliged to pay, within thirty (30) days after receipt of Consultan"
+    },
+    {
+     "category": "Volume Restriction",
+     "snippet": "The Company will compensate Consultant at the rate of $400 per hour (19 hours cap monthly; anything over these hrs must be preapproved by management), payable in accordance with the Company's standard payroll schedule, and subject to withholding as legally required. This compensation will be subject"
+    }
    ]
   },
   {
@@ -342,6 +664,32 @@
     "Expiration Date",
     "Governing Law",
     "Parties"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "October 30, 2019 (the \"Effective Date\") by and among (1) Veoneer AB, a Swedish corporation (\"Veoneer AB\") and Veoneer US, Inc., a Delaware corporation (\"Veoneer US\" and together with Veoneer AB, the \"Veoneer Parties\"), and (2) Nissin Kogyo Co., Ltd., a Japanese corporation (\"Nissin\"), Nissin Kogyo H"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "AMENDMENT AND TERMINATION OF JOINT VENTURE AGREEMENT (this \"Amendment\") is made and entered into effective as of October 30, 2019 (the \"Effective Date\") by and among (1) Veoneer AB, a Swedish corporation (\"Veoneer AB\") and Veoneer US, Inc., a Delaware corporation (\"Veoneer US\" and together with Veon"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "This Amendment shall only become effective upon the VNBJ Closing with respect to Article 1.1 and the VNBZ Closing with respect to Article 1.2, and shall terminate without any force or effect in the event that the VNBJ SPA and the VNBZ SPA are terminated in accordance with the terms thereof.\n\n(The re"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "This Amendment shall only become effective upon the VNBJ Closing with respect to Article 1.1 and the VNBZ Closing with respect to Article 1.2, and shall terminate without any force or effect in the event that the VNBJ SPA and the VNBZ SPA are terminated in accordance with the terms thereof.\n\n(The re"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Amendment shall be governed by and construed in accordance with the laws of Japan.\n\nArticle 4.Effectiveness\n\nThis Amendment shall only become effective upon the VNBJ Closing with respect to Article 1.1 and the VNBZ Closing with respect to Article 1.2, and shall terminate without any force or ef"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Nissin Kogyo Co., Ltd., a Japanese corporation (\"Nissin\"), Nissin Kogyo Holdings USA, Inc., an Ohio corporation (\"Nissin Holding\") and Zhongshan Nissin Industry Co., Ltd., a Peoples' Republic of China company (\"NBZ\" and together with Nissin and Nissin Holding, the \"Nissin Parties\"), as an amendment"
+    }
    ]
   },
   {
@@ -388,6 +736,108 @@
     "Revenue/Profit Sharing",
     "Termination For Convenience",
     "Uncapped Liability"
+   ],
+   "clauses": [
+    {
+     "category": "Affiliate License-Licensee",
+     "snippet": "[***], Valeant hereby grants to Dova a fully paid-up, royalty free, non-transferable, non- exclusive license (with a limited right to sub-license to its Affiliates) to any Valeant Property that appears on, embodied on or contained in the Product materials or Product Labeling solely for use in connec"
+    },
+    {
+     "category": "Agreement Date",
+     "snippet": "September 26, 2018\n\n______________________________________________________________________________\n\nCONFIDENTIAL TREATMENT HAS BEEN REQUESTED FOR PORTIONS OF THIS EXHIBIT. THE COPY FILED HEREWITH OMITS THE INFORMATION SUBJECT TO A CONFIDENTIALITY REQUEST. OMISSIONS ARE DESIGNATED [***]. A COMPLETE V"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "In the event either Party desires to make such an assignment or other transfer of this Agreement or any rights or obligations hereunder, such Party shall deliver a written notice to the other Party requesting the other Party's written consent in accordance with this Section 13.2, and the other Party"
+    },
+    {
+     "category": "Audit Rights",
+     "snippet": "Dova shall have the right, at its own expense, during normal business hours and upon reasonable prior notice, through a certified public accounting firm or other auditor selected by Dova and reasonably acceptable to Valeant and upon execution of a confidentiality agreement reasonably satisfactory to"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "Notwithstanding the above, the sole remedy of Dova for breach of this Section 4.1.2 shall be (i) the adjustment to the promotion fee as set forth in Section 6.1.2 and (ii) the termination right set out in Section 12.2.2.\n\n4.1.3 Target Incentive Compensation. In addition, [***] and continuing through"
+    },
+    {
+     "category": "Change Of Control",
+     "snippet": "Notwithstanding the foregoing, (a) either Party may, without the other Party's consent, assign this Agreement and its rights and obligations hereunder in whole or in part to an Affiliate; and (b) Dova may assign this Agreement to a successor in interest in connection with the sale or other transfer"
+    },
+    {
+     "category": "Competitive Restriction Exception",
+     "snippet": "Notwithstanding anything to the contrary, in no event shall the restrictions set forth in this Section 2.3.2 apply to [***].\n\n2.4 Dova Trademarks and Copyrights.\n\n2.4.1 Valeant shall have the non-exclusive right to use the Dova Trademarks and Copyrights solely on Product Materials in order to perfor"
+    },
+    {
+     "category": "Covenant Not To Sue",
+     "snippet": "Valeant shall not at any time during the Term knowingly do or allow to be done any act or thing which will in any way impair or diminish the rights of Dova in or to the Dova Trademarks and Copyrights. All goodwill and\n\nSource: DOVA PHARMACEUTICALS INC., 10-Q, 11/8/2018\n\n\n\n\n\nimproved reputation gener"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "CO-PROMOTION AGREEMENT\n\nThis Co-Promotion Agreement (this \"Agreement\") is entered into and dated as of September 26, 2018 (the \"Effective Date\") by and between Dova Pharmaceuticals, Inc., a Delaware corporation (\"Dova\"), and Valeant Pharmaceuticals North America LLC, a Delaware limited liability com"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "\"Effective Date\" shall have the meaning set forth in the preamble to this Agreement.\n\n1.26 \"FDA\" shall mean the United States Food and Drug Administration or any successor agency performing comparable functions.\n\n1.27 \"Field\" shall mean the treatment of thrombocytopenia in adult patients with chroni"
+    },
+    {
+     "category": "Exclusivity",
+     "snippet": "During the Term, subject to the terms and conditions of this Agreement, Dova hereby grants to Valeant the right, on a co-exclusive basis (solely with Dova and its Affiliates), to Detail and promote the Product in the Specialty in the Territory in the Field, and to conduct the Valeant Activities and"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "This Agreement shall become effective as of the Effective Date and, unless earlier terminated as provided in this ARTICLE 12, shall extend until the four (4) year anniversary of the Effective Date (the \"Term\").\n\n12.2 Early Termination for Cause. A Party shall have the right to terminate this Agreeme"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement and any and all matters arising directly or indirectly herefrom shall be governed by and construed and enforced in accordance with the internal laws of the [***] applicable to agreements made and to be performed entirely in such state, including its statutes of limitation but without"
+    },
+    {
+     "category": "Insurance",
+     "snippet": "Each Party acknowledges and agrees that during the Term, it shall maintain, through purchase or self- insurance, adequate insurance, including products liability coverage and comprehensive general liability insurance, adequate to cover its obligations under this Agreement and which are consistent wi"
+    },
+    {
+     "category": "Ip Ownership Assignment",
+     "snippet": "As between the Parties, Dova shall own all right, title and interest in and to any Product Materials (and all content contained therein) and any Product Labeling (and all content contained therein), including applicable copyrights and trademarks (other than any name, trademark, trade name or logo of"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "During the Term, subject to the terms and conditions of this Agreement, Dova hereby grants to Valeant the right, on a co-exclusive basis (solely with Dova and its Affiliates), to Detail and promote the Product in the Specialty in the Territory in the Field, and to conduct the Valeant Activities and"
+    },
+    {
+     "category": "Liquidated Damages",
+     "snippet": "Solely in the event that Dova has terminated this Agreement pursuant to Section 12.3.1 and notwithstanding anything else herein, in consideration of the promotion services performed by Valeant during the Term, with respect to the Tail Period, Dova shall make payments to Valeant in an amount equal to"
+    },
+    {
+     "category": "Minimum Commitment",
+     "snippet": "If the aggregate actual number of Details for the Product made by the Sales Representatives for a Calendar Quarter is less than the Quarterly Minimum Details for such Calendar Quarter, then in calculating the promotion fee due under Section 6.1.1, the Applicable Percentage for such Calendar Quarter"
+    },
+    {
+     "category": "No-Solicit Of Employees",
+     "snippet": "[***], neither Valeant nor Dova (nor any of their respective Affiliates) shall directly or indirectly solicit for hire or employee as an employee, consultant or otherwise any of the other Party's professional personnel who have had direct involvement with the JSC, with the Valeant Activities under t"
+    },
+    {
+     "category": "Non-Compete",
+     "snippet": "[***], neither Valeant nor its Affiliates shall, directly or indirectly, [***] in the Territory other than the Product; provided that if the Agreement is terminated by Dova pursuant to [***], then any Tail Period shall be immediately terminated if either Valeant or any of its Affiliates, directly or"
+    },
+    {
+     "category": "Non-Transferable License",
+     "snippet": "Except to Affiliates of Valeant, Valeant's rights and obligations under this Section 2.1 are non-transferable, non-assignable, and non-delegable. Except to Affiliates of Valeant, Valeant shall not subcontract the Valeant Activities with any Third Party (including any contract sales force). Any oblig"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Valeant Activities. 14\n\n4.2 Detailing. 15\n\n4.3 Compliance with Applicable Law. 17\n\n4.4 Field Force Personnel Training; Product Materials. 19\n\n4.5 Provisions Related to Field Force Personnel. 21\n\n4.6 Responsibility for Valeant Activity Costs and Expenses. 22\n\n4.7 Data Sharing. 22\n\nARTICLE 5 REGULATOR"
+    },
+    {
+     "category": "Revenue/Profit Sharing",
+     "snippet": "Commencing with the Calendar Quarter commencing on October 1, 2018, as consideration for the Valeant Activities performed by Valeant, Dova shall pay Valeant a promotion fee based on annual Net Sales during the Term, calculated as follows:\n\n(a) For any portion of Net Sales up to and equal [***] in a"
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "Either Party shall have the right to terminate this Agreement before the end of the Term for its convenience upon [***] written notice to the other Party (and any such termination shall become effective at the end of such [***]); [***].\n\n12.3.2 Either Party shall have the right to terminate this Agr"
+    },
+    {
+     "category": "Uncapped Liability",
+     "snippet": "THE FOREGOING SENTENCE SHALL NOT LIMIT (1) THE OBLIGATIONS OF EITHER PARTY TO INDEMNIFY THE OTHER PARTY FROM AND AGAINST THIRD PARTY CLAIMS UNDER SECTION 11.1 OR 11.2, AS APPLICABLE, OR (2) DAMAGES AVAILABLE FOR A PARTY'S BREACH OF THE CONFIDENTIALITY AND NON-USE OBLIGATIONS IN ARTICLE 9.\n\n11.5 Insu"
+    }
    ]
   },
   {
@@ -432,6 +882,104 @@
     "Revenue/Profit Sharing",
     "Termination For Convenience",
     "Uncapped Liability"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "October 15, 2009 (the \"Agreement Date\") and is effective as of the Effective Date (as defined below), between:   PACIRA PHARMACEUTICALS, INC. (F/K/A SKYEPHARMA, INC.) a company incorporated in the state of California whose principal place of business is 10450 Sciences Center Drive, San Diego, Califo"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "Subject to Section 20.2, neither Party shall, nor shall it purport to, assign, license, transfer or change any of its rights or  obligations under this Agreement without the prior written consent of the other, such consent not to be unreasonably withheld  conditioned or delayed; provided, however, t"
+    },
+    {
+     "category": "Audit Rights",
+     "snippet": "Upon completion of such inspection, PPI shall not be entitled to inspect nor shall EKR be required to make available the records and  books for any Calendar Year for which such inspection was previously undertaken.   7.4 Confidentiality. PPI shall procure that any independent auditor appointed under"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "however that such limitation shall not apply to the extent that EKR or any EKR Indemnified Party is required to pay in excess of such  amount to a third party in respect of a final judgment or order obtained by the third party or as a result of PPI's breach of Section 7.2.12 of  the Supply Agreement"
+    },
+    {
+     "category": "Change Of Control",
+     "snippet": "(i) the other Party ceases or threatens to cease to carry on the whole or any material part of its business; or\n\n\n\n(j) for reasons unrelated to any breach of either Parties' duties or obligations under or in connection with this Agreement, the  other Party is prevented from performing any of its mat"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "AMENDED AND RESTATED STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT (the  \"Agreement\") is made on October 15, 2009 (the \"Agreement Date\") and is effective as of the Effective Date (as defined below), between:   PACIRA PHARMACEUTICALS, INC. (F/K/A SKYEPHARMA, INC.) a company incorporated i"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "August 10, 2007  (the \"Original Agreement\"), PPI granted and EKR acquired the exclusive right and license to sell, offer to sell, distribute and market the Product in  the Territory (as defined below) in the Field (as defined below).\n\nEKR and PPI desire to amend and restate the Original Agreement in"
+    },
+    {
+     "category": "Exclusivity",
+     "snippet": "Subject to the terms of this Agreement, PPI hereby appoints EKR and EKR agrees to be retained as the exclusive  distributor, and Authorized Distributor of Record, of the Products in the Field in the Territory during the Term to market, distribute,  warehouse and sell the Products. EKR shall have the"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "This Agreement shall commence on the Effective Date and, subject to earlier termination in accordance with the provisions of Section 16, shall continue in force for a period being the longer of fifteen (15) years from first Commercial Launch of the Product in the Territory or until  the expiration o"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement and the relationship between the Parties shall be governed by, and interpreted in accordance with New  York law without regard to provisions related to conflicts of laws, and, except as provided in Section 21.2 above, the Parties agree to submit  any dispute to the exclusive jurisdict"
+    },
+    {
+     "category": "Insurance",
+     "snippet": "Each Party shall maintain, at its own cost, comprehensive product liability insurance, general commercial liability insurance and business interruption insurance at a level which is reasonable and customary taking into account the nature of the Product but which shall  have combined limits of not le"
+    },
+    {
+     "category": "Ip Ownership Assignment",
+     "snippet": "Upon termination of this Agreement for any reason except by EKR pursuant to Section 16.1(a), EKR shall promptly transfer the Transferred NDA and related regulatory documentation to PPI in accordance with Section 17.1(e).   3.3 Maintenance of Transferred NDA. The Parties acknowledge that prior to the"
+    },
+    {
+     "category": "Irrevocable Or Perpetual License",
+     "snippet": "PPI Improvements shall be owned by PPI and be licensed to EKR hereunder. EKR Improvements shall be owned by EKR  and upon termination of this Agreement by PPI pursuant to Section, shall be deemed be licensed to PPI on a worldwide, non-exclusive,  irrevocable basis, at a royalty or for such other con"
+    },
+    {
+     "category": "Joint Ip Ownership",
+     "snippet": "Joint Improvements  shall be owned jointly by the Parties, and PPI's interest therein shall be licensed to EKR hereunder.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   -40-\n\n9. Representations and Warranties.   9.1 Representations and Warranties of Both Parties. Each Party represents and warrants to the other Party as of the"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "PPI hereby grants EKR the exclusive right and license (with the right to sublicense) to use, market, promote, sell, distribute and warehouse the Products (the \"Distribution Rights\") in the Field in the Territory during the Term, as  well as to make or have made the Products anywhere in the world for"
+    },
+    {
+     "category": "Non-Compete",
+     "snippet": "During the Term, PPI and its Affiliates shall not: (i) file for Marketing Authorization with respect to any Competing Product in  any country in the Territory, (ii) manufacture or have manufactured any Competing Product in any country in the Territory, (iii) market or  have marketed any Competing Pr"
+    },
+    {
+     "category": "Non-Transferable License",
+     "snippet": "EKR may appoint sub-distributors under this Agreement provided that EKR:\n\n  (a) informs PPI of the identity of any Third Party sub-distributor (other than Affiliate companies) prior to the execution of any  sub-distribution agreement;\n\n\n\n\n\n\n\n\n\n\n\n\n\n   -62-\n\n  (b) obtain a confidential nondisclosure a"
+    },
+    {
+     "category": "Notice Period To Terminate Renewal",
+     "snippet": "Notwithstanding the foregoing, this  Agreement can be terminated by EKR at the end of the Initial Term by delivery of written notice to PPI at least one hundred eighty (180)  days prior to the end of the Initial Term or any renewal term. As used herein \"Term\" refers to the Initial Term and any renew"
+    },
+    {
+     "category": "Parties",
+     "snippet": "F/K/A SKYEPHARMA, INC.) a company incorporated in the state of California whose principal place of business is 10450 Sciences Center Drive, San Diego, California 92121 USA (\"PPI\"); and   EKR THERAPEUTICS, INC., a company incorporated in the state of Delaware whose principal place of business is 1545"
+    },
+    {
+     "category": "Post-Termination Services",
+     "snippet": "In the event EKR exercises the Step-in Right, PPI shall, at EKR's cost and expense, cooperate in the exercise of such rights  and EKR shall reimburse PPI for the reasonable costs PPI incurs in assisting EKR in the exercise of such rights within thirty  (30) days of EKR's receipt of invoice.\n\n\n\n(c) T"
+    },
+    {
+     "category": "Renewal Term",
+     "snippet": "Thereafter  the term of this Agreement shall automatically renew for consecutive periods of two (2) years each. Notwithstanding the foregoing, this  Agreement can be terminated by EKR at the end of the Initial Term by delivery of written notice to PPI at least one hundred eighty (180)  days prior to"
+    },
+    {
+     "category": "Revenue/Profit Sharing",
+     "snippet": "As further consideration for the license and grant of Distribution Rights and other rights under this Agreement, EKR shall pay to PPI a royalty (\"Royalty\") equal to (a) $[**] for each [**] mg Vial of Product sold during the Term and $[**] for each [**] mg Vial of Product  sold during the Term (the \""
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "At any time after July 1, 2015, PPI shall have the right, exercisable upon sixty (60) days prior written notice to EKR, to terminate the Lease Term and repurchase the Transferred Equipment from EKR, subject to payment by PPI to EKR within five (5) days of such  notice of any principal paid by EKR un"
+    },
+    {
+     "category": "Uncapped Liability",
+     "snippet": "however that such limitation shall not apply to the extent that EKR or any EKR Indemnified Party is required to pay in excess of such  amount to a third party in respect of a final judgment or order obtained by the third party or as a result of PPI's breach of Section 7.2.12 of  the Supply Agreement"
+    }
    ]
   },
   {
@@ -453,6 +1001,36 @@
     "Governing Law",
     "Insurance",
     "Parties"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "August 26, 2014\n\nDeutsche Bank Securities Inc. 60 Wall Street New York, New York 10005\n\nLadies and Gentlemen:\n\nThis Remarketing Agreement is dated as of August 26, 2014 (this \"Remarketing Agreement\"), among MetLife, Inc., a Delaware corporation (the \"Company\"), and Deutsche Bank Securities Inc. (\"De"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "Notwithstanding the provisions of this subsection (d), no Remarketing Agent shall be required to contribute any amount in excess of the amount by which the total price at which the applicable Securities remarketed by it and distributed to the public were offered to the public exceeds the amount of a"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "Remarketing Agreement\"), among MetLife, Inc., a Delaware corporation (the \"Company\"), and Deutsche Bank Securities Inc. (\"Deutsche Bank\") (the \"Remarketing Agents,\" which expression shall include any institution appointed as a Remarketing Agent in accordance with Section 8 hereof), and Deutsche Bank"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "obligations of the Remarketing Agents may be terminated by them by notice given to the Company prior to 12:00 noon, New York City time on the Remarketing Settlement Date if, prior to that time, any of the applicable conditions precedent to the obligations of the Remarketing Agents described in Secti"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "THIS REMARKETING AGREEMENT AND THE PRICING AGREEMENT SHALL BE GOVERNED BY AND CONSTRUED IN ACCORDANCE WITH THE LAWS OF THE STATE OF NEW YORK, WITHOUT REGARD TO PRINCIPLES OF CONFLICTS OF LAW TO THE EXTENT THAT SUCH PRINCIPLES WOULD REQUIRE OR PERMIT THE APPLICATION OF LAWS OF ANOTHER JURISDICTION."
+    },
+    {
+     "category": "Insurance",
+     "snippet": "Each Significant Subsidiary that is required to be organized or licensed as an insurance company in its jurisdiction of incorporation (each, an \"Insurance Subsidiary\" and collectively, the \"Insurance Subsidiaries\") is licensed   12\n\n\n\n\n\nas an insurance company in its respective jurisdiction of incor"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Deutsche Bank Trust Company Americas, not individually but solely as Stock Purchase Contract Agent (as defined below) and as attorney-in-fact of the holders of Stock Purchase Contracts (as defined below). The Company and the Remarketing Agents will enter into a Pricing Agreement, to be dated the Rem"
+    }
    ]
   },
   {
@@ -487,6 +1065,72 @@
     "Renewal Term",
     "Termination For Convenience",
     "Warranty Duration"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "17t h day of February 2016, through February 16, 2019 (the \"Initial Term\") is entered into by and between EDGE Communications Solutions, LLC, with its principal place of business at 6505 Windcrest Drive, Suite 200, Plano, TX 75024 (hereinafter referred to as \"EDGE\"), and FTE Networks, Inc. with its"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "Subcontractor shall not assign any right or interest under this Agreement (excepting monies due, or to become due) or delegate or subcontract any Work or other obligation to be performed or owed under this Agreement without prior consent of EDGE. Notwithstanding, Subcontractor may delegate or assign"
+    },
+    {
+     "category": "Audit Rights",
+     "snippet": "As set forth in the Exhibit, EDGE shall have the opportunity to review and inspect all elements of the Work in a reasonable manner. EDGE shall have the right to require repair or replacement of any Work which is defective or not performed in accordance with the Purchase Order or deviates from other"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "STRATEGIC ALLIANCE AGREEMENT (the \"Agreement\"), made effective this 17t h day of February 2016, through February 16, 2019 (the \"Initial Term\") is entered into by and between EDGE Communications Solutions, LLC, with its principal place of business at 6505 Windcrest Drive, Suite 200, Plano, TX 75024 ("
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "17t h day of February 2016, through February 16, 2019 (the \"Initial Term\") is entered into by and between EDGE Communications Solutions, LLC, with its principal place of business at 6505 Windcrest Drive, Suite 200, Plano, TX 75024 (hereinafter referred to as \"EDGE\"), and FTE Networks, Inc. with its"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "THIS STRATEGIC ALLIANCE AGREEMENT (the \"Agreement\"), made effective this 17t h day of February 2016, through February 16, 2019 (the \"Initial Term\") is entered into by and between EDGE Communications Solutions, LLC, with its principal place of business at 6505 Windcrest Drive, Suite 200, Plano, TX 75"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "The construction, interpretation, and performance of this Agreement and all transactions under it shall be governed by the laws of the State of Texas, irrespective of its conflict of law principles. Subcontractor and EDGE shall not be obligated to resolve by arbitration any claim or dispute related"
+    },
+    {
+     "category": "Insurance",
+     "snippet": "Commercial General Liability Insurance providing the limits of coverage written on an occurrence basis, in no event less than $1,000,000 combined single limit and $2,000,000 in the aggregate for personal and bodily injury and death arising therefrom and Broad Form property damage arising out of any"
+    },
+    {
+     "category": "Liquidated Damages",
+     "snippet": "In the event Subcontractor directly employs or contracts with an employee of EDGE without the consent of EDGE, Subcontractor shall pay as liquidated damages two times the then monthly salary of the employee for a three-month period of time.\n\nSTRATEGIC ALLIANCE AGREEMENT \"EDGE-FTE\"  Page 13"
+    },
+    {
+     "category": "No-Solicit Of Employees",
+     "snippet": "In the event Subcontractor directly employs or contracts with an employee of EDGE without the consent of EDGE, Subcontractor shall pay as liquidated damages two times the then monthly salary of the employee for a three-month period of time.\n\nSTRATEGIC ALLIANCE AGREEMENT \"EDGE-FTE\"  Page 13"
+    },
+    {
+     "category": "Notice Period To Terminate Renewal",
+     "snippet": "After the Initial Term, this Agreement shall continue on a month to month basis until terminated by either party upon thirty (30) days prior written notice to the other setting forth the effective date of such termination. The termination of any Purchase Order shall not affect the obligations of eit"
+    },
+    {
+     "category": "Parties",
+     "snippet": "FTE Networks, Inc. with its principal place of business at 999 Vanderbilt Beach Road, Suite 601, Naples, FL 34108 (hereinafter referred to as \"FTE\" or \"Subcontractor\") sets forth the terms and conditions by which FTE will supply labor, materials, equipment, supervision and/or services for FTE's scop"
+    },
+    {
+     "category": "Post-Termination Services",
+     "snippet": "Should the Agreement expire during the period of performance, all remaining Work of each Purchase Order will be completed under the terms of the Agreement then in effect on the date of award for each respective Purchase Order, unless modified in writing by mutual consent of the parties.   C. Prior t"
+    },
+    {
+     "category": "Renewal Term",
+     "snippet": "After the Initial Term, this Agreement shall continue on a month to month basis until terminated by either party upon thirty (30) days prior written notice to the other setting forth the effective date of such termination. The termination of any Purchase Order shall not affect the obligations of eit"
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "After the Initial Term, this Agreement shall continue on a month to month basis until terminated by either party upon thirty (30) days prior written notice to the other setting forth the effective date of such termination. The termination of any Purchase Order shall not affect the obligations of eit"
+    },
+    {
+     "category": "Warranty Duration",
+     "snippet": "If within one (1) year from the date of completion of Work acceptance, or within one (1) year from the completion of all other work or services and acceptance by EDGE (or within any longer materials warranty period as set forth above), any defects exists or arise, then in each case upon receipt of n"
+    }
    ]
   },
   {
@@ -512,6 +1156,44 @@
     "Parties",
     "Revenue/Profit Sharing",
     "Termination For Convenience"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "February 4, 2005, by and between Domini Advisor Trust, a Massachusetts business trust (the \"Trust\"), and Domini Social Investments LLC, a Massachusetts limited liability company (\"Domini\" or the \"Sponsor\").\n\n                              W I T N E S S E T H:\n\n         WHEREAS, the Trust is engaged i"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "Limitation of Liability of the Sponsor. The Sponsor shall not be liable for any error of judgment or mistake of law or for any act or omission in the oversight, administration or management of the Trust or the performance of its duties hereunder, except for willful misfeasance, bad faith or gross ne"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "SPONSORSHIP AGREEMENT, dated as of February 4, 2005, by and between Domini Advisor Trust, a Massachusetts business trust (the \"Trust\"), and Domini Social Investments LLC, a Massachusetts limited liability company (\"Domini\" or the \"Sponsor\").\n\n                              W I T N E S S E T H:"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "This Agreement shall become effective as of the day and year first above written and shall govern the relations between the parties hereto thereafter, unless terminated as set forth in this Section 6.\n\n         This Agreement may not be altered or amended, except by an instrument in writing and exec"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "This Agreement shall become effective as of the day and year first above written and shall govern the relations between the parties hereto thereafter, unless terminated as set forth in this Section 6.\n\n         This Agreement may not be altered or amended, except by an instrument in writing and exec"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement shall be construed and enforced and interpreted in accordance with and governed by the laws of the Commonwealth of Massachusetts without reference to principles of conflicts of law. The captions in this Agreement are included for convenience only and in no way define or delimit any of"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Trust, a Massachusetts business trust (the \"Trust\"), and Domini Social Investments LLC, a Massachusetts limited liability company (\"Domini\" or the \"Sponsor\").\n\n                              W I T N E S S E T H:\n\n         WHEREAS, the Trust is engaged in business as an open-end investment company reg"
+    },
+    {
+     "category": "Revenue/Profit Sharing",
+     "snippet": "For the services to be rendered and facilities to be provided by the Sponsor hereunder, the Trust shall pay Domini a fee accrued daily and payable monthly at an annual rate equal to 0.50% of the Trust's average daily net assets for the Trust's then current fiscal year. If Domini serves as the Sponso"
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "This Agreement may be terminated at any time, without the payment of any penalty, with respect to any series or the Trust, by the Board of Trustees of the Trust, or by the Sponsor, in each case on not less than 60 days' written notice to the other party.\n\n         7. Subcontracting by Domini. Domini"
+    }
    ]
   },
   {
@@ -537,6 +1219,36 @@
     "Non-Compete",
     "Parties",
     "Third Party Beneficiary"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "this  _____ day of _________, 20___, by and between ___________________________ (the \"Franchisee\"), and ___________________________, who is an officer, director, or employee of Franchisee (the \"Member\"). RECITALS: WHEREAS, __________________ (\"Franchisor\") has developed a distinctive set of specific"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "SAMPLE OF NON-DISCLOSURE AND NON-COMPETITION AGREEMENT ( \"Agreement\")  is  made this  _____ day of _________, 20___, by and between ___________________________ (the \"Franchisee\"), and ___________________________, who is an officer, director, or employee of Franchisee (the \"Member\"). RECITALS: WHEREA"
+    },
+    {
+     "category": "No-Solicit Of Customers",
+     "snippet": "Member covenants and agrees that during the term of the Franchise Agreement, except as otherwise approved in writing by Franchisor, Member shall not, either directly or indirectly, for itself, or through, on behalf of, or in conjunction with any person, persons, partnership, corporation, or entity:"
+    },
+    {
+     "category": "No-Solicit Of Employees",
+     "snippet": "Member covenants and agrees that during the term of the Franchise Agreement, except as otherwise approved in writing by Franchisor, Member shall not, either directly or indirectly, for itself, or through, on behalf of, or in conjunction with any person, persons, partnership, corporation, or entity:"
+    },
+    {
+     "category": "Non-Compete",
+     "snippet": "Member covenants and agrees that during the Post-Term Period (defined below), except as otherwise approved in writing by Franchisor, Member shall not, either directly or indirectly, own, manage, engage in, be employed by, advise, make loans to, consult for, or have any other interest in any Competit"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Member\"). RECITALS: WHEREAS, __________________ (\"Franchisor\") has developed a distinctive set of specifications and operating procedures (collectively, the \"System\") for the operation of \"Pizza Fusion\" restaurant businesses (\"Franchised Businesses\"). WHEREAS, Franchisor and Franchisee have executed"
+    },
+    {
+     "category": "Third Party Beneficiary",
+     "snippet": "Member hereby acknowledges and agrees that Franchisor is an intended third-party beneficiary of this Agreement with the right to enforce it, independently or jointly with Franchisee. C - 2\n\nSource: PF HOSPITALITY GROUP INC., 10-12G, 9/23/2015\n\n\n\n\n\nIN WITNESS WHEREOF, the Franchisee and the Member at"
+    }
    ]
   },
   {
@@ -570,6 +1282,68 @@
     "Non-Transferable License",
     "Parties",
     "Termination For Convenience"
+   ],
+   "clauses": [
+    {
+     "category": "Affiliate License-Licensee",
+     "snippet": "Subject to the terms and conditions of this Agreement, as of the Distribution Date, Nuance hereby grants to SpinCo and the members of the SpinCo Group a worldwide, non-exclusive, fully paid-up, perpetual and irrevocable, transferable (subject to ARTICLE VIII), sublicensable (subject to Section 3.01("
+    },
+    {
+     "category": "Agreement Date",
+     "snippet": "September 30, 2019\n\nSource: CERENCE INC., 8-K, 10/2/2019\n\n\n\n\n\nTABLE OF CONTENTS Page ARTICLE I DEFINITIONS\n\nSection 1.01. Definitions 1\n\nARTICLE II RECORDATION OF INTELLECTUAL PROPERTY RIGHTS ASSIGNMENT AGREEMENTS\n\nSection 2.01. Intellectual Property Assignment Agreements 5 Section 2.02. Recordation"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "Any purported assignment without such consent shall be void. Notwithstanding the foregoing, if any Party to this Agreement (or any of its successors or permitted assigns) (a) shall enter into a consolidation or merger transaction in which such Party is not the surviving entity and the surviving enti"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "Without limiting the terms set forth in Section 6.09 of the Separation Agreement, none of Nuance, SpinCo or any other member of either Group shall in any event have any Liability to the other or to any other member of the other's Group under this Agreement for any indirect, special, punitive or cons"
+    },
+    {
+     "category": "Change Of Control",
+     "snippet": "Notwithstanding the foregoing, if any Party to this Agreement (or any of its successors or permitted assigns) (a) shall enter into a consolidation or merger transaction in which such Party is not the surviving entity and the surviving entity acquires or assumes all or substantially all of such Party"
+    },
+    {
+     "category": "Covenant Not To Sue",
+     "snippet": "SpinCo agrees that it will not (i) oppose, challenge, petition to cancel, contest or threaten in any way, or assist another party in opposing, challenging, petitioning to cancel, contesting or threatening in any way, any application or registration by Nuance or its Affiliates or their respective lic"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "INTELLECTUAL PROPERTY AGREEMENT, dated as of September 30, 2019 (this \"Agreement\"), by and between NUANCE COMMUNICATIONS, INC., a Delaware corporation (\"Nuance\"), and CERENCE INC., a Delaware corporation (\"SpinCo\").\n\nRECITALS\n\nWHEREAS, in connection with the contemplated Spin-Off of SpinCo and concu"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "This Agreement may be executed in one or more counterparts, all of which counterparts shall be considered one and the same agreement, and shall become effective when one or more counterparts have been signed by each Party and delivered to the other Party. This Agreement may be executed by facsimile"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "Any disputes relating to, arising out of or resulting from this Agreement, including to its execution, performance, or enforcement, shall be governed by, and construed in accordance with, the Laws of the State of Delaware, regardless of the Laws that might otherwise govern under applicable principle"
+    },
+    {
+     "category": "Ip Ownership Assignment",
+     "snippet": "In order to carry out the intent of the Parties with respect to the recordation of the transfers of any registrations or applications of Nuance IP or SpinCo IP, as applicable, to the extent the ownership thereof has transferred from a member of the Nuance Group to a member of the SpinCo Group, or vi"
+    },
+    {
+     "category": "Irrevocable Or Perpetual License",
+     "snippet": "Subject to the terms and conditions of this Agreement, as of the Distribution Date, Nuance hereby grants to SpinCo and the members of the SpinCo Group a worldwide, non-exclusive, fully paid-up, perpetual and irrevocable, transferable (subject to ARTICLE VIII), sublicensable (subject to Section 3.01("
+    },
+    {
+     "category": "License Grant",
+     "snippet": "shall retain those licenses granted to it under this Agreement, provided that the license shall be limited to the business, products or services (as applicable) of the Divested Entity as of the date of divestment and such natural development thereof within the Nuance Field of Use (where Nuance is th"
+    },
+    {
+     "category": "Non-Transferable License",
+     "snippet": "The licenses granted in Sections 4.01(a), (b) and (c) to the Nuance Group include the right to grant sublicenses within the scope of such licenses only to members of the Nuance Group and, without any further right to sublicense, to their respective (i) contractors, distributors, manufacturers and re"
+    },
+    {
+     "category": "Parties",
+     "snippet": "CERENCE INC., 8-K, 10/2/2019\n\n\n\n\n\nTABLE OF CONTENTS Page ARTICLE I DEFINITIONS\n\nSection 1.01. Definitions 1\n\nARTICLE II RECORDATION OF INTELLECTUAL PROPERTY RIGHTS ASSIGNMENT AGREEMENTS\n\nSection 2.01. Intellectual Property Assignment Agreements 5 Section 2.02. Recordation 5 Section 2.03. Security In"
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "This Agreement may be terminated by Nuance at any time, in its sole discretion, prior to the Distribution; provided, however, that this Agreement shall automatically terminate upon the termination of the Separation Agreement in accordance with its terms.\n\nSection 9.03. Effect of Termination; Surviva"
+    }
    ]
   },
   {
@@ -593,6 +1367,28 @@
     "Document Name",
     "Effective Date",
     "Parties"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "July 1, 2019\n\nThrivent Life Insurance Company has been dissolved. (Thrivent Life Insurance Company was formerly known as Lutheran Brotherhood Variable Insurance Products Company.) All assets and related liabilities of Thrivent Life Insurance Company have been transferred to Thrivent Financial for Lu"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "Society membership rights and privileges cannot be transferred or assigned. VB-TL-TFFL (18) page TL-2\n\nSource: THRIVENT VARIABLE INSURANCE ACCOUNT B, N-6, 7/1/2019\n\n\n\n\n\nContract Number: ENDORSEMENT (continued)\n\nThe following words or phrases in this contract are amended as follows. Any reference to:"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "ENDORSEMENT\n\nEffective Date: July 1, 2019\n\nThrivent Life Insurance Company has been dissolved. (Thrivent Life Insurance Company was formerly known as Lutheran Brotherhood Variable Insurance Products Company.) All assets and related liabilities of Thrivent Life Insurance Company have been transferred"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "July 1, 2019\n\nThrivent Life Insurance Company has been dissolved. (Thrivent Life Insurance Company was formerly known as Lutheran Brotherhood Variable Insurance Products Company.) All assets and related liabilities of Thrivent Life Insurance Company have been transferred to Thrivent Financial for Lu"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Thrivent Financial for Lutherans. That includes contracts of insurance, separate accounts, and cash and investment securities. Thrivent Financial for Lutherans now has all obligations under this contract. It is the same as if Thrivent Financial for Lutherans had originally issued the contract. All r"
+    }
    ]
   },
   {
@@ -622,6 +1418,52 @@
     "Insurance",
     "Parties",
     "Uncapped Liability"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "November 1, 2019 (the \"Effective Date\") between REYNOLDS CONSUMER PRODUCTS LLC, a Delaware limited liability company with its headquarters at 1900 West Field Court, Lake Forest, IL 60045 (\"Seller\"), and PACTIV LLC, a Delaware limited liability company with its headquarters at 1900 West Field Court,"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "A change of control shall be deemed an assignment requiring consent hereunder provided that any transfer or assignment that results in Seller's and Buyer's current common parent, Reynolds Group Holdings Limited, ceasing to control either party shall not require consent of the other party. The restri"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "A Party that breaches this Agreement will only be liable to the other Party for direct damages arising from the breach. Each Party waives any right to recover consequential, incidental, indirect, exemplary, punitive or any other types of indirect damages from the other Party for a breach of this Agr"
+    },
+    {
+     "category": "Change Of Control",
+     "snippet": "A change of control shall be deemed an assignment requiring consent hereunder provided that any transfer or assignment that results in Seller's and Buyer's current common parent, Reynolds Group Holdings Limited, ceasing to control either party shall not require consent of the other party. The restri"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "MASTER SUPPLY AGREEMENT (the \"Agreement\") dated November 1, 2019 (the \"Effective Date\") between REYNOLDS CONSUMER PRODUCTS LLC, a Delaware limited liability company with its headquarters at 1900 West Field Court, Lake Forest, IL 60045 (\"Seller\"), and PACTIV LLC, a Delaware limited liability company"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "November 1, 2019 (the \"Effective Date\") between REYNOLDS CONSUMER PRODUCTS LLC, a Delaware limited liability company with its headquarters at 1900 West Field Court, Lake Forest, IL 60045 (\"Seller\"), and PACTIV LLC, a Delaware limited liability company with its headquarters at 1900 West Field Court,"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The \"Term\" of this Agreement will commence on the Effective Date and will end on the earlier of: (a) the first anniversary of the expiration date of the last Purchase Schedule (as defined in this next Section); (b) a termination date elected by a Party in a written notice delivered to the other Part"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement and all claims or causes of action arising out of or related to this Agreement shall be governed in all respects, including as to validity, interpretation and effect, by the laws of the State of Illinois and the United States of America, without giving effect to its principles or rule"
+    },
+    {
+     "category": "Insurance",
+     "snippet": "Employers' Liability Insurance. Occurrence based coverage with a limit of at least $10,000,000 per occurrence or any greater limits set by Applicable Law workplace and work related injuries and illnesses to the employees of a Party. Requires waiver of alternate employer endorsement. e. Property Insu"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Seller\"), and PACTIV LLC, a Delaware limited liability company with its headquarters at 1900 West Field Court, Lake Forest, IL 60045 (\"Buyer\"). Seller and Buyer are referred to individually at times as a \"Party\" and collectively at times as the \"Parties\".\n\nBACKGROUND\n\nA. Seller sells various types o"
+    },
+    {
+     "category": "Uncapped Liability",
+     "snippet": "Notwithstanding the preceding sentences, this Subsection will not limit the liability of a Party for any amount or type of damages for: (1) the defense and indemnification of an Indemnified Claim on which the Party is the Indemnifying Party; (2) infringement by the Party on the intellectual property"
+    }
    ]
   },
   {
@@ -648,6 +1490,44 @@
     "Parties",
     "Renewal Term",
     "Revenue/Profit Sharing"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "January 18, 2020 This is to confirm that, in consideration of the agreements hereinafter contained, the undersigned, the Integrity Short Term Government Fund, (the \"Fund\"), an open-end, diversified, management investment company organized as a series of The Integrity Funds, a Delaware statutory trus"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "This Agreement will also terminate automatically in the event of its assignment (as defined in the 1940 Act). SECTION 8. MISCELLANEOUS Section 8.1 The Fund recognizes that governors, officers, and employees of Integrity may from time to time serve as directors, officers, and employees of corporation"
+    },
+    {
+     "category": "Audit Rights",
+     "snippet": "The Fund shall also furnish Integrity upon request with: (a) annual audits of the Fund's books and accounts made by independent public accountants regularly retained by the Fund, (b) semi-annual unaudited financial statements pertaining to the Fund, (c) quarterly earnings statements prepared by the"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "DISTRIBUTION AND SERVICES AGREEMENT January 18, 2020 This is to confirm that, in consideration of the agreements hereinafter contained, the undersigned, the Integrity Short Term Government Fund, (the \"Fund\"), an open-end, diversified, management investment company organized as a series of The Integr"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "This Agreement shall continue until January 18, 2022, and thereafter shall continue automatically for successive annual periods ending on January 18th of each year, provided such continuance is specifically approved at least annually by (a) the Fund's Board of Trustees and (b) a vote of a majority ("
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement shall be construed in accordance with the laws of the State of Kansas. Section 8.4 This Agreement may be executed in any number of counterparts, each of which shall be deemed to be an original; but such counterparts shall, together, constitute only one instrument. Section 8.5 This Agr"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Integrity Short Term Government Fund, (the \"Fund\"), an open-end, diversified, management investment company organized as a series of The Integrity Funds, a Delaware statutory trust, has agreed that Integrity Funds Distributor, LLC, (\"Integrity\"), shall be, for the period of this distribution agreeme"
+    },
+    {
+     "category": "Renewal Term",
+     "snippet": "This Agreement shall continue until January 18, 2022, and thereafter shall continue automatically for successive annual periods ending on January 18th of each year, provided such continuance is specifically approved at least annually by (a) the Fund's Board of Trustees and (b) a vote of a majority ("
+    },
+    {
+     "category": "Revenue/Profit Sharing",
+     "snippet": "In consideration of the services rendered pursuant to this Agreement, Integrity shall receive the excess, if any, of the sales price, as set forth in the Fund's Registration Statement, over the net asset value of Shares sold by Integrity, as underwriter. The Fund shall also pay Integrity any distrib"
+    }
    ]
   },
   {
@@ -674,6 +1554,44 @@
     "License Grant",
     "Parties",
     "Revenue/Profit Sharing"
+   ],
+   "clauses": [
+    {
+     "category": "Affiliate License-Licensee",
+     "snippet": "Any such sublicense may be made effective retroactively, but not prior to the effective date hereof, nor prior to the sublicensee's becoming a Related Company.              (b)      Reports and Payments - For the above exclusive licensing rights, THI will pay for various costs associated with this A"
+    },
+    {
+     "category": "Agreement Date",
+     "snippet": "May 12, 2020 (\"Effective Date\"), concerning the pursuits set forth herein for the collective development, implementation and commercialization of a potential treatment for the COVID-19 virus and its effects on the human body (collectively referred to herein as the \"Joint Venture\") by and between:"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "Intellectual Property Agreement (this \"Agreement\") is entered into on May 12, 2020 (\"Effective Date\"), concerning the pursuits set forth herein for the collective development, implementation and commercialization of a potential treatment for the COVID-19 virus and its effects on the human body (coll"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "May 12, 2020 (\"Effective Date\"), concerning the pursuits set forth herein for the collective development, implementation and commercialization of a potential treatment for the COVID-19 virus and its effects on the human body (collectively referred to herein as the \"Joint Venture\") by and between:"
+    },
+    {
+     "category": "Exclusivity",
+     "snippet": "If THI does not make the obligatory payments as stated in 3(a) by the dates stated, the Exclusive License will revert back to Premier, provided, however, that in such event, THI would still be entitled to a proportionate interest in any Covid-19 Licensed Products, such portion being equal to a fract"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement and the rights of the Parties hereunder shall be governed by and construed in accordance with the laws of the Commonwealth of Pennsylvania including all matters of construction, validity, performance, and enforcement and without giving effect to the principles of conflict of laws. Ven"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "THI is granted the following rights to the Applications in Appendix A and the Licensed Products derived therefrom:   Scope. The licenses granted herein are exclusive worldwide licenses to:   1.         make, have made, use, lease, sell and import Licensed Products for the legal purposes of researchi"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Marv Enterprises, LLC, a Limited Liability Company organized under the laws of the Commonwealth of Pennsylvania (\"Marv\"),   Premier Biomedical, Inc. (OTC Pink: BIEI), a Nevada corporation (\"Premier\"),   Technology Health, Inc. (OTC Pink: HALB), a Colorado corporation f/k/a Halberd Corporation (\"THI\""
+    },
+    {
+     "category": "Revenue/Profit Sharing",
+     "snippet": "In addition to the 5% amount calculated pursuant to the preceding paragraph, there shall be an identical 5% amount to be paid from THI, per Premier's consideration, to certain shareholders of Premier, as identified by Premier, as of a record date to be determined in the future, on an annual basis, c"
+    }
    ]
   },
   {
@@ -704,6 +1622,806 @@
     "Renewal Term",
     "Revenue/Profit Sharing",
     "Termination For Convenience"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "30th day of November, 2017 by and between Bravatek Solutions, Inc., a corporation organized under the laws of the State of Colorado, (\"Bravatek\"), with an address at 2028 E. Ben White Blvd., Unit #240-2835, Austin, Texas, 78741, and Sibannac, Inc. (\"COMPANY\"), a corporation organized under the laws"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "This Agreement shall not be assignable by either party without the prior written consent of the other party.\n\n 4\n\n\n\n\n\n\n\n  13) Entire Agreement   This Agreement represents the complete and entire understanding between the parties regarding the subject matter hereof and supersedes all prior negotiatio"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "Strategic Alliance Agreement   This agreement is made and entered into this 30th day of November, 2017 by and between Bravatek Solutions, Inc., a corporation organized under the laws of the State of Colorado, (\"Bravatek\"), with an address at 2028 E. Ben White Blvd., Unit #240-2835, Austin, Texas, 78"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The term of this Agreement is twelve (12) months from the date hereof, and will be automatically renewed for one (1) additional twelve month period unless either party shall notify the other in writing of its intention not to renew. Such notice must be given ninety (90) days prior to expiration of t"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement is entered into in the State of Texas and shall be interpreted according to the laws of the State of Texas.   10) Indemnification   COMPANY shall indemnify Bravatek, its directors, officers and employees, for any and all damages, costs, expenses, and other liabilities, including reaso"
+    },
+    {
+     "category": "Minimum Commitment",
+     "snippet": "For any Product or Solution sold to any perspective clients introduced by Bravatek registered with COMPANY via email to COMPANY's CEO and delivered through Bravatek or a COMPANY-designated distribution affiliate(s) or sales channel(s), Bravatek will receive a lead-finder fee, to be mutually discusse"
+    },
+    {
+     "category": "Notice Period To Terminate Renewal",
+     "snippet": "The term of this Agreement is twelve (12) months from the date hereof, and will be automatically renewed for one (1) additional twelve month period unless either party shall notify the other in writing of its intention not to renew. Such notice must be given ninety (90) days prior to expiration of t"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Sibannac, Inc. (\"COMPANY\"), a corporation organized under the laws of Nevada, with an address at 2122 E Highland Avenue, Suite 425, Phoenix, Arizona 85016.   Whereas, Bravatek is a corporation, which has technical expertise in security-related software, tools and systems/services (including telecom"
+    },
+    {
+     "category": "Renewal Term",
+     "snippet": "The term of this Agreement is twelve (12) months from the date hereof, and will be automatically renewed for one (1) additional twelve month period unless either party shall notify the other in writing of its intention not to renew. Such notice must be given ninety (90) days prior to expiration of t"
+    },
+    {
+     "category": "Revenue/Profit Sharing",
+     "snippet": "For any Product or Solution sold to any perspective clients introduced by Bravatek registered with COMPANY via email to COMPANY's CEO and delivered through Bravatek or a COMPANY-designated distribution affiliate(s) or sales channel(s), Bravatek will receive a lead-finder fee, to be mutually discusse"
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "This Agreement may also be terminated by either party upon ninety (90) days written notice.\n\n 3\n\n\n\n\n\n\n\n  8) Notices   Any notices required under this Agreement shall be delivered to:   Bravatek Technologies, Inc. 2028 E. Ben White Blvd., Unit #240-2835 Austin, Texas 78741   Sibannac, Inc. 2122 E Hig"
+    }
+   ]
+  },
+  {
+   "contract_id": "CUAD-0020",
+   "title": "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement",
+   "contract_type": "STRATEGIC ALLIANCE AGREEMENT",
+   "matter_id": "SYN-1001",
+   "matter_name": "Northwind distribution agreements",
+   "client_name": "SYNTHETIC Northwind Pharma",
+   "confidentiality": "Highly Confidential",
+   "risk_score": 40,
+   "risk_band": "Medium",
+   "risk_drivers": [
+    "Termination for convenience",
+    "Anti-assignment",
+    "Minimum commitment",
+    "Restrictive covenant"
+   ],
+   "present_categories": [
+    "Agreement Date",
+    "Anti-Assignment",
+    "Audit Rights",
+    "Cap On Liability",
+    "Competitive Restriction Exception",
+    "Document Name",
+    "Effective Date",
+    "Exclusivity",
+    "Expiration Date",
+    "Governing Law",
+    "License Grant",
+    "Minimum Commitment",
+    "Parties",
+    "Post-Termination Services",
+    "Revenue/Profit Sharing",
+    "Termination For Convenience"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "1st day of October, 2008 (Commencement Date) by and between IntriCon  Corporation, a Pennsylvania Corporation having a place of business at 1260 Red Fox Road, Arden Hills, Minnesota 55112 USA (hereinafter  IntriCon) and Dynamic Hearing Pty Ltd a Corporation organized under the laws of Victoria, Aust"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "IntriCon may not assign or transfer any of its rights or obligations under this Agreement without the prior written consent of  Dynamic Hearing. Likewise, Dynamic Hearing may not assign or transfer any of its rights or obligations under this Agreement without the prior  written consent of IntriCon."
+    },
+    {
+     "category": "Audit Rights",
+     "snippet": "such audit must be at Dynamic Hearing's expense unless the auditor finds an underpayment royalty due under this  Agreement in excess of 5% in which case IntriCon must reimburse Dynamic Hearing's reasonable cost of such audit;  and\n\n       (d)    Audits will be limited to one audit in any calendar ye"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "IntriCon is not liable in any way to Dynamic Hearing for any indirect, consequential, third party, special or incidental  harm, liability, expense, cost, loss or damage, loss of profits, loss of data, exemplary damages or any other indirect  commercial or economic loss of any kind whatsoever incurre"
+    },
+    {
+     "category": "Competitive Restriction Exception",
+     "snippet": "The rights granted under such agreements shall  be included as exceptions to the exclusivity of IntriCon's License Grant, if such agreements are executed by Dynamic Hearing and the third party  before January 1, 2009. Such third parties and their relevant subsidiaries will be Identified Parties and"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "Strategic Alliance Agreement (SAA) outlines the principles and the understanding of the parties and defines related terms and conditions.     WHEREAS, Dynamic Hearing has developed technology useful for products in the Hearing Health (HH) Assisted Listening Device  (ALD) and Professional Communicati"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "1st day of October, 2008 (Commencement Date) by and between IntriCon  Corporation, a Pennsylvania Corporation having a place of business at 1260 Red Fox Road, Arden Hills, Minnesota 55112 USA (hereinafter  IntriCon) and Dynamic Hearing Pty Ltd a Corporation organized under the laws of Victoria, Aust"
+    },
+    {
+     "category": "Exclusivity",
+     "snippet": "Commencing on the Exclusivity Date, and continuing for so long as IntriCon continues to make such payments, the license granted to  IntriCon under this Agreement will, subject to the terms and conditions of this Agreement, be exclusive for Hearing Aids. The exclusivity shall not  prevent Dynamic Hea"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The initial term of this Agreement shall be five (5) years from the date of execution and may be extended subject to satisfactory  agreement on ongoing commercial terms, to be agreed two (2) months prior to the expiration of this Agreement.     3.2 Dynamic Hearing grants to IntriCon in accordance wi"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement is governed by the laws of Victoria, Australia and the parties submit to the jurisdiction of the courts of Victoria,  Australia. The 1980 United Nations Convention on Contracts for the International Sale of Goods does not apply to this Agreement.\n\n            20\n\n            DYNAMIC H"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "Dynamic Hearing grants to IntriCon in accordance with this Agreement, for the Term, a license, to Use Dynamic Hearing's  Technology, Software and Documentation developed as of the Commencement Date to manufacture, import, sell and offer for sale throughout the  Territory, Products containing Dynamic"
+    },
+    {
+     "category": "Minimum Commitment",
+     "snippet": "The Minimum Payment consists of the Access Fee of US$300,000 per annum and  the Second Component that increases from year to year.     Minimum Payment Schedule (All amounts are in US Dollars):\n\n   The Minimum Payments will be paid quarterly in advance in equal installments at the beginning of each r"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Dynamic Hearing Pty Ltd  2 Chapel Street, Richmond, VIC 3121  AUSTRALIA\n\n\n\n\n\n      AGREEMENT     This Agreement is entered into and is effective as of the 1st day of October, 2008 (Commencement Date) by and between IntriCon  Corporation, a Pennsylvania Corporation having a place of business at 1260"
+    },
+    {
+     "category": "Post-Termination Services",
+     "snippet": "(a)    such inspection, copying or audit must only be made after at least one Business Day's written notice;\n\n       (b)    such audit must not unreasonably interfere with the day to day operations of IntriCon; and\n\n       (c)    such audit must be at Dynamic Hearing's expense unless the auditor fin"
+    },
+    {
+     "category": "Revenue/Profit Sharing",
+     "snippet": "A 2% royalty rate per Base Product Unit shall be added to the initial base rate for each DSP feature/module  that is based on Dynamic Hearing Technology and that is added to a Base Product Unit. However, such additional Royalty Payments when added  to the initial base rate shall not exceed in total"
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "Subject to the provisions of 11.1, Dynamic Hearing may terminate this Agreement upon three (3) months written notice  to IntriCon of such termination.\n\n       11.6    Termination or expiry of this Agreement will not affect:\n\n       (a)    any rights or remedies of the parties which may have accrued"
+    }
+   ]
+  },
+  {
+   "contract_id": "CUAD-0021",
+   "title": "BONTONSTORESINC_04_20_2018-EX-99.3-AGENCY AGREEMENT",
+   "contract_type": "AGENCY AGREEMENT",
+   "matter_id": "SYN-1002",
+   "matter_name": "Helios licensing & supply",
+   "client_name": "SYNTHETIC Helios Energy",
+   "confidentiality": "Confidential",
+   "risk_score": 50,
+   "risk_band": "Medium",
+   "risk_drivers": [
+    "No cap on liability",
+    "Termination for convenience",
+    "Anti-assignment",
+    "Restrictive covenant"
+   ],
+   "present_categories": [
+    "Agreement Date",
+    "Anti-Assignment",
+    "Audit Rights",
+    "Document Name",
+    "Exclusivity",
+    "Governing Law",
+    "Insurance",
+    "License Grant",
+    "Liquidated Damages",
+    "Parties",
+    "Post-Termination Services",
+    "Termination For Convenience"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "April 18, 2018, by and between The Bon-Ton Stores, Inc. and its associated chapter 11 debtors in possession (collectively, \"Merchant\"),1 on the one hand, and (a) a contractual joint venture comprised of GA Retail, Inc. (\"GA\") and Tiger Capital Group, LLC (\"Tiger\" and collectively with GA, the \"Agent"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "This Agreement shall inure to the benefit of and be binding upon the Parties and their respective successors and assigns, including, but not limited to, any chapter 11 or chapter 7 trustee; provided, however, that this Agreement may not be assigned by any of the Parties without the prior written con"
+    },
+    {
+     "category": "Audit Rights",
+     "snippet": "Merchant shall make its books and records available to Purchaser at all times;\n\n(xxxii) Purchaser shall not be liable for any claims against Merchant except as expressly provided for in this Agreement;\n\n8\n\n\n\n\n\nCase 18-10248- MFW Doc 632-1 Filed 04/18/18 Page 10 of 60\n\n(xxxiii) all payments made by M"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "AGENCY AGREEMENT This Agency Agreement (\"Agreement\") is made as of April 18, 2018, by and between The Bon-Ton Stores, Inc. and its associated chapter 11 debtors in possession (collectively, \"Merchant\"),1 on the one hand, and (a) a contractual joint venture comprised of GA Retail, Inc. (\"GA\") and Tig"
+    },
+    {
+     "category": "Exclusivity",
+     "snippet": "assignees of (which may in certain circumstances be Purchaser, any of the entities comprising Purchaser, any of their respective affiliates, and/or a new entity created by any of the foregoing), any or all of the Assets free and clear of all liens, claims, and encumbrances thereon, without further o"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement shall be governed by and interpreted in accordance with the laws of the State of Delaware without reference to any conflict of laws provisions thereof, except where governed by the Bankruptcy Code. Each of the Parties irrevocably and unconditionally submits, for itself and its propert"
+    },
+    {
+     "category": "Insurance",
+     "snippet": "Until the Designation Rights Termination Date or as otherwise directed by Purchaser or set forth in this Agreement, Merchant shall continue to maintain, subject to the Wind-Down Budget and the Wind-Down Cap, in such amounts as it currently has in effect, all of its liability insurance policies, incl"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "Agent is granted a limited license and right to use all Intellectual Property for purposes of conducting the GOB Sale and otherwise marketing any or all of the Assets;\n\n(xxvii) unless otherwise ordered by the Bankruptcy Court, all newspapers and other advertising media in which the GOB Sale is adver"
+    },
+    {
+     "category": "Liquidated Damages",
+     "snippet": "In the event the Closing fails to occur, then, only upon entry of a final and non-appealable order of the Bankruptcy Court determining that such failure was the result of Purchaser's sole, material, non-excusable breach of this Agreement, then Merchant shall be entitled to retain the Deposit as liqu"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Notes Trustee\" and collectively with Agent, \"Purchaser\"). Purchaser and Merchant are collectively the \"Parties.\"\n\nSection 1. Recitals\n\nWHEREAS, on February 4, 2018, the entities comprising Merchant commenced ten voluntary chapter 11 bankruptcy cases (the \"Bankruptcy Cases\") in the United States Bank"
+    },
+    {
+     "category": "Post-Termination Services",
+     "snippet": "To the extent that there is Merchandise remaining at the Sale Termination Date (the \"Remaining Merchandise\"), such Remaining Merchandise shall be deemed automatically transferred to Agent free and clear of all liens, claims, and encumbrances. Agent and its affiliates shall be authorized to sell or o"
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "Subject to the Wind-Down Budget and payment of Expenses, Agent shall use the E-Commerce Platform in connection with the GOB Sale to fulfill customer orders made during the GOB Sale Term and otherwise promote the GOB Sale (in Agent's capacity as Agent hereunder), provided that Agent shall have the op"
+    }
+   ]
+  },
+  {
+   "contract_id": "CUAD-0022",
+   "title": "ON2TECHNOLOGIES,INC_11_17_2006-EX-10.3-SUPPORT AND MAINTENANCE AGREEMENT",
+   "contract_type": "SUPPORT AND MAINTENANCE AGREEMENT",
+   "matter_id": "SYN-1003",
+   "matter_name": "Blue Harbor vendor contracts",
+   "client_name": "SYNTHETIC Blue Harbor Bank",
+   "confidentiality": "Highly Confidential",
+   "risk_score": 30,
+   "risk_band": "Medium",
+   "risk_drivers": [
+    "No cap on liability",
+    "Anti-assignment"
+   ],
+   "present_categories": [
+    "Agreement Date",
+    "Anti-Assignment",
+    "Document Name",
+    "Effective Date",
+    "Expiration Date",
+    "Governing Law",
+    "Ip Ownership Assignment",
+    "Parties",
+    "Volume Restriction"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "April __, 2005 (the \"Effective Date\"), between On2 Technologies, Inc., a Delaware corporation (\"On2\"), and Wildform, Inc., a California corporation (\"Wildform\"). Capitalized terms used herein and not defined herein shall have the meanings given to them in Asset Purchase Agreement (as defined below)."
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "Neither party will have the right to assign, pledge or transfer all or any part of this Agreement without the prior written consent of the other, and any such purported assignment, pledge or transfer by a party without such prior written consent shall be void ab initio; provided, however, that eithe"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "SUPPORT AND MAINTENANCE AGREEMENT dated as of April __, 2005 (the \"Effective Date\"), between On2 Technologies, Inc., a Delaware corporation (\"On2\"), and Wildform, Inc., a California corporation (\"Wildform\"). Capitalized terms used herein and not defined herein shall have the meanings given to them i"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "April __, 2005 (the \"Effective Date\"), between On2 Technologies, Inc., a Delaware corporation (\"On2\"), and Wildform, Inc., a California corporation (\"Wildform\"). Capitalized terms used herein and not defined herein shall have the meanings given to them in Asset Purchase Agreement (as defined below)."
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "Except as otherwise set forth in Sections 9.2 and 9.3 or Exhibit A hereof, the term of this Agreement shall be eighteen (18) months (\"Term\").\n\n      9.2 Termination. Either of Wildform or On2 may terminate this Agreement if the other Party is in material breach of this Agreement and fails to cure su"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement shall be governed by and construed in accordance with the laws of the State of New York, without giving effect to any choice of law or conflict of law provision or rule whether such provision or rule is that of the State of New York or any other jurisdiction.\n\n      10.8 Dispute Resol"
+    },
+    {
+     "category": "Ip Ownership Assignment",
+     "snippet": "The Incorporated Technology Works shall be the sole property of On2, and all right, title and interest therein shall vest solely in On2 and shall be deemed to be a work made for hire. To the extent that title to any of the Incorporated Technology Works may not, by operation of law, vest in On2 or su"
+    },
+    {
+     "category": "Parties",
+     "snippet": "On2 Technologies, Inc., a Delaware corporation (\"On2\"), and Wildform, Inc., a California corporation (\"Wildform\"). Capitalized terms used herein and not defined herein shall have the meanings given to them in Asset Purchase Agreement (as defined below).\n\n                                   WITNESSETH"
+    },
+    {
+     "category": "Volume Restriction",
+     "snippet": "The foregoing obligations of Wildform, following the initial 30 day period, shall be limited to a maximum of twenty (20) hours, or up to a maximum of one hundred twenty five (125) emails, whichever accumulates first.\n\n5. PR & Marketing During the first twelve (12) months of the Term (except as expre"
+    }
+   ]
+  },
+  {
+   "contract_id": "CUAD-0023",
+   "title": "Freecook_20180605_S-1_EX-10.3_11233807_EX-10.3_Hosting Agreement",
+   "contract_type": "10.3_HOSTING AGREEMENT",
+   "matter_id": "SYN-1004",
+   "matter_name": "Vector strategic alliances",
+   "client_name": "SYNTHETIC Vector Robotics",
+   "confidentiality": "Confidential",
+   "risk_score": 45,
+   "risk_band": "Medium",
+   "risk_drivers": [
+    "No cap on liability",
+    "Termination for convenience",
+    "No governing law"
+   ],
+   "present_categories": [
+    "Agreement Date",
+    "Document Name",
+    "Expiration Date",
+    "License Grant",
+    "Parties",
+    "Termination For Convenience"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "January 11, 2018 by and between Natalija Tunevic, director of FreeCook (hereinafter referred to as \"Client\") and Mitchell Vitalis, director of Mitchell's Web Advance, PLC (hereinafter referred to as \"Company\").\n\n1. Website Design and Development. Client agrees to pay to Company the sum of $5,000 (th"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "Website Design, Development and Hosting Agreement the (\"Agreement\") is entered into on January 11, 2018 by and between Natalija Tunevic, director of FreeCook (hereinafter referred to as \"Client\") and Mitchell Vitalis, director of Mitchell's Web Advance, PLC (hereinafter referred to as \"Company\").\n\n1"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "Terms of the project: 12 weeks from February 8, 2018 to May 3, 2018. Client acknowledges and agrees that any due dates set forth in the Scope of Work are subject to delay if Company does not receive the required materials or documentation in a timely manner or in the required format or if approvals"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "Client further agrees that Company may use and display the graphics and other web design elements of Client's website as examples of Company website design and development work. To maintain Company's portfolio credentials, and the integrity of any applicable copyrights, Company shall be entitled to"
+    },
+    {
+     "category": "Parties",
+     "snippet": "FreeCook (hereinafter referred to as \"Client\") and Mitchell Vitalis, director of Mitchell's Web Advance, PLC (hereinafter referred to as \"Company\").\n\n1. Website Design and Development. Client agrees to pay to Company the sum of $5,000 (the \"Contract Price\") to design and develop a website for Client"
+    },
+    {
+     "category": "Termination For Convenience",
+     "snippet": "Company at its sole discretion may at any time alter or cease providing the Customer Service which it has agreed to provide to Client relating to Client Website pursuant to this Agreement without any liability to Company.\n\nAGREED AND ACCEPTED:\n\nDate: Jan. 11, 2018\n\nSource: FREECOOK, S-1, 6/5/2018"
+    }
+   ]
+  },
+  {
+   "contract_id": "CUAD-0024",
+   "title": "OPERALTD_04_30_2020-EX-4.14-SERVICE AGREEMENT",
+   "contract_type": "SERVICE AGREEMENT",
+   "matter_id": "SYN-1005",
+   "matter_name": "Cedar employment & endorsement",
+   "client_name": "SYNTHETIC Cedar Health",
+   "confidentiality": "Public",
+   "risk_score": 50,
+   "risk_band": "Medium",
+   "risk_drivers": [
+    "Uncapped liability",
+    "Anti-assignment"
+   ],
+   "present_categories": [
+    "Agreement Date",
+    "Anti-Assignment",
+    "Audit Rights",
+    "Cap On Liability",
+    "Document Name",
+    "Effective Date",
+    "Expiration Date",
+    "Governing Law",
+    "Parties",
+    "Renewal Term",
+    "Uncapped Liability"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "April. 1st 2019 (\"Effective Date\") by and between: PC Financial Services Private Limited, a India company with an address at Building RZ-2, Pole No.-3, G/F Kapashera, Near HDFC Bank, New Delhi (\"PC Financial\"), a registered Non-banking Financial Company (NBFC) in India; and Mobimagic Co., Ltd., a co"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "This Agreement may not be assigned, delegated, or otherwise transferred, in whole or in part, by operation of law or otherwise, by a Party without the other Party's express prior written consent. Any attempted assignment, delegation, or transfer in violation of the foregoing will be null and void. 1"
+    },
+    {
+     "category": "Audit Rights",
+     "snippet": "Both Parties acknowledge and confirm that the Reserve Bank of India (hereafter \"RBI\") or persons authorized by it has right to access and inspect the PC Financial's documents, records of Service transactions and other necessary information related to the Services or Activity given to, stored or proc"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "Neither Party shall be liable to the other Party in contract, tort or otherwise, whatever the cause, for any loss of profit, business or goodwill or any indirect, incidental or consequential costs, damages or expenses of any kind, except for such loss attributable to breach of confidentiality. 9. TE"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "Service Agreement (\"Agreement\") is entered into on April. 1st 2019 (\"Effective Date\") by and between: PC Financial Services Private Limited, a India company with an address at Building RZ-2, Pole No.-3, G/F Kapashera, Near HDFC Bank, New Delhi (\"PC Financial\"), a registered Non-banking Financial Com"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "April. 1st 2019 (\"Effective Date\") by and between: PC Financial Services Private Limited, a India company with an address at Building RZ-2, Pole No.-3, G/F Kapashera, Near HDFC Bank, New Delhi (\"PC Financial\"), a registered Non-banking Financial Company (NBFC) in India; and Mobimagic Co., Ltd., a co"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The Agreement shall commence on the Effective Date and continue in effect for the Service Period, unless terminated earlier as provided in this Section. This Agreement is a memorialization of an earlier oral Agreement and shall be deemed to apply for the entire Service Period. The Agreement may be e"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement (and any question about its subsistence, effect or termination) is to be interpreted in accordance with the laws of India, save for that body of law which governs the conflict of laws. The courts of New Delhi shall have exclusive jurisdiction to settle any dispute between the Parties"
+    },
+    {
+     "category": "Parties",
+     "snippet": "PC Financial Services Private Limited, a India company with an address at Building RZ-2, Pole No.-3, G/F Kapashera, Near HDFC Bank, New Delhi (\"PC Financial\"), a registered Non-banking Financial Company (NBFC) in India; and Mobimagic Co., Ltd., a company Incorporated under the laws of the People 's"
+    },
+    {
+     "category": "Renewal Term",
+     "snippet": "4.7 Data protection. Each Party agrees to comply with all applicable data protection and privacy laws arising from its obligations, if any, under the Agreement and to reasonably co-operate with the other Party in order to allow the other Party to comply with any laws as deemed necessary from time to"
+    },
+    {
+     "category": "Uncapped Liability",
+     "snippet": "Subject to the foregoing as wen as Mobimagic's obligations under this Agreement, Mobimagic shall not in any manner be held or be responsible or liable for any unforeseen contingency, claims, liabilities, demands. losses, damages or expenses arising due to absence of storage or retention of any PC Fi"
+    }
+   ]
+  },
+  {
+   "contract_id": "CUAD-0025",
+   "title": "BORROWMONEYCOM,INC_06_11_2020-EX-10.1-JOINT VENTURE AGREEMENT",
+   "contract_type": "JOINT VENTURE AGREEMENT",
+   "matter_id": "SYN-1001",
+   "matter_name": "Northwind distribution agreements",
+   "client_name": "SYNTHETIC Northwind Pharma",
+   "confidentiality": "Highly Confidential",
+   "risk_score": 30,
+   "risk_band": "Medium",
+   "risk_drivers": [
+    "No cap on liability",
+    "Anti-assignment"
+   ],
+   "present_categories": [
+    "Agreement Date",
+    "Anti-Assignment",
+    "Audit Rights",
+    "Document Name",
+    "Effective Date",
+    "Expiration Date",
+    "Governing Law",
+    "Insurance",
+    "Parties"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "20th day of Friday, March 2020 (the \"Execution Date\"), BETWEEN: BorrowMoney.com, inc of 512 Bayshore DR, suite 201 Fort Lauderdale FL 33304, and JVLS, LLC dba Vaccines 2Go of 4060 Johns Creek Parkway Suite H Suwanee, GA 30024 (individually the \"Member\" and collectively the \"Members\"). BACKGROUND: A."
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "Assignment of Member status, under this clause, including any management and voting interests, will require the consent of all the remaining Members. Page 8 of 13\n\n\n\n\n\nManagement Voting 42. Any management vote required will be determined such that each Manager receives one vote carrying equal weight"
+    },
+    {
+     "category": "Audit Rights",
+     "snippet": "Accurate and complete books of account of the transactions of the Venture will be kept in accordance with generally accepted accounting principles (GAAP) and at all reasonable times will be available and open to inspection and examination by any Member. The books and records of the Venture will refl"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "JOINT VENTURE AGREEMENT (the \"Agreement\") made and entered into this 20th day of Friday, March 2020 (the \"Execution Date\"), BETWEEN: BorrowMoney.com, inc of 512 Bayshore DR, suite 201 Fort Lauderdale FL 33304, and JVLS, LLC dba Vaccines 2Go of 4060 Johns Creek Parkway Suite H Suwanee, GA 30024 (indi"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "The duration of this Venture (the \"Term\") will begin on March 1, 2020 and continue in full force and effect until February 28, 2025 or as otherwise provided in this Agreement. 5. The Term may be extended with the unanimous consent of all Members. Place of Business 6. The principal office of the busi"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The duration of this Venture (the \"Term\") will begin on March 1, 2020 and continue in full force and effect until February 28, 2025 or as otherwise provided in this Agreement. 5. The Term may be extended with the unanimous consent of all Members. Place of Business 6. The principal office of the busi"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "By this Agreement the Members enter into a joint venture (the \"Venture\") in accordance with the laws of the State of Florida. The rights and obligations of the Members will be as stated in the applicable legislation of the State of Florida (the \"Act\") except as otherwise provided here. Name 2. The b"
+    },
+    {
+     "category": "Insurance",
+     "snippet": "The Venture may acquire insurance on behalf of any Member, employee, agent or other person engaged in the business interest of the Venture against any liability asserted against them or incurred by them while acting in good faith on behalf of the Venture. Covenant of Good Faith 52. Members will use"
+    },
+    {
+     "category": "Parties",
+     "snippet": "JVLS, LLC dba Vaccines 2Go of 4060 Johns Creek Parkway Suite H Suwanee, GA 30024 (individually the \"Member\" and collectively the \"Members\"). BACKGROUND: A. The Members wish to enter into an association of mutual benefit and agree to jointly invest and set up a joint venture enterprise. B. This Agree"
+    }
+   ]
+  },
+  {
+   "contract_id": "CUAD-0026",
+   "title": "ZEBRATECHNOLOGIESCORP_04_16_2014-EX-10.1-INTELLECTUAL PROPERTY AGREEMENT",
+   "contract_type": "INTELLECTUAL PROPERTY AGREEMENT",
+   "matter_id": "SYN-1002",
+   "matter_name": "Helios licensing & supply",
+   "client_name": "SYNTHETIC Helios Energy",
+   "confidentiality": "Confidential",
+   "risk_score": 25,
+   "risk_band": "Low",
+   "risk_drivers": [
+    "Anti-assignment",
+    "Change of control",
+    "Restrictive covenant"
+   ],
+   "present_categories": [
+    "Affiliate License-Licensee",
+    "Agreement Date",
+    "Anti-Assignment",
+    "Cap On Liability",
+    "Change Of Control",
+    "Document Name",
+    "Effective Date",
+    "Exclusivity",
+    "Expiration Date",
+    "Governing Law",
+    "Ip Ownership Assignment",
+    "Irrevocable Or Perpetual License",
+    "License Grant",
+    "Non-Transferable License",
+    "Parties"
+   ],
+   "clauses": [
+    {
+     "category": "Affiliate License-Licensee",
+     "snippet": "Each Purchaser Licensee may grant sublicenses of the licenses granted to it pursuant to Section 2.2: (i) to any (for the avoidance of doubt, and without limiting any other provision of this IP Agreement, current or future) direct or indirect Subsidiary of Purchaser (but only for so long as such Pers"
+    },
+    {
+     "category": "Agreement Date",
+     "snippet": "April 14, 2014 (the \"Effective Date\"), by and between Motorola Solutions, Inc., a Delaware corporation (the \"Seller\"), and Zebra Technologies Corporation, a Delaware corporation (the \"Purchaser\").\n\nRECITALS\n\nWHEREAS, the Seller, directly and through certain of its Affiliates, is engaged in the Busin"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "If Purchaser or a Purchaser Assignee assigns or transfers any Intellectual Property licensed to the Seller Parties pursuant to Section 2.1(c) or Section 2.1(d), the Purchaser shall (or shall cause the applicable Purchaser Assignee to) expressly condition such assignment or transfer on the express ac"
+    },
+    {
+     "category": "Cap On Liability",
+     "snippet": "The sole and exclusive remedy for any breach of this IP Agreement, including the representations and warranties and covenants herein, shall be as set forth in Article 8 of the Acquisition Agreement. The representations and warranties and covenants contained herein shall terminate in accordance with"
+    },
+    {
+     "category": "Change Of Control",
+     "snippet": "Upon a merger or change of control of a party (including, for purposes of this Section 6.3, with respect to Purchaser any Purchaser Licensee and with respect to Seller any Seller Party) (a \"Change of Control Event\") with or to a Person (other than a Person that is a then-current Affiliate of such pa"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "INTELLECTUAL PROPERTY AGREEMENT (this \"IP Agreement\") is entered into as of April 14, 2014 (the \"Effective Date\"), by and between Motorola Solutions, Inc., a Delaware corporation (the \"Seller\"), and Zebra Technologies Corporation, a Delaware corporation (the \"Purchaser\").\n\nRECITALS\n\nWHEREAS, the Sel"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "April 14, 2014 (the \"Effective Date\"), by and between Motorola Solutions, Inc., a Delaware corporation (the \"Seller\"), and Zebra Technologies Corporation, a Delaware corporation (the \"Purchaser\").\n\nRECITALS\n\nWHEREAS, the Seller, directly and through certain of its Affiliates, is engaged in the Busin"
+    },
+    {
+     "category": "Exclusivity",
+     "snippet": "If and to the extent that, as a matter of Law in any jurisdiction, ownership, title, or any rights or interest in or to any of the Assigned IP cannot be assigned as provided in Section 2.1(b)(i), (A) the Seller irrevocably agrees to (and shall cause the other Seller Parties to) assign and transfer,"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The term of this IP Agreement shall be from the Effective Date until all of the Intellectual Property licensed hereunder is in the public domain (provided, however, that in such event the representations and warranties in Article III shall survive (and terminate) in accordance with the Acquisition A"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "The Laws of the State of Delaware (without reference to its principles of conflicts of law) shall govern the construction, interpretation and other matters arising out of or in connection with this IP Agreement and its schedules (whether arising in contract, tort, equity or otherwise).\n\n(b) Except w"
+    },
+    {
+     "category": "Ip Ownership Assignment",
+     "snippet": "If the arbitrator determines that any Outstanding Patent should be or should have been, as applicable, an Assigned Patent, Seller shall (and shall cause the other Seller Parties to) assign such Patent to the Purchaser Assignees in accordance with Section 2.1(b)(iii)(E).\n\n(c) License-Back of Patents."
+    },
+    {
+     "category": "Irrevocable Or Perpetual License",
+     "snippet": "Effective as of the Initial Closing Date the Seller hereby grants (and will cause each other Seller Party to grant, following each applicable Closing Date), to the Purchaser Licensees an irrevocable (except as expressly set forth herein), non-sublicenseable (except as expressly set forth herein), pe"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "(ii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Smart Sensing Network Equipment; and\n\n(iii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Public Safety LTE Smartphone Devices.\n\n(d) License-Back of Non-Patent, Non-Trademark IP. Ef"
+    },
+    {
+     "category": "Non-Transferable License",
+     "snippet": "(ii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Smart Sensing Network Equipment; and\n\n(iii) to make, have made, use, sell, offer for sale, import, and otherwise dispose of Public Safety LTE Smartphone Devices.\n\n(d) License-Back of Non-Patent, Non-Trademark IP. Ef"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Zebra Technologies Corporation, a Delaware corporation (the \"Purchaser\").\n\nRECITALS\n\nWHEREAS, the Seller, directly and through certain of its Affiliates, is engaged in the Business;\n\nWHEREAS, the Seller desires to sell and transfer to the Purchaser, and the Purchaser desires to acquire from the Sell"
+    }
+   ]
+  },
+  {
+   "contract_id": "CUAD-0027",
+   "title": "ChinaRealEstateInformationCorp_20090929_F-1_EX-10.32_4771615_EX-10.32_Content License Agreement",
+   "contract_type": "10.32_CONTENT LICENSE AGREEMENT",
+   "matter_id": "SYN-1003",
+   "matter_name": "Blue Harbor vendor contracts",
+   "client_name": "SYNTHETIC Blue Harbor Bank",
+   "confidentiality": "Highly Confidential",
+   "risk_score": 45,
+   "risk_band": "Medium",
+   "risk_drivers": [
+    "No cap on liability",
+    "Anti-assignment",
+    "Change of control",
+    "Restrictive covenant"
+   ],
+   "present_categories": [
+    "Affiliate License-Licensee",
+    "Anti-Assignment",
+    "Change Of Control",
+    "Covenant Not To Sue",
+    "Document Name",
+    "Effective Date",
+    "Exclusivity",
+    "Expiration Date",
+    "Governing Law",
+    "License Grant",
+    "Most Favored Nation",
+    "Non-Transferable License",
+    "Parties",
+    "Post-Termination Services"
+   ],
+   "clauses": [
+    {
+     "category": "Affiliate License-Licensee",
+     "snippet": "Notwithstanding anything in this Agreement to the contrary, Licensee has no right to sublicense any rights granted hereunder to any third  party, or otherwise permit any third party to use any Licensed Domain Names or Licensed Content; provided, however, that any rights granted to  Licensee hereunde"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "Notwithstanding anything in this Agreement to the contrary, Licensee has no right to sublicense any rights granted hereunder to any third  party, or otherwise permit any third party to use any Licensed Domain Names or Licensed Content; provided, however, that any rights granted to  Licensee hereunde"
+    },
+    {
+     "category": "Change Of Control",
+     "snippet": "This Agreement and any rights or authority granted hereunder shall not be assigned or transferred by either Party, including by  operation of law, merger or otherwise, without the express written consent of the other Party, provided that Licensor may assign this Agreement  without consent to any of"
+    },
+    {
+     "category": "Covenant Not To Sue",
+     "snippet": "Except as expressly permitted under the Trademark License Agreement, Licensee shall not knowingly (a) use the Licensed  Domain Names in any manner that tarnishes, degrades, disparages or reflects adversely on Licensor or Licensor's business or reputation, (b) in  any jurisdiction, register or attemp"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "DOMAIN NAME AND CONTENT LICENSE AGREEMENT\n\nThis Domain Name and Content License Agreement (the \"Agreement\") is made and entered into, by and between Beijing SINA Internet  Information Service Co., Ltd. ( ), a limited liability company organized under the laws of the People's Republic  of China (here"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "\"Effective Date\" means the Closing Date as set forth in the Share Purchase Agreement.\n\n\"E-House Licensed Data and Information\" means the data and information licensed to CRIC Holdings Limited and its subsidiaries, for the  operation of the CRIC system pursuant to the Master Transaction Agreement.\n\n2"
+    },
+    {
+     "category": "Exclusivity",
+     "snippet": "Subject to the terms and conditions of this Agreement, Licensor hereby grants to Licensee, and Licensee hereby accepts from Licensor, an  exclusive, non-transferable (except as set forth in Section 10.7) and non-sublicensable (except as provided in Section 2.1(c)) license to use the  Licensed Domain"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "The initial term of this Agreement (the \"Initial Term\") shall commence on the Effective Date and shall continue for a period of ten (10)  years thereafter. Beginning twelve (12) months prior to the expiration of the Initial Term, the Parties shall use\n\n7\n\nSource: CHINA REAL ESTATE INFORMATION CORP,"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Termination Agreement shall be governed by the laws of the PRC, without regard to conflicts of law principles.\n\n4. This Termination Agreement may be executed in one or more counterparts, each of which shall be deemed an original but all of which together  will constitute one and the same instru"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "Subject to the terms and conditions of this Agreement, Licensor hereby grants to Licensee, and Licensee hereby accepts from Licensor, an  exclusive, non-transferable (except as set forth in Section 10.7) and non-sublicensable (except as provided in Section 2.1(c)) license to use the  Licensed Domain"
+    },
+    {
+     "category": "Most Favored Nation",
+     "snippet": "In the event E-House Research and Training Institute becomes entitled to charge, invoice, or otherwise receive from, Licensee any  royalties, fees or other remuneration for use of the E-House Licensed Data and Information pursuant to amendments to the Master Transaction  Agreement or through other m"
+    },
+    {
+     "category": "Non-Transferable License",
+     "snippet": "Notwithstanding anything in this Agreement to the contrary, Licensee has no right to sublicense any rights granted hereunder to any third  party, or otherwise permit any third party to use any Licensed Domain Names or Licensed Content; provided, however, that any rights granted to  Licensee hereunde"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Beijing Yisheng Leju Information Services Co., Ltd., a limited liability company organized under the laws of  the People's Republic of China (\"Licensee\" and together with Licensor, the \"Parties\" and each a \"Party\") and is made effective as of the Effective  Date (defined below).\n\nRECITALS\n\nWHEREAS,"
+    },
+    {
+     "category": "Post-Termination Services",
+     "snippet": "Upon termination (but not expiration) of this Agreement for any reason, Licensee shall be entitled to use the Licensed Domain Names and  Licensed Content for a limited period of time, not to exceed ninety (90) days, during which it shall diligently work to transition to another solution.  Upon expir"
+    }
+   ]
+  },
+  {
+   "contract_id": "CUAD-0028",
+   "title": "HERTZGLOBALHOLDINGS,INC_07_07_2016-EX-10.4-INTELLECTUAL PROPERTY AGREEMENT",
+   "contract_type": "INTELLECTUAL PROPERTY AGREEMENT",
+   "matter_id": "SYN-1004",
+   "matter_name": "Vector strategic alliances",
+   "client_name": "SYNTHETIC Vector Robotics",
+   "confidentiality": "Confidential",
+   "risk_score": 35,
+   "risk_band": "Medium",
+   "risk_drivers": [
+    "No cap on liability",
+    "Anti-assignment",
+    "Restrictive covenant"
+   ],
+   "present_categories": [
+    "Agreement Date",
+    "Anti-Assignment",
+    "Covenant Not To Sue",
+    "Document Name",
+    "Effective Date",
+    "Governing Law",
+    "Insurance",
+    "Ip Ownership Assignment",
+    "License Grant",
+    "Non-Compete",
+    "Parties"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "30  day of June 2016 (the \"Effective Date\") among THE HERTZ CORPORATION, a Delaware corporation, with an address of 8501 Williams Road, Estero, Florida 33928 (hereinafter \"THC\"); HERTZ SYSTEM, INC., a Delaware corporation, with an address of 8501 Williams Road, Estero, Florida 33928, United States o"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "HERC may not assign, transfer, sublicense or delegate any of its rights hereunder or delegate its obligations hereunder without the prior written consent of HSI, and any such purported assignment, transfer, sublicense or delegation, in the absence of such consent, shall be void and without effect."
+    },
+    {
+     "category": "Covenant Not To Sue",
+     "snippet": "The Parties acknowledge and affirm their respective rights in and to the relevant trademark and related rights subject to this Agreement and neither Party shall directly or indirectly attack, challenge or impair the title and related rights of the other Party during the Interim Period or any time th"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "INTELLECTUAL PROPERTY AGREEMENT (this \"Agreement\" or \"IPA\"), effective as of this 30  day of June 2016 (the \"Effective Date\") among THE HERTZ CORPORATION, a Delaware corporation, with an address of 8501 Williams Road, Estero, Florida 33928 (hereinafter \"THC\"); HERTZ SYSTEM, INC., a Delaware corporat"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "30  day of June 2016 (the \"Effective Date\") among THE HERTZ CORPORATION, a Delaware corporation, with an address of 8501 Williams Road, Estero, Florida 33928 (hereinafter \"THC\"); HERTZ SYSTEM, INC., a Delaware corporation, with an address of 8501 Williams Road, Estero, Florida 33928, United States o"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement and all disputes or controversies arising out of or relating to this Agreement or the transactions contemplated hereby shall be governed by, and construed in accordance with, the internal laws of the State of New York, without regard to the laws of any other jurisdiction that might be"
+    },
+    {
+     "category": "Insurance",
+     "snippet": "HERC shall provide for ten (10) days notice to THC and HSI in the event of any modification, cancellation or termination. HERC agrees to furnish THC and HSI Certificates of Insurance evidencing same within thirty (30) days after the execution of this Agreement. In no event shall HERC perform or prom"
+    },
+    {
+     "category": "Ip Ownership Assignment",
+     "snippet": "THC will assign all right, title and interest in and to the THC ERB Domains (those domains owned by THC related to the ERB that do not incorporate the mark/name HERTZ) as set forth on Schedule H to HERC and as more fully set forth in the Domain Name Assignment attached hereto as Exhibit D.   2.10 In"
+    },
+    {
+     "category": "License Grant",
+     "snippet": "HSI will retain ownership and will grant a royalty-free, non-exclusive, license to HERC to use the HSI (HERTZ) US ERB Trademarks (those US trademarks   3\n\n\n\n\n\n  owned by HSI related to the ERB that incorporate the mark/name HERTZ) as set forth on Schedule B, for the Interim Period, in the United Sta"
+    },
+    {
+     "category": "Non-Compete",
+     "snippet": "During the Interim Period, neither HERC nor any of its affiliates or subsidiaries shall, directly or indirectly, engage in the business of renting or leasing cars, crossovers or light trucks (including sport utility vehicles and light commercial vehicles) in [any country in which THC or any of its a"
+    },
+    {
+     "category": "Parties",
+     "snippet": "(hereinafter referred to collectively as the \"Parties\" and individually as a \"Party\").   WITNESSETH   WHEREAS, both HSI and HERC are wholly-owned subsidiaries of THC, and THC is an indirect wholly-owned subsidiary of Hertz Global Holdings, Inc., a Delaware corporation (\"HGH\");   WHEREAS, THC is the"
+    }
+   ]
+  },
+  {
+   "contract_id": "CUAD-0029",
+   "title": "GLOBALTECHNOLOGIESLTD_06_08_2020-EX-10.16-CONSULTING AGREEMENT",
+   "contract_type": "CONSULTING AGREEMENT",
+   "matter_id": "SYN-1005",
+   "matter_name": "Cedar employment & endorsement",
+   "client_name": "SYNTHETIC Cedar Health",
+   "confidentiality": "Public",
+   "risk_score": 30,
+   "risk_band": "Medium",
+   "risk_drivers": [
+    "No cap on liability",
+    "Anti-assignment"
+   ],
+   "present_categories": [
+    "Agreement Date",
+    "Anti-Assignment",
+    "Document Name",
+    "Effective Date",
+    "Expiration Date",
+    "Governing Law",
+    "No-Solicit Of Customers",
+    "Parties"
+   ],
+   "clauses": [
+    {
+     "category": "Agreement Date",
+     "snippet": "This Consulting Agreement (the \"Agreement\") is made and entered into as of this 2nd day of January 2020, by and between Global Technologies, Ltd (hereinafter the \"Company\"), a Delaware corporation whose address is 501 1st Ave N., Suite 901, St. Petersburg, FL 33701 and Timothy Cabrera (hereinafter t"
+    },
+    {
+     "category": "Anti-Assignment",
+     "snippet": "Neither Party shall delegate the performance of its duties under this Agreement without the prior written consent of the other Party. (h) Publicity. Neither Consultant nor the Company shall make or issue or cause to be made or issued, any announcement or written statement concerning this Agreement,"
+    },
+    {
+     "category": "Document Name",
+     "snippet": "CONSULTING AGREEMENT This Consulting Agreement (the \"Agreement\") is made and entered into as of this 2nd day of January 2020, by and between Global Technologies, Ltd (hereinafter the \"Company\"), a Delaware corporation whose address is 501 1st Ave N., Suite 901, St. Petersburg, FL 33701 and Timothy C"
+    },
+    {
+     "category": "Effective Date",
+     "snippet": "2nd day of January 2020, by and between Global Technologies, Ltd (hereinafter the \"Company\"), a Delaware corporation whose address is 501 1st Ave N., Suite 901, St. Petersburg, FL 33701 and Timothy Cabrera (hereinafter the \"Consultant\"), an individual whose address is 11718 SE Federal Hwy., Suite 37"
+    },
+    {
+     "category": "Expiration Date",
+     "snippet": "This Agreement shall be in full force and effect commencing on January 2, 2020 and shall remain in effect for one (1) year or until Consultant completes the services requested. Either Party shall have the right to terminate this Agreement without notice in the event of the bankruptcy, insolvency, or"
+    },
+    {
+     "category": "Governing Law",
+     "snippet": "This Agreement and the legal relations among the Parties hereto shall be governed by and construed in accordance with the laws of the State of Florida, without regard to its conflict of law doctrine. The Parties agree that the venue for the resolution of all disputes arising under the terms of this"
+    },
+    {
+     "category": "No-Solicit Of Customers",
+     "snippet": "he Company further agrees that neither it nor its employees, affiliates or assigns, shall enter into, or otherwise arrange (either for it/him/herself, or any other person or entity) any business relationship, contact any person regarding such Opportunity, either directly or indirectly, or any of its"
+    },
+    {
+     "category": "Parties",
+     "snippet": "Consultant\"), an individual whose address is 11718 SE Federal Hwy., Suite 372, Hobe Sound, FL 33455 (individually, a \"Party\"; collectively, the \"Parties\"). This Agreement is non-exclusive. RECITALS WHEREAS, the Company has asked to retain Consultant to provide various services to the Company as agre"
+    }
    ]
   }
  ],

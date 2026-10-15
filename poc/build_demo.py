@@ -69,6 +69,7 @@ const OVERSIGHT = ['compliance_admin', 'auditor'];
 const app = document.getElementById('app');
 let current = null;
 let audit = D.seed_audit.slice();
+let auditFilter = { user: '', action: '', outcome: '' };
 
 function nowISO() { return new Date().toISOString().replace(/\.\d+Z$/, 'Z'); }
 function logEvent(user, action, target, outcome) {
@@ -80,12 +81,15 @@ function docsFor(user) {
   return D.documents.filter(d => allowed.includes(d.matter_id));
 }
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function norm(s) { return String(s).replace(/\s+/g, ' ').trim(); }
+function uniq(arr) { return Array.from(new Set(arr)).sort(); }
 
 function renderLogin() {
   current = null;
   app.innerHTML = `<div class="panel">
     <h2>Sign in as a hypothetical user</h2>
     <p class="lead">Each person is authorized only for specific matters. Pick one to see what the wall does.</p>
+    <p class="muted">${D.documents.length} documents across ${D.matters.length} matters &middot; ${D.users.length} users &middot; simulated Snowflake warehouse.</p>
     <div class="user-grid">
       ${D.users.map(u => `<button class="user-card" data-u="${esc(u.username)}">
         <strong>${esc(u.name)}</strong><span>${esc(u.practice || '')}</span>
@@ -110,6 +114,7 @@ function renderDashboard() {
       <span class="pill-role">${esc(user.role)}</span>
       <span style="margin-left:auto">
         <button class="btn ghost" id="tab-home">${homeLabel}</button>
+        <button class="btn ghost" id="tab-risk">Risk register</button>
         <button class="btn ghost" id="tab-console">Snowflake console</button>
         <button class="btn" id="out">Sign out</button>
       </span>
@@ -117,8 +122,33 @@ function renderDashboard() {
     <div id="body"></div>`;
   document.getElementById('out').onclick = renderLogin;
   document.getElementById('tab-home').onclick = () => isOver ? renderAudit() : renderDocs();
+  document.getElementById('tab-risk').onclick = renderRiskRegister;
   document.getElementById('tab-console').onclick = renderConsole;
   document.getElementById('tab-home').click();
+}
+
+function renderRiskRegister() {
+  const user = current;
+  const mine = docsFor(user).slice().sort((a, b) => b.risk_score - a.risk_score || a.contract_id.localeCompare(b.contract_id));
+  const high = mine.filter(d => d.risk_band === 'High').length;
+  const med = mine.filter(d => d.risk_band === 'Medium').length;
+  logEvent(user, 'view_risk_register', null, 'allowed');
+  document.getElementById('body').innerHTML = `<div class="panel">
+    <h3>Risk register — high-risk clauses by matter</h3>
+    <p class="muted">Rules are transparent and data-driven (mirrors <code>sql/04_risk_views.sql</code>).
+      <strong>Simulated</strong> review, not legal advice. Bands: High &ge; 60, Medium 30&ndash;59, Low &lt; 30.
+      You can see ${mine.length} of ${D.documents.length} documents (${high} High, ${med} Medium).</p>
+    <div class="table-scroll"><table><thead><tr><th>Matter</th><th>Document</th><th>Type</th><th>Risk</th><th>High-risk clauses</th></tr></thead>
+    <tbody>${mine.map(d => `<tr>
+      <td>${esc(d.matter_name)}</td>
+      <td><button class="doc-link" data-id="${esc(d.contract_id)}">${esc(d.contract_id)}</button> ${esc(d.title.slice(0, 34))}${d.title.length > 34 ? '…' : ''}</td>
+      <td>${esc(d.contract_type)}</td>
+      <td><span class="badge ${d.risk_band.toLowerCase()}">${esc(d.risk_band)} (${d.risk_score})</span></td>
+      <td>${d.risk_drivers.map(esc).join(', ') || '—'}</td></tr>`).join('') || '<tr><td colspan=5>No documents</td></tr>'}
+    </tbody></table></div>
+  </div>
+  <div id="detail"></div>`;
+  document.querySelectorAll('button[data-id]').forEach(b => b.onclick = () => openDoc(b.dataset.id));
 }
 
 function renderDocs() {
@@ -168,20 +198,40 @@ function openDoc(id) {
     <p class="muted">${esc(d.client_name)} &middot; ${esc(d.matter_name)} &middot; ${esc(d.confidentiality)}</p>
     <p>Risk: <span class="badge ${d.risk_band.toLowerCase()}">${esc(d.risk_band)} (${d.risk_score})</span>
        &middot; drivers: ${d.risk_drivers.map(esc).join(', ') || '—'}</p>
-    <h4>Clause categories present (${d.present_categories.length} of 41)</h4>
-    ${d.present_categories.slice(0, 18).map(c => `<div class="clause">${esc(c)}</div>`).join('')}
-    ${d.present_categories.length > 18 ? `<p class="muted">+ ${d.present_categories.length-18} more</p>` : ''}
+    <h4>Clause detail (${d.present_categories.length} categories present of 41)</h4>
+    ${(d.clauses && d.clauses.length ? d.clauses : d.present_categories.map(c => ({category: c, snippet: ''})))
+      .map(c => `<div class="clause"><strong>${esc(c.category)}</strong>${c.snippet ? `<span class="snip">${esc(norm(c.snippet))}</span>` : ''}</div>`).join('')}
   </div>`;
 }
 
 function renderAudit() {
-  const rows = audit.slice().reverse();
+  const f = auditFilter;
+  const users = uniq(audit.map(a => a.user));
+  const actions = uniq(audit.map(a => a.action));
+  const outcomes = uniq(audit.map(a => a.outcome));
+  const all = audit.slice().reverse();
+  const rows = all.filter(a =>
+    (!f.user || a.user === f.user) &&
+    (!f.action || a.action === f.action) &&
+    (!f.outcome || a.outcome === f.outcome));
+  const opt = (val, sel) => `<option value="${esc(val)}"${val === sel ? ' selected' : ''}>${esc(val)}</option>`;
   document.getElementById('body').innerHTML = `<div class="panel">
     <h3>Audit log — who accessed which files</h3>
-    <p class="muted">Pre-seeded example events plus this session's simulated activity.</p>
+    <p class="muted">Pre-seeded example events plus this session's simulated activity. Filter by user, action, or outcome.</p>
+    <div class="row">
+      <label>User <select id="f-user"><option value="">All users</option>${users.map(u => opt(u, f.user)).join('')}</select></label>
+      <label>Action <select id="f-action"><option value="">All actions</option>${actions.map(a => opt(a, f.action)).join('')}</select></label>
+      <label>Outcome <select id="f-outcome"><option value="">All outcomes</option>${outcomes.map(o => opt(o, f.outcome)).join('')}</select></label>
+      <button class="btn ghost" id="f-reset">Reset</button>
+      <span class="muted" style="margin-left:auto">${rows.length} of ${all.length} events</span>
+    </div>
     <div class="table-scroll"><table><thead><tr><th>When</th><th>User</th><th>Role</th><th>Action</th><th>Target</th><th>Outcome</th></tr></thead>
-    <tbody>${rows.map(a => `<tr><td>${esc(a.at)}</td><td>${esc(a.user)}</td><td>${esc(a.role)}</td><td>${esc(a.action)}</td><td>${esc(a.target||'')}</td><td class="${a.outcome}">${esc(a.outcome)}</td></tr>`).join('')}
+    <tbody>${rows.map(a => `<tr><td>${esc(a.at)}</td><td>${esc(a.user)}</td><td>${esc(a.role)}</td><td>${esc(a.action)}</td><td>${esc(a.target||'')}</td><td class="${a.outcome}">${esc(a.outcome)}</td></tr>`).join('') || '<tr><td colspan=6>No matching events</td></tr>'}
     </tbody></table></div></div>`;
+  document.getElementById('f-user').onchange = e => { auditFilter.user = e.target.value; renderAudit(); };
+  document.getElementById('f-action').onchange = e => { auditFilter.action = e.target.value; renderAudit(); };
+  document.getElementById('f-outcome').onchange = e => { auditFilter.outcome = e.target.value; renderAudit(); };
+  document.getElementById('f-reset').onclick = () => { auditFilter = { user: '', action: '', outcome: '' }; renderAudit(); };
 }
 
 /* ---------- Simulated Snowflake console ---------- */
@@ -196,6 +246,9 @@ const SIM_QUERIES = {
     policy: 'row access: sec.matter_access_policy ON (matter_id)' },
   clauses: { label: 'Clause categories present',
     sql: 'SELECT contract_id, matter_id, category\nFROM core.fact_clause WHERE present = 1;',
+    policy: 'row access: sec.matter_access_policy ON (matter_id)' },
+  risk_register: { label: 'Risk register (high-risk clauses by matter)',
+    sql: 'SELECT matter_id, matter_name, contract_id, contract_type,\n       risk_score, risk_band, high_risk_clauses\nFROM marts.mart_high_risk_register\nORDER BY risk_score DESC;',
     policy: 'row access: sec.matter_access_policy ON (matter_id)' },
   clients: { label: 'Client contacts (masked)',
     sql: 'SELECT client_id, client_name, contact_email, contact_phone\nFROM core.dim_client;',
@@ -230,6 +283,14 @@ function simRows(role, key) {
     D.documents.filter(d => mset.has(d.matter_id)).forEach(d =>
       d.present_categories.forEach(c => rows.push([d.contract_id, d.matter_id, c])));
     return { columns: ['contract_id', 'matter_id', 'category'], rows, filtered: !oversight };
+  }
+  if (key === 'risk_register') {
+    const rows = D.documents.filter(d => mset.has(d.matter_id))
+      .sort((a, b) => b.risk_score - a.risk_score || a.contract_id.localeCompare(b.contract_id))
+      .map(d => [d.matter_id, d.matter_name, d.contract_id, d.contract_type,
+                 d.risk_score, d.risk_band, (d.risk_drivers || []).join(', ')]);
+    return { columns: ['matter_id', 'matter_name', 'contract_id', 'contract_type',
+                       'risk_score', 'risk_band', 'high_risk_clauses'], rows, filtered: !oversight };
   }
   if (key === 'clients') {
     const mask = !oversight;
