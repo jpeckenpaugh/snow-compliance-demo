@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snow Compliance POC</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; background: #f6f8fb; color: #111827; }
+  header { background: #0e2439; color: #fff; padding: 14px 24px; font-weight: 700; }
+  main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+  .card { background: #fff; border: 1px solid #e3e8ef; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+  input, button, select { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid #cbd5e1; }
+  button { background: #0d9488; color: #fff; border: none; cursor: pointer; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid #e3e8ef; }
+  .denied { color: #dc2626; font-weight: 700; }
+  .allowed { color: #047857; font-weight: 700; }
+  .muted { color: #52627a; font-size: 13px; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<header>Snow Compliance POC &mdash; functional login &amp; audit</header>
+<main>
+  <div id="app"></div>
+  <p class="muted">Users: alice (attorney), bob (attorney), carol (paralegal), admin (compliance). Password: demo.</p>
+</main>
+<script>
+const $ = (h) => { const d = document.createElement('div'); d.innerHTML = h; return d; };
+let token = null, user = null;
+const app = document.getElementById('app');
+
+function api(path, opts = {}) {
+  opts.headers = Object.assign({ 'Content-Type': 'application/json' }, opts.headers || {});
+  if (token) opts.headers['Authorization'] = 'Bearer ' + token;
+  return fetch(path, opts).then(async (r) => ({ ok: r.ok, status: r.status, body: await r.json() }));
+}
+
+function renderLogin() {
+  app.innerHTML = `<div class="card">
+    <h2>Sign in</h2>
+    <div class="row">
+      <select id="u">
+        <option value="alice">alice &mdash; attorney</option>
+        <option value="bob">bob &mdash; attorney</option>
+        <option value="carol">carol &mdash; paralegal</option>
+        <option value="admin">admin &mdash; compliance</option>
+        <option value="auditor">auditor &mdash; risk</option>
+      </select>
+      <input id="p" type="password" placeholder="password" value="demo">
+      <button id="go">Sign in</button>
+    </div>
+    <p id="err" class="denied"></p></div>`;
+  document.getElementById('go').onclick = async () => {
+    const r = await api('/api/login', { method: 'POST', body: JSON.stringify({
+      username: document.getElementById('u').value, password: document.getElementById('p').value }) });
+    if (!r.ok) { document.getElementById('err').textContent = r.body.error; return; }
+    token = r.body.token; user = r.body.user; renderApp();
+  };
+}
+
+async function renderApp() {
+  app.innerHTML = `<div class="card"><div class="row">
+    <strong>${user.name}</strong> <span class="muted">${user.role}</span>
+    <button id="out" style="margin-left:auto;background:#334155">Sign out</button></div></div>
+    <div id="content"></div>`;
+  document.getElementById('out').onclick = async () => { await api('/api/logout', { method: 'POST' }); token = null; user = null; renderLogin(); };
+  if (user.role === 'compliance_admin' || user.role === 'auditor') await renderAdmin();
+  else await renderDocs();
+}
+
+async function renderDocs() {
+  const c = document.getElementById('content');
+  const r = await api('/api/documents');
+  const rows = r.body.documents.map((d) =>
+    `<tr><td><a href="#" data-id="${d.contract_id}">${d.title.slice(0, 60)}</a></td>
+     <td>${d.contract_type}</td><td>${d.matter_name}</td><td>${d.confidentiality}</td></tr>`).join('');
+  c.innerHTML = `<div class="card"><h3>Your documents (${r.body.documents.length})</h3>
+    <table><thead><tr><th>Document</th><th>Type</th><th>Matter</th><th>Confidentiality</th></tr></thead>
+    <tbody>${rows || '<tr><td colspan=4>none</td></tr>'}</tbody></table></div>
+    <div id="detail"></div>`;
+  c.querySelectorAll('a[data-id]').forEach((a) => a.onclick = async (e) => {
+    e.preventDefault();
+    const dr = await api('/api/document?id=' + a.dataset.id);
+    const det = document.getElementById('detail');
+    if (!dr.ok) { det.innerHTML = `<div class="card denied-box">Access denied: ${dr.body.error}</div>`; return; }
+    const d = dr.body;
+    const present = d.clauses.filter((x) => x.present);
+    det.innerHTML = `<div class="card"><h3>${d.title}</h3>
+      <p class="muted">${d.client_name} &middot; ${d.matter_name} &middot; ${d.confidentiality}</p>
+      <p><strong>${present.length}</strong> clause categories present.</p>
+      <ul>${present.slice(0, 15).map((x) => `<li>${x.category}${x.snippet ? ' &mdash; <span class="muted">' + x.snippet.slice(0, 120) + '</span>' : ''}</li>`).join('')}</ul></div>`;
+  });
+}
+
+async function renderAdmin() {
+  const c = document.getElementById('content');
+  const r = await api('/api/audit');
+  if (!r.ok) { c.innerHTML = `<div class="card">Audit denied: ${r.body.error}</div>`; return; }
+  const rows = r.body.audit.map((a) =>
+    `<tr><td>${a.at}</td><td>${a.user}</td><td>${a.role}</td><td>${a.action}</td><td>${a.target || ''}</td>
+     <td class="${a.outcome}">${a.outcome}</td></tr>`).join('');
+  c.innerHTML = `<div class="card"><h3>Audit log</h3>
+    <p class="muted">Which users accessed which files.</p>
+    <table><thead><tr><th>When</th><th>User</th><th>Role</th><th>Action</th><th>Target</th><th>Outcome</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+}
+
+renderLogin();
+</script>
+</body>
+</html>

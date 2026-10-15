@@ -14,7 +14,7 @@
       <span class="mark" aria-hidden="true">SC</span>
       <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
     </a>
-    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html" class="active">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="roadmap.html">Roadmap</a></nav>
+    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html" class="active">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="poc.html">POC & findings</a><a href="demo/index.html">Interactive demo</a><a href="roadmap.html">Roadmap</a></nav>
   </div>
 </header>
 <section class="hero"><div class="wrap">
@@ -39,20 +39,24 @@
 <section id="clauses">
   <div class="section-kicker">Inputs</div>
   <h2>Clause categories used</h2>
-  <p>A subset of CUAD's 41 categories carries the contract-risk story. Weights below
-  drive the score; they are stored as data, not hard-coded.</p>
+  <p>A subset of CUAD's <strong>actual 41 categories</strong> carries the contract-risk story.
+  Weights are stored as data, not hard-coded.</p>
+  <div class="callout warn"><strong>Corrected against the real dataset</strong>
+    CUAD v1 has <em>no</em> "Indemnification" or "Limitation of Liability" category. Liability
+    exposure is expressed as <code>Uncapped Liability</code> / <code>Cap On Liability</code>.
+    The rubric below uses CUAD's real category names (see <a href="poc.html#findings">findings</a>).</div>
   <div class="table-scroll"><table>
-    <thead><tr><th>Clause category</th><th>Risk theme</th><th>Weight</th></tr></thead>
+    <thead><tr><th>CUAD clause category</th><th>Risk theme</th><th>Weight</th></tr></thead>
     <tbody>
-      <tr><td>Limitation of liability</td><td>Uncapped exposure</td><td><span class="badge high">High</span></td></tr>
-      <tr><td>Indemnification</td><td>One-sided / unlimited indemnity</td><td><span class="badge high">High</span></td></tr>
-      <tr><td>Termination for convenience</td><td>Counterparty-only exit</td><td><span class="badge med">Medium</span></td></tr>
-      <tr><td>Assignment</td><td>Assignment without consent / change of control</td><td><span class="badge med">Medium</span></td></tr>
-      <tr><td>Renewal / auto-renewal</td><td>Long notice windows</td><td><span class="badge med">Medium</span></td></tr>
-      <tr><td>Governing law</td><td>Unfavorable or foreign forum</td><td><span class="badge med">Medium</span></td></tr>
-      <tr><td>Non-compete / exclusivity</td><td>Restricted scope</td><td><span class="badge low">Low</span></td></tr>
-      <tr><td>Confidentiality</td><td>Duration / residuals</td><td><span class="badge low">Low</span></td></tr>
-      <tr><td>Warranties</td><td>Broad or missing disclaimers</td><td><span class="badge low">Low</span></td></tr>
+      <tr><td>Uncapped Liability</td><td>Uncapped exposure present</td><td><span class="badge high">High</span></td></tr>
+      <tr><td>Cap On Liability <em>(absent)</em></td><td>No cap on liability</td><td><span class="badge high">High</span></td></tr>
+      <tr><td>Termination For Convenience</td><td>Counterparty may exit at will</td><td><span class="badge med">Medium</span></td></tr>
+      <tr><td>Anti-Assignment</td><td>Assignment restricted</td><td><span class="badge med">Medium</span></td></tr>
+      <tr><td>Change Of Control</td><td>Ownership-change trigger</td><td><span class="badge med">Medium</span></td></tr>
+      <tr><td>Minimum Commitment</td><td>Minimum purchase/volume</td><td><span class="badge med">Medium</span></td></tr>
+      <tr><td>Governing Law <em>(absent)</em></td><td>No forum specified</td><td><span class="badge med">Medium</span></td></tr>
+      <tr><td>Non-Compete / Exclusivity</td><td>Restrictive scope</td><td><span class="badge low">Low</span></td></tr>
+      <tr><td>Renewal Term / Notice Period</td><td>Auto-renewal notice windows</td><td><span class="badge low">Low</span></td></tr>
     </tbody>
   </table></div>
 </section>

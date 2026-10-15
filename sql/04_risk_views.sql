@@ -16,16 +16,19 @@ CREATE OR REPLACE TABLE CORE.ref_risk_rule (
   rationale       STRING
 );
 
+-- Category names are CUAD's ACTUAL 41 categories (verified in poc/analysis/cuad_shape_report.md).
+-- Note: CUAD v1 has NO "Indemnification" or "Limitation of Liability" category; liability
+-- exposure is expressed as "Uncapped Liability" / "Cap On Liability".
 INSERT OVERWRITE INTO CORE.ref_risk_rule VALUES
-  ('R1','Limitation of liability','ABSENT', NULL, 40,'No cap on liability'),
-  ('R2','Limitation of liability','KEYWORD','consequential|indirect', 10,'Broad consequential-damage exposure'),
-  ('R3','Indemnification','PRESENT', NULL, 25,'Indemnity present; scope requires review'),
-  ('R4','Termination for convenience','PRESENT', NULL, 15,'Counterparty may exit at will'),
-  ('R5','Assignment','KEYWORD','without.*consent|change of control', 15,'Assignment without consent'),
-  ('R6','Renewal','KEYWORD','automatically renew', 10,'Auto-renewal with notice window'),
-  ('R7','Governing law','KEYWORD','foreign|arbitration', 10,'Offshore or arbitration forum'),
-  ('R8','Non-compete','PRESENT', NULL, 5,'Restrictive covenant present'),
-  ('R9','Warranties','ABSENT', NULL, 5,'No warranty disclaimer found');
+  ('R1','Uncapped Liability','PRESENT', NULL, 40,'Uncapped liability exposure'),
+  ('R2','Cap On Liability','ABSENT', NULL, 20,'No cap on liability'),
+  ('R3','Termination For Convenience','PRESENT', NULL, 15,'Counterparty may exit at will'),
+  ('R4','Anti-Assignment','PRESENT', NULL, 10,'Assignment restricted'),
+  ('R5','Change Of Control','PRESENT', NULL, 10,'Change-of-control provision'),
+  ('R6','Minimum Commitment','PRESENT', NULL, 10,'Minimum purchase/volume commitment'),
+  ('R7','Governing Law','ABSENT', NULL, 10,'No governing law found'),
+  ('R8','Non-Compete','PRESENT', NULL, 5,'Restrictive covenant present'),
+  ('R9','Exclusivity','PRESENT', NULL, 5,'Exclusivity provision present');
 
 -- --- Scoring view ------------------------------------------------------------
 CREATE OR REPLACE VIEW MARTS.mart_matter_risk AS

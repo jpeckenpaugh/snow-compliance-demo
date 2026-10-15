@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>POC &amp; findings · Snow Compliance Demo</title>
+<meta name="description" content="Board-review recommendations for a Snowflake legal-compliance demonstration built on the public CUAD dataset plus synthetic law-firm records.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">SC</span>
+      <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="poc.html" class="active">POC & findings</a><a href="demo/index.html">Interactive demo</a><a href="roadmap.html">Roadmap</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Proof of concept</p>
+  <h1>POC &amp; CUAD findings</h1>
+  <p class="lede">We extracted the first 20 CUAD documents, examined their real shape against the
+  original plan, and built a Python + SQLite proof of concept that maps directly to Snowflake.</p>
+  <p style="margin-top:18px"><a href="demo/index.html" style="display:inline-block;background:#0d9488;color:#fff;font-weight:700;padding:11px 18px;border-radius:10px;text-decoration:none">Open the interactive demo &rarr;</a></p>
+</div></section>
+<main class="main">
+  <div class="wrap">
+    <div class="grid">
+      <aside class="toc"><h2>On this page</h2><ul><li><a href="#built">What we built</a></li><li><a href="#findings">Alignment with the plan</a></li><li><a href="#mapping">Path to Snowflake</a></li><li><a href="#demo">Try the demo</a></li></ul></aside>
+      <div class="content">
+        
+<section id="built">
+  <div class="section-kicker">What we built</div>
+  <h2>Footwork in place</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Artifact</th><th>Path</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>CUAD extractor</td><td><code>poc/extract_cuad.py</code></td><td>Downloads CUAD, normalizes the first N docs, emits the shape report</td></tr>
+      <tr><td>SQLite schema</td><td><code>poc/schema.sql</code></td><td>Mirrors the Snowflake model: dims, fact, bridge, authorization, audit</td></tr>
+      <tr><td>Seeder</td><td><code>poc/seed.py</code></td><td>Loads 20 contracts + synthetic users/matters; exports the static demo data</td></tr>
+      <tr><td>Access layer</td><td><code>poc/access.py</code></td><td><strong>The enforcement point</strong> &mdash; authorization check + audit logging</td></tr>
+      <tr><td>POC web server</td><td><code>poc/server.py</code></td><td>Standard-library HTTP server; real login, real denials, real audit</td></tr>
+      <tr><td>Static demo</td><td><code>demo/index.html</code></td><td>Board-clickable login/audit demo hosted on Pages</td></tr>
+      <tr><td>Shape report</td><td><code>poc/analysis/cuad_shape_report.md</code></td><td>Full statistics over the 20-document sample</td></tr>
+    </tbody>
+  </table></div>
+  <pre><code>python3 poc/extract_cuad.py --limit 20   # fetch + normalize first 20 docs
+python3 poc/seed.py                      # build SQLite DB + demo data
+python3 poc/build_demo.py                # regenerate the static Pages demo
+python3 poc/server.py                    # functional POC at http://localhost:8000</code></pre>
+</section>
+
+<section id="findings">
+  <div class="section-kicker">Analysis</div>
+  <h2>How the real data aligns with the plan</h2>
+  <div class="kpis">
+    <div class="kpi"><div class="n">20</div><div class="l">documents extracted</div></div>
+    <div class="kpi"><div class="n">820</div><div class="l">annotations (20&times;41)</div></div>
+    <div class="kpi"><div class="n">41</div><div class="l">clause categories</div></div>
+    <div class="kpi"><div class="n">1&ndash;175k</div><div class="l">chars per contract</div></div>
+  </div>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Original plan assumed</th><th>CUAD actually provides</th><th>Change required</th></tr></thead>
+    <tbody>
+      <tr><td>510 contracts, 41 annotated categories</td><td>Confirmed (aok_v1.0)</td><td><span class="badge low">None</span></td></tr>
+      <tr><td>A <code>contract_type</code> field</td><td>No such field; type is embedded in the title with <code>EX-10.x</code> noise</td><td><span class="badge med">Add title normalization</span></td></tr>
+      <tr><td>A structured <code>parties</code> field</td><td>No parties field; parties are the "Parties" <em>clause annotation</em></td><td><span class="badge med">Model as annotation, not a column</span></td></tr>
+      <tr><td>Clauses carry Yes/No answers</td><td>Extractive spans: <code>answers[{text, answer_start}]</code> + <code>is_impossible</code></td><td><span class="badge med">Derive presence from <code>is_impossible</code></span></td></tr>
+      <tr><td>Clause text with start/end offsets</td><td>Only <code>answer_start</code>; end must be derived from the text length</td><td><span class="badge low">Derive end; store snippet</span></td></tr>
+      <tr><td>Categories like Indemnification, Limitation of Liability, Confidentiality, Warranties</td><td>None of these exist; liability is <code>Uncapped Liability</code> / <code>Cap On Liability</code></td><td><span class="badge high">Remap the rubric</span></td></tr>
+      <tr><td>Multiple paragraphs per document</td><td>One paragraph (the full contract) per document</td><td><span class="badge low">Simplifies ingestion</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout danger"><strong>The headline finding</strong>
+    Four clause categories named in the original brainstorm don't exist in CUAD. The risk rubric
+    was remapped to real categories (<code>Uncapped Liability</code>, <code>Cap On Liability</code>,
+    <code>Termination For Convenience</code>, <code>Anti-Assignment</code>, <code>Change Of Control</code>,
+    <code>Minimum Commitment</code>, <code>Governing Law</code>, <code>Non-Compete</code>, <code>Exclusivity</code>).</div>
+</section>
+
+<section id="mapping">
+  <div class="section-kicker">Path to Snowflake</div>
+  <h2>How the POC maps to the warehouse</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>POC (SQLite / Python)</th><th>Snowflake target</th></tr></thead>
+    <tbody>
+      <tr><td><code>dim_*</code>, <code>fact_clause</code>, <code>bridge_matter_contract</code></td><td>Same tables under <code>CORE</code> (<code>sql/02_data_model.sql</code>)</td></tr>
+      <tr><td><code>access.py</code> authorization check</td><td>Row access policy over <code>matter_authorization</code> (<code>sql/03</code>)</td></tr>
+      <tr><td>PII masking in the query path</td><td>Masking policies + classification tags</td></tr>
+      <tr><td><code>audit_log</code> table</td><td>Append-only audit table <em>and</em> <code>QUERY_HISTORY</code> / <code>ACCESS_HISTORY</code></td></tr>
+      <tr><td>Risk scoring in <code>seed.py</code></td><td><code>CORE.ref_risk_rule</code> + <code>MARTS.mart_matter_risk</code> (<code>sql/04</code>)</td></tr>
+      <tr><td>POC web server</td><td>Not needed &mdash; enforcement moves into the warehouse; any BI/UI reads governed tables</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="demo">
+  <div class="section-kicker">Interactive</div>
+  <h2>Try the access-control demo</h2>
+  <p>Sign in as <strong>alice</strong>, <strong>bob</strong>, or <strong>carol</strong> (attorneys/paralegal)
+  to see only your matters, request a document outside your matters to watch the denial get recorded,
+  then sign in as <strong>admin</strong> to read the audit log of who accessed which files.</p>
+  <p><a href="demo/index.html">Open the interactive demo &rarr;</a></p>
+  <div class="callout"><strong>Simulated vs. functional</strong>
+    The hosted demo simulates the model in the browser so it runs on static Pages. The SQLite POC
+    enforces it for real server-side; both share the same authorization map and denial semantics.</div>
+</section>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <strong>Snow Compliance Demo</strong> &mdash; internal staging for board review.<br>
+      Built on the public <a href="https://github.com/The-Atticus-Project/cuad">CUAD</a> dataset (CC&nbsp;BY&nbsp;4.0) plus synthetic records.
+    </div>
+    <div>Prepared by the CEO office &middot; For discussion only &mdash; not legal advice.</div>
+  </div>
+</footer>
+</body>
+</html>

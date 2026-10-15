@@ -14,7 +14,7 @@
       <span class="mark" aria-hidden="true">SC</span>
       <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
     </a>
-    <nav class="nav" aria-label="Primary"><a href="index.html" class="active">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="roadmap.html">Roadmap</a></nav>
+    <nav class="nav" aria-label="Primary"><a href="index.html" class="active">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="poc.html">POC & findings</a><a href="demo/index.html">Interactive demo</a><a href="roadmap.html">Roadmap</a></nav>
   </div>
 </header>
 <section class="hero"><div class="wrap">
@@ -29,11 +29,13 @@
     <span class="pill">Reproducible SQL, no hidden steps</span>
     <span class="pill">Staged here for review</span>
   </div>
+  <p style="margin-top:22px"><a href="demo/index.html" style="display:inline-block;background:#0d9488;color:#fff;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none">Open the interactive access-control demo &rarr;</a>
+  &nbsp;<a href="poc.html" style="display:inline-block;color:#c3d3e4;font-weight:600;padding:12px 8px">POC &amp; CUAD findings</a></p>
 </div></section>
 <main class="main">
   <div class="wrap">
     <div class="grid">
-      <aside class="toc"><h2>On this page</h2><ul><li><a href="#purpose">Purpose</a></li><li><a href="#outcomes">Outcomes</a></li><li><a href="#why">Why CUAD</a></li><li><a href="#architecture-at-a-glance">Architecture at a glance</a></li><li><a href="#recommendations">Ten recommendations</a></li><li><a href="#phases">Delivery phases</a></li><li><a href="#decisions">What we need from the board</a></li></ul></aside>
+      <aside class="toc"><h2>On this page</h2><ul><li><a href="#purpose">Purpose</a></li><li><a href="#outcomes">Outcomes</a></li><li><a href="#poc">Working POC &amp; demo</a></li><li><a href="#why">Why CUAD</a></li><li><a href="#architecture-at-a-glance">Architecture at a glance</a></li><li><a href="#recommendations">Ten recommendations</a></li><li><a href="#phases">Delivery phases</a></li><li><a href="#decisions">What we need from the board</a></li></ul></aside>
       <div class="content">
         
 <section id="purpose">
@@ -63,6 +65,21 @@
     <div class="card"><h3>4. Verifiable audit</h3><p>We run the same query under multiple
       roles, capture allowed and denied access, and reconstruct it from Snowflake's own
       query and access history.</p></div>
+  </div>
+</section>
+
+<section id="poc">
+  <div class="section-kicker">Proof of concept</div>
+  <h2>Working POC and interactive demo</h2>
+  <p class="lead">The board asked for a simple login experience, an examination of the first 20 CUAD
+  documents, and Python scaffolding adaptable to Snowflake. All three are done and staged here.</p>
+  <div class="cards">
+    <div class="card"><h3>Interactive demo</h3><p>Sign in as a hypothetical attorney and see only your
+      documents; sign in as admin to review who accessed which files. <a href="demo/index.html">Open the demo &rarr;</a></p></div>
+    <div class="card"><h3>Python + SQLite POC</h3><p>A real enforcement layer (<code>poc/access.py</code>)
+      with a governed query path, a web server, and a functional audit log. <a href="poc.html">POC &amp; CUAD findings &rarr;</a></p></div>
+    <div class="card"><h3>First 20 CUAD documents</h3><p>Extracted and analyzed. Two assumptions in the
+      original plan needed correcting. <a href="poc.html#findings">See the findings &rarr;</a></p></div>
   </div>
 </section>
 

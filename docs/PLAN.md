@@ -117,7 +117,27 @@ SQL: `sql/05_audit_queries.sql`.
 | Row-policy gaps via joins | Medium | Attach to every `matter_id` table; test |
 | Cost creep | Low | X-Small + auto-suspend |
 
-## 11. Board decisions requested
+## 11. Proof of concept & CUAD findings (added after board review)
+
+A working Python + SQLite POC is in `poc/`, with a board-clickable demo at
+`demo/index.html`.
+
+**First 20 CUAD documents — how reality differs from the original plan:**
+
+| Plan assumed | CUAD actually provides | Change |
+| --- | --- | --- |
+| `contract_type` field | Not present; type embedded in title with `EX-10.x` noise | Add title normalization |
+| structured `parties` field | Not present; parties is a clause annotation | Model as annotation |
+| clauses carry Yes/No | extractive spans + `is_impossible` | Derive presence from `is_impossible` |
+| clause start/end offsets | only `answer_start` | Derive end from text length |
+| Indemnification / Limitation of Liability / Confidentiality / Warranties | these categories do not exist | remap rubric to real categories (`Uncapped Liability`, `Cap On Liability`, …) |
+| many paragraphs per doc | one paragraph per doc | simplifies ingestion |
+
+**POC → Snowflake mapping:** `poc/access.py` authorization check ↔ row access policy over
+`matter_authorization`; `audit_log` ↔ append-only table + `QUERY_HISTORY`/`ACCESS_HISTORY`;
+`seed.py` risk scoring ↔ `CORE.ref_risk_rule` + `MARTS.mart_matter_risk`.
+
+## 12. Board decisions requested
 
 1. Scope: full four-phase flow vs. narrower.
 2. Data sourcing: CUAD + synthetic (recommended) vs. synthetic only.
