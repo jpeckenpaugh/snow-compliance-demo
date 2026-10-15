@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  offline-sql:
+    name: Offline SQL portability
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install offline SQL emulator (fakesnow)
+        run: |
+          python -m pip install --upgrade pip
+          # fakesnow depends on an unpinned snowflake-connector-python, whose
+          # 5.x layout dropped snowflake.connector.converter that fakesnow
+          # imports. Pin to 3.x until fakesnow catches up.
+          python -m pip install "snowflake-connector-python<4" fakesnow
+
+      - name: Run DDL through fakesnow
+        run: python3 scripts/run_sql_offline.py --json offline-sql-report.json
+
+      - name: Upload per-statement report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: offline-sql-report
+          path: offline-sql-report.json
+          if-no-files-found: ignore
+
+  python-compile:
+    name: Python syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Byte-compile Python sources
+        run: python3 -m py_compile poc/*.py build_site.py
