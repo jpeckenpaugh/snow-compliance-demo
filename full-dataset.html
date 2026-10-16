@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full-dataset plan · Snow Compliance Demo</title>
+<meta name="description" content="Board-review recommendations for a Snowflake legal-compliance demonstration built on the public CUAD dataset plus synthetic law-firm records.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">SC</span>
+      <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="index.html">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="poc.html">POC & findings</a><a href="demo/index.html">Interactive demo</a><a href="snowflake-options.html">Snowflake options</a><a href="roadmap.html">Roadmap</a><a href="full-dataset.html" class="active">Full-dataset plan</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Approved 2026-10-16 &middot; Full dataset</p>
+  <h1>Full-dataset CUAD &rarr; Snowflake plan</h1>
+  <p class="lede">Scale the demo from a 30-contract sample to all <strong>510 CUAD contracts / 20,910
+  clause annotations</strong>, normalize them inside Snowflake with no API, generate the simulated
+  RBAC + risk metadata, and put a Streamlit-in-Snowflake app in front of it.</p>
+  <div class="pills">
+    <span class="pill">510 contracts</span>
+    <span class="pill">Normalized in SQL, no API</span>
+    <span class="pill">510 matters (1:1)</span>
+    <span class="pill">Streamlit in Snowflake</span>
+  </div>
+</div></section>
+<main class="main">
+  <div class="wrap">
+    <div class="grid">
+      <aside class="toc"><h2>On this page</h2><ul><li><a href="#summary">Recommendation</a></li><li><a href="#state">Gap analysis</a></li><li><a href="#phase1">Phase 1: normalize</a></li><li><a href="#phase2">Phase 2: RBAC &amp; risk</a></li><li><a href="#phase3">Phase 3: web app</a></li><li><a href="#decisions">Approved decisions</a></li><li><a href="#risks">Risks</a></li><li><a href="#runbook">Walk it through</a></li></ul></aside>
+      <div class="content">
+        
+<section id="summary">
+  <div class="section-kicker">Recommendation</div>
+  <h2>Proceed in three gated phases, all inside Snowflake</h2>
+  <p class="lead">The repository already contains the hard parts (DDL, access model, risk rubric, offline
+  POC). What changes for the full dataset is <strong>scale</strong> and the requirement that the walkthrough
+  be runnable by hand in Snowsight. The board approved the full-dataset scope and methodology on 2026-10-16.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="n">510</div><div class="l">contracts (30 today)</div></div>
+    <div class="kpi"><div class="n">20,910</div><div class="l">clause annotations (6,702 present)</div></div>
+    <div class="kpi"><div class="n">~27 MB</div><div class="l">full contract text</div></div>
+    <div class="kpi"><div class="n">249 &rarr; 18</div><div class="l">raw contract types &rarr; controlled vocabulary</div></div>
+  </div>
+  <ol>
+    <li><strong>Parse &amp; normalize inside Snowflake.</strong> Load the CUAD JSON into a <code>VARIANT</code>
+      table, then flatten it with <code>LATERAL FLATTEN</code> in SQL. No external pipeline, no API.</li>
+    <li><strong>Generate simulated RBAC + risk metadata at scale.</strong> One matter per contract (510),
+      SQL-generated synthetic layer, role buckets + <code>matter_access_map</code>, row access policy,
+      masking, and the 9-rule simulated rubric.</li>
+    <li><strong>Web app on Streamlit in Snowflake.</strong> It runs as the caller's role, so RBAC + row
+      access policies apply with no separate login store. External portal (with External OAuth) is a later step.</li>
+  </ol>
+</section>
+
+<section id="state">
+  <div class="section-kicker">Today vs. target</div>
+  <h2>Gap analysis: 30-doc demo to full dataset</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Area</th><th>Demo core</th><th>Full dataset</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>Ingestion</td><td><code>extract_cuad.py --limit 30</code></td><td>510 docs, ~40 MB JSON</td><td>Add <code>VARIANT</code> load + SQL flatten</td></tr>
+      <tr><td><code>contract_type</code></td><td>25 inferred types</td><td>249 noisy strings</td><td><code>CORE.ref_contract_type</code> map</td></tr>
+      <tr><td>Matter graph</td><td>5 matters, 6 contracts each</td><td>510 matters (1:1)</td><td>Scale synthetic generator</td></tr>
+      <tr><td>Roles</td><td>ATTORNEY_0/1, PARALEGAL&hellip;</td><td>same model, more buckets</td><td>Add ATTORNEY_0/1/2</td></tr>
+      <tr><td>Full text</td><td>snippets only</td><td>~27 MB available</td><td>Store full text</td></tr>
+      <tr><td>Risk register</td><td>9 rules, 5 matters</td><td>9 rules, 510 matters</td><td>Re-tune bands on distribution</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="phase1">
+  <div class="section-kicker">Phase 1</div>
+  <h2>Parse &amp; normalize the full CUAD dataset</h2>
+  <p>Snowflake caps a single <code>VARIANT</code> value at ~16 MB, and the master file is ~40 MB, so it is
+  split into one document per line (NDJSON) for <em>transport only</em> &mdash; all parsing and normalization
+  runs in SQL. The runbook has the copy-paste steps.</p>
+  <pre><code>-- 1. stage the NDJSON and land it (one document per row)
+COPY INTO RAW.raw_cuad_json (src, source_file)
+FROM (SELECT $1, METADATA$FILENAME FROM @RAW.cuad_stage)
+FILE_FORMAT = RAW.json_ff PATTERN = '.*cuad_docs.*';
+
+-- 2. normalize in SQL with LATERAL FLATTEN
+CREATE OR REPLACE TABLE RAW.raw_cuad_contracts AS
+SELECT 'CUAD-' || LPAD(src:ord::string, 4, '0') AS contract_id,
+       src:title::string                        AS contract_name,
+       UPPER(TRIM(SPLIT_PART(src:title::string,'-',-1))) AS contract_type,
+       src:paragraphs[0]:context::string        AS contract_text
+FROM RAW.raw_cuad_json;</code></pre>
+  <div class="callout ok"><strong>Data-quality gates</strong>
+    510 contracts &middot; 20,910 annotations &middot; 6,702 present &middot; 41 categories &middot; 0 orphaned clauses.
+    All measured against the real <code>CUADv1.json</code>.</div>
+  <p>Assets: <code>ingest/split_cuad_json.py</code> (NDJSON split), <code>sql/full_dataset/06_full_dataset.sql</code>
+  (consolidated DDL), and <code>docs/SNOWFLAKE_WALKTHROUGH.md</code> (the manual runbook).</p>
+</section>
+
+<section id="phase2">
+  <div class="section-kicker">Phase 2</div>
+  <h2>Simulated RBAC + risk metadata</h2>
+  <p>One matter per contract (510 matters). Everything synthetic is prefixed <code>SYNTHETIC</code> and
+  generated deterministically in SQL &mdash; no external generator required.</p>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Control</th><th>Where</th></tr></thead>
+    <tbody>
+      <tr><td>Access decision is data, not code</td><td><code>SECURITY.matter_access_map(role_name, matter_id, &hellip;)</code></td></tr>
+      <tr><td>Matter wall</td><td><code>SECURITY.matter_access_policy</code> attached to every <code>matter_id</code> object</td></tr>
+      <tr><td>PII protection</td><td><code>SECURITY.pii_mask</code> + <code>data_classification</code> tags</td></tr>
+      <tr><td>Risk rubric</td><td><code>CORE.ref_risk_rule</code> &rarr; <code>MARTS.mart_matter_risk</code> (simulated)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="phase3">
+  <div class="section-kicker">Phase 3</div>
+  <h2>Web application &mdash; Streamlit in Snowflake first</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Option</th><th>Auth / login</th><th>Governance</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Streamlit in Snowflake</strong></td><td>Snowflake SSO/MFA; app runs as caller's role</td><td><span class="badge low">Inherits</span> RBAC + row access + masking</td><td><strong>Recommended first</strong></td></tr>
+      <tr><td>External portal</td><td>Build login/SSO + session&rarr;role mapping</td><td><span class="badge med">Duplicates</span> unless External OAuth</td><td>Later, if a standalone portal is required</td></tr>
+      <tr><td>Snowpark Container Services / Native App</td><td>Snowflake auth</td><td><span class="badge low">Inherits</span></td><td>Overkill for the demo</td></tr>
+    </tbody>
+  </table></div>
+  <p>Admin/auditability: native <code>QUERY_HISTORY</code> / <code>ACCESS_HISTORY</code> / <code>LOGIN_HISTORY</code>
+  and <code>POLICY_REFERENCES</code> for data touches, plus an app-level audit table for UI actions mirroring
+  <code>poc/access.py</code>.</p>
+</section>
+
+<section id="decisions">
+  <div class="section-kicker">Approved 2026-10-16</div>
+  <h2>Board decisions</h2>
+  <div class="callout ok"><strong>Approved</strong>
+    The board approved the full-dataset scope and all six methodology decisions below.</div>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Decision</th><th>Resolution</th></tr></thead>
+    <tbody>
+      <tr><td>Snowflake account</td><td><span class="badge low">New trial account</span> (Enterprise)</td></tr>
+      <tr><td>Normalization location</td><td><span class="badge low">In-Snowflake <code>VARIANT</code> + SQL</span></td></tr>
+      <tr><td>Synthetic scale</td><td><span class="badge low">510 matters (1:1)</span></td></tr>
+      <tr><td>Full contract text</td><td><span class="badge low">Store full text</span> (~27 MB)</td></tr>
+      <tr><td>Web app approach</td><td><span class="badge low">Streamlit in Snowflake</span> first</td></tr>
+      <tr><td>Publish this roadmap</td><td><span class="badge low">This page</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="risks">
+  <div class="section-kicker">Risk</div>
+  <h2>Risks &amp; mitigations</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Risk</th><th>Impact</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td>Manual steps drift from <code>sql/*.sql</code></td><td><span class="badge med">Medium</span></td><td>Runbook embeds the same DDL; keep files authoritative</td></tr>
+      <tr><td><code>contract_type</code> noise (249 types)</td><td><span class="badge med">Medium</span></td><td>Controlled-vocabulary map; report unmapped as <code>Other</code></td></tr>
+      <tr><td>Unstable <code>contract_id</code> across loads</td><td><span class="badge med">Medium</span></td><td>Derive from the NDJSON ordinal; document load order</td></tr>
+      <tr><td>Row-policy gaps via joins</td><td><span class="badge high">High</span></td><td>Attach policy to every <code>matter_id</code> object; run the verification matrix</td></tr>
+      <tr><td>Demo mistaken for real client data</td><td><span class="badge high">High</span></td><td><code>SYNTHETIC</code> prefixes + CUAD CC BY 4.0 attribution + disclaimers</td></tr>
+      <tr><td>External app weakens governance</td><td><span class="badge high">High</span></td><td>Prefer Streamlit in Snowflake; if external, mandate External OAuth + per-user role</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="runbook">
+  <div class="section-kicker">Do it</div>
+  <h2>Walk it through</h2>
+  <p>The full step-by-step runbook (load &rarr; normalize &rarr; synthetic layer &rarr; RBAC &rarr; risk &rarr; verify &rarr; teardown)
+  is <code>docs/SNOWFLAKE_WALKTHROUGH.md</code>, with the consolidated SQL in
+  <code>sql/full_dataset/06_full_dataset.sql</code>. It needs only a Snowflake trial account and Snowsight &mdash; no API.</p>
+  <pre><code># transport shaping only (one JSON document per line)
+python3 ingest/split_cuad_json.py --json CUADv1.json --out build/cuad_docs.jsonl
+# then: upload to @RAW.cuad_stage and run sql/full_dataset/06_full_dataset.sql</code></pre>
+</section>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <strong>Snow Compliance Demo</strong> &mdash; internal staging for board review.<br>
+      Built on the public <a href="https://github.com/The-Atticus-Project/cuad">CUAD</a> dataset (CC&nbsp;BY&nbsp;4.0) plus synthetic records.
+    </div>
+    <div>Prepared by the CEO office &middot; For discussion only &mdash; not legal advice.</div>
+  </div>
+</footer>
+</body>
+</html>

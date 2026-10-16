@@ -14,7 +14,7 @@
       <span class="mark" aria-hidden="true">SC</span>
       <span>Snow Compliance Demo<small>Board review &middot; v1</small></span>
     </a>
-    <nav class="nav" aria-label="Primary"><a href="index.html" class="active">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="poc.html">POC & findings</a><a href="demo/index.html">Interactive demo</a><a href="snowflake-options.html">Snowflake options</a><a href="roadmap.html">Roadmap</a></nav>
+    <nav class="nav" aria-label="Primary"><a href="index.html" class="active">Overview</a><a href="data-foundation.html">Data foundation</a><a href="architecture.html">Architecture</a><a href="security.html">Confidentiality</a><a href="risk-analysis.html">Risk analysis</a><a href="audit-verification.html">Audit</a><a href="poc.html">POC & findings</a><a href="demo/index.html">Interactive demo</a><a href="snowflake-options.html">Snowflake options</a><a href="roadmap.html">Roadmap</a><a href="full-dataset.html">Full-dataset plan</a></nav>
   </div>
 </header>
 <section class="hero"><div class="wrap">
@@ -156,19 +156,21 @@
 <section id="decisions">
   <div class="section-kicker">Approved</div>
   <h2>Board decisions</h2>
-  <div class="callout ok"><strong>Approved 2026-10-15</strong>
-    The board approved the four-phase scope, CUAD + synthetic data sourcing, and continued hosting on
-    this repo. Per later board direction, the <strong>Snowflake component is simulated</strong> (no account).
-    The simulated build is <strong>complete and signed off 2026-10-15</strong>; validating the same DDL on a
-    free 30-day trial is tracked as a separate, account-gated task.</div>
+  <div class="callout ok"><strong>Approved 2026-10-16 &mdash; full dataset</strong>
+    The board approved scaling to the <strong>full 510-contract CUAD dataset</strong>, normalizing it
+    <strong>inside Snowflake with no API</strong>, generating the simulated RBAC + risk metadata at
+    <strong>510 matters</strong>, storing <strong>full contract text</strong>, and building the web app on
+    <strong>Streamlit in Snowflake</strong> on a new trial account. Details:
+    <a href="full-dataset.html">Full-dataset plan &rarr;</a></div>
   <div class="table-scroll"><table>
     <thead><tr><th>Decision</th><th>Resolution</th></tr></thead>
     <tbody>
-      <tr><td>Scope of the demo</td><td><span class="badge low">Full four phases</span> against the CUAD sample</td></tr>
+      <tr><td>Scope of the demo</td><td><span class="badge low">Full four phases</span> against the full CUAD dataset</td></tr>
       <tr><td>Data sourcing</td><td><span class="badge low">CUAD + synthetic</span>, with full attribution</td></tr>
-      <tr><td>Snowflake component</td><td><span class="badge med">Simulated now</span>; trial validation deferred</td></tr>
+      <tr><td>Snowflake component</td><td><span class="badge low">Real trial account</span> (2026-10-16)</td></tr>
       <tr><td>Hosting of this review site</td><td><span class="badge low">This repo</span> (<code>main</code> auto-deploys)</td></tr>
       <tr><td>Risk rubric framing</td><td><span class="badge low">Simulated</span> and prominently disclaimed</td></tr>
+      <tr><td>Web application</td><td><span class="badge low">Streamlit in Snowflake</span> first</td></tr>
     </tbody>
   </table></div>
 </section>
