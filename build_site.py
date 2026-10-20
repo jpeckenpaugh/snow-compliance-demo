@@ -14,6 +14,7 @@ NAV = [
     ("data-foundation.html", "Data foundation"),
     ("architecture.html", "Architecture"),
     ("security.html", "Confidentiality"),
+    ("identity-verification.html", "Verified login"),
     ("risk-analysis.html", "Risk analysis"),
     ("audit-verification.html", "Audit"),
     ("poc.html", "POC & findings"),
@@ -155,6 +156,20 @@ def build_index():
   </div>
 </section>
 
+<section id="verified-login">
+  <div class="section-kicker">Proposed next capability</div>
+  <h2>Webcam-verified login for compliance and RBAC</h2>
+  <p class="lead">A design for requiring a webcam photo at sign-in: 1:1 face verification,
+  auditable photo retention, embedding and centroid maintenance, and an assurance level
+  that actually gates privileged roles and high-confidentiality matters.</p>
+  <div class="callout warn"><strong>Design only &mdash; approval gate first</strong>
+    Facial biometrics are regulated, sensitive data. Legal review, a DPIA, written consent,
+    retention approval, and vendor due diligence come before any real capture. Nothing on
+    this site captures a camera or performs recognition today.</div>
+  <p><a href="identity-verification.html">Read the verified-login design &rarr;</a>
+  &nbsp;·&nbsp; <code>docs/WEBCAM_LOGIN_RBAC.md</code> · <code>sql/identity/01_identity_verification.sql</code></p>
+</section>
+
 <section id="why">
   <div class="section-kicker">Rationale</div>
   <h2>Why CUAD plus synthetic records</h2>
@@ -247,7 +262,7 @@ def build_index():
 """
     page("index.html", "Overview", header, content, [
         ("purpose", "Purpose"), ("outcomes", "Outcomes"), ("poc", "Working POC & demo"),
-        ("why", "Why CUAD"), ("architecture-at-a-glance", "Architecture at a glance"),
+        ("verified-login", "Verified login"), ("why", "Why CUAD"), ("architecture-at-a-glance", "Architecture at a glance"),
         ("recommendations", "Ten recommendations"), ("phases", "Delivery phases"),
         ("decisions", "What we need from the board"),
     ])
@@ -567,6 +582,278 @@ ALTER TABLE core.dim_client
     page("security.html", "Confidentiality", header, content, [
         ("goal", "Goal"), ("mapping", "Authorization mapping"), ("policies", "Row access policy"),
         ("masking", "Dynamic data masking"), ("gotchas", "Implementation notes"),
+    ])
+
+
+# --------------------------------------------------------------------------
+# Verified login (proposed webcam feature)
+# --------------------------------------------------------------------------
+def build_identity():
+    header = """<section class="hero"><div class="wrap">
+  <p class="eyebrow">Proposed capability &middot; not yet implemented</p>
+  <h1>Webcam-verified login, governed end to end</h1>
+  <p class="lede">A design for requiring a webcam photo at sign-in: 1:1 face
+  verification, auditable photo retention, embedding and centroid maintenance,
+  and an assurance level that actually controls RBAC.</p>
+  <div class="pills">
+    <span class="pill">Step-up, not a password replacement</span>
+    <span class="pill">1:1 verification only</span>
+    <span class="pill">Snowflake-governed audit</span>
+    <span class="pill">Legal review required</span>
+  </div>
+</div></section>"""
+
+    content = """
+<section id="warning">
+  <div class="callout danger"><strong>Biometric data &mdash; approval gate</strong>
+    This is a proposal, not a working capture feature. Facial biometrics are sensitive
+    personal information and are regulated in several jurisdictions. Do not enable
+    real capture, store real employee photos, or pilot with real people until legal
+    review, a DPIA, written consent, retention approval, and vendor due diligence are
+    complete. This page and the full guide are design material, not legal advice.</div>
+</section>
+
+<section id="recommendation">
+  <div class="section-kicker">Recommendation</div>
+  <h2>Add verification as a step-up authenticator</h2>
+  <p class="lead">A face is not a secret. A printed photo or replayed video can be
+  presented to a camera, so webcam verification must sit <strong>after</strong>
+  password + MFA and raise an <em>authentication assurance level</em>. It must never
+  become the only factor protecting privileged roles.</p>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Decision</th><th>Recommendation</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td>Matching mode</td><td><span class="badge low">1:1 self-verification</span></td><td>1:N identification creates much larger privacy, bias, and false-match exposure.</td></tr>
+      <tr><td>Enrollment</td><td><span class="badge low">3&ndash;5 consented frames</span></td><td>One frame cannot estimate within-person variance or calibrate a threshold.</td></tr>
+      <tr><td>Raw photo retention</td><td><span class="badge med">90 days default</span></td><td>Enough for audit; not an indefinite biometric archive. Legal hold overrides deletion.</td></tr>
+      <tr><td>Embeddings</td><td><span class="badge med">Employment + audit tail</span></td><td>Vectors are still biometric data; delete on separation or withdrawal.</td></tr>
+      <tr><td>Thresholds</td><td><span class="badge high">Calibrated, never guessed</span></td><td>Published numbers from other deployments do not transfer to our cameras and population.</td></tr>
+      <tr><td>Fallback</td><td><span class="badge high">Assisted, never silent</span></td><td>Outages and accommodations must not become an authentication bypass.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="flow">
+  <div class="section-kicker">User experience</div>
+  <h2>Enrollment and daily sign-in</h2>
+  <div class="cards">
+    <div class="card"><h3>1. Consent and enroll</h3><p>After password + MFA, explain purpose,
+      retention, viewers, and the voluntary alternative. Capture 3&ndash;5 frames with a
+      random challenge and quality/liveness gates. Store the template and centroid version.</p></div>
+    <div class="card"><h3>2. Sign in</h3><p>Password + MFA produce a short-lived pre-auth session.
+      The camera step captures a fresh frame with a server nonce, then runs quality &rarr;
+      liveness &rarr; embedding &rarr; 1:1 comparison.</p></div>
+    <div class="card"><h3>3. Issue assurance</h3><p>On accept, the token carries
+      <code>verification_id</code>, <code>assurance_level</code>, <code>model_id</code>,
+      <code>centroid_version</code>, and <code>verified_at</code>. Snowflake maps that to a role.</p></div>
+    <div class="card"><h3>4. Step up when it matters</h3><p>Opening a High-confidentiality matter
+      or changing policy requires a fresh verification (for example, within 5 minutes) with
+      its own audit event.</p></div>
+  </div>
+  <div class="callout warn"><strong>Failure behavior is part of the design</strong>
+    Poor lighting gets guidance; liveness failure gets one retry then a deny and an alert;
+    a review-band score never auto-accepts; service outages fail closed for privileged roles
+    and route to an assisted path with two-person approval.</div>
+</section>
+
+<section id="architecture">
+  <div class="section-kicker">Architecture</div>
+  <h2>Five isolated responsibilities</h2>
+  <pre><code>Browser (getUserMedia, challenge UI)
+        |
+        |  TLS, server nonce, image bytes
+        v
+Verification API  --- signed event --->  SIEM
+        |
+        +--> Face pipeline: detect -> align -> quality -> liveness -> embed
+        |             |
+        |             +--> model registry / thresholds
+        |
+        +--> Encrypted photo store (Object Lock, 90-day lifecycle)
+        |
+        +--> Snowflake IDENTITY (templates, centroids, attempts, audit)
+        |
+        +--> IdP / token service (assurance claims -> Snowflake role)</code></pre>
+  <p>The face model runs in a container service or vendor API, not as a Snowflake-native
+  function. Only the resulting vector and decision metadata are written to Snowflake.
+  Snowflake Cortex text embeddings are <strong>not</strong> a face-embedding substitute.</p>
+</section>
+
+<section id="model">
+  <div class="section-kicker">Data model</div>
+  <h2>Evidence, templates, and identity are separate</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Object</th><th>What it holds</th><th>Protection</th></tr></thead>
+    <tbody>
+      <tr><td><code>consent_record</code></td><td>Version, signature, withdrawal</td><td>Append-only; drives deletion workflow</td></tr>
+      <tr><td><code>face_template</code></td><td>512-d embedding per enrollment frame</td><td>Restricted grants; never returned to the browser</td></tr>
+      <tr><td><code>face_centroid</code></td><td>Current normalized centroid, sample count, intra-user distance</td><td>Row access; versioned; history retained</td></tr>
+      <tr><td><code>login_attempt</code></td><td>Decision, scores, model/centroid version, request ID</td><td>Self-or-oversight row access; audit retention</td></tr>
+      <tr><td><code>photo_audit</code></td><td>Object URI, SHA-256, retention date, legal hold</td><td>URI masked; deletions leave a tombstone</td></tr>
+      <tr><td><code>verification_event</code></td><td>Canonical payload + hash chain</td><td>Append-only; periodically anchored</td></tr>
+      <tr><td><code>role_assurance_policy</code></td><td>Required AAL per Snowflake role</td><td>Owned by <code>COMPLIANCE_ADMIN</code></td></tr>
+    </tbody>
+  </table></div>
+  <p>Full DDL: <code>sql/identity/01_identity_verification.sql</code>. Vectors use
+  Snowflake's <code>VECTOR(FLOAT, 512)</code>; raw photos stay in encrypted object storage,
+  not in a table.</p>
+</section>
+
+<section id="embeddings">
+  <div class="section-kicker">AI / ML</div>
+  <h2>Embeddings and a centroid that does not drift away</h2>
+  <p>Use an ArcFace/InsightFace-family model that outputs an L2-normalized
+  <strong>512-dimensional</strong> vector, or a vendor verification API with a calibrated
+  score. Record the exact model, preprocessing, and threshold versions. Pin artifact
+  hashes and treat a model change as a new template generation.</p>
+  <pre><code>c_0 = normalize(mean(e_1 ... e_n))          # enrollment centroid
+d_i = 1 - cosine(e_i, c_0)                 # intra-user distance
+p50, p95 = percentiles(d_i)
+alpha_eff = max(0.05, 1 / (sample_count + 1))
+c_new = normalize((1 - alpha_eff) * c_old + alpha_eff * e_accepted)</code></pre>
+  <p>Update only on an <code>accept</code> with a margin above threshold, good liveness and
+  quality, no legal hold, and no outlier flag. Cap updates at three per day and keep a
+  version history with rollback.</p>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Centroid risk</th><th>Guard</th></tr></thead>
+    <tbody>
+      <tr><td>One bad frame pulls the template</td><td>Outlier gate at the user's p99 + margin; reject the update</td></tr>
+      <tr><td>Repeated spoofs shift identity</td><td>Liveness gate, daily cap, spoof alerts, quarantine after anomalies</td></tr>
+      <tr><td>Camera or model drift</td><td>Cohort monitoring, per-user drift alerts, recompute on model upgrade</td></tr>
+      <tr><td>Attacker re-enrolls the account</td><td>MFA + manager/compliance approval + cooling-off period</td></tr>
+      <tr><td>Silent model change</td><td>New <code>model_id</code>; rebuild centroids from active templates; retain old vectors for audit</td></tr>
+      <tr><td>Corrupt centroid</td><td>Version history, checksum, two-person review for forced updates, rollback</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="decision">
+  <div class="section-kicker">Verification</div>
+  <h2>Three bands, with liveness overriding the score</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Band</th><th>Similarity</th><th>Outcome</th><th>User experience</th></tr></thead>
+    <tbody>
+      <tr><td>Accept</td><td>&ge; 0.68</td><td><span class="badge low">accept</span></td><td>Sign in with the required assurance</td></tr>
+      <tr><td>Review</td><td>0.58&ndash;0.679</td><td><span class="badge med">review</span></td><td>Assisted verification; never auto-accept</td></tr>
+      <tr><td>Deny</td><td>&lt; 0.58</td><td><span class="badge high">deny</span></td><td>Neutral failure, retry policy, security log</td></tr>
+    </tbody>
+  </table></div>
+  <p class="disclaimer">Illustrative starting points for an ArcFace-family model. Calibrate
+  on a consented pilot and approve the FAR/FRR risk appetite before production. Liveness or
+  quality failure is always a deny, even if the similarity is high.</p>
+</section>
+
+<section id="rbac">
+  <div class="section-kicker">RBAC</div>
+  <h2>Assurance levels map to real Snowflake roles</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Role</th><th>Required assurance</th><th>Step-up</th><th>Photo / embedding access</th></tr></thead>
+    <tbody>
+      <tr><td><code>PARALEGAL</code></td><td><code>AAL2</code></td><td>High matters</td><td>No</td></tr>
+      <tr><td><code>ATTORNEY</code></td><td><code>AAL2</code></td><td>High matters</td><td>No</td></tr>
+      <tr><td><code>AUDITOR</code></td><td><code>AAL2</code></td><td>Never</td><td>Break-glass only</td></tr>
+      <tr><td><code>COMPLIANCE_ADMIN</code></td><td><code>AAL3</code></td><td>Policy changes</td><td>Yes, with reason + log</td></tr>
+      <tr><td><code>DEMO_ADMIN</code></td><td><code>AAL3</code> + managed device</td><td>Always</td><td>Emergency only</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Use external OAuth or governed token exchange so the app never holds a Snowflake password.</li>
+    <li>Never trust a client-supplied <code>assurance_level</code>; read it from the signed token or server-side verification record.</li>
+    <li>Bind the token to the verification event and expire it quickly; re-check freshness for step-up actions.</li>
+    <li>Keep matter confidentiality in row access policies. Add assurance through roles/entitlements, not unverified session text.</li>
+    <li>Break-glass is time-bound, two-person approved, reason-coded, and fully audited &mdash; not a silent fallback.</li>
+  </ul>
+</section>
+
+<section id="audit">
+  <div class="section-kicker">Audit &amp; retention</div>
+  <h2>Provable decisions, deletable photos</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Artifact</th><th>Default retention</th><th>Deletion trigger</th></tr></thead>
+    <tbody>
+      <tr><td>Raw login photo</td><td>90 days</td><td>Consent withdrawal, erasure request, successful appeal</td></tr>
+      <tr><td>Enrollment photos</td><td>Employment + 90 days</td><td>Separation + audit tail, withdrawal</td></tr>
+      <tr><td>Template / embedding</td><td>Employment + audit tail</td><td>Separation, withdrawal, model retirement</td></tr>
+      <tr><td>Login metadata</td><td>2 years</td><td>Investigation hold</td></tr>
+      <tr><td>Audit hash chain</td><td>7 years</td><td>Legal requirement</td></tr>
+      <tr><td>Photo access log</td><td>7 years</td><td>Legal requirement</td></tr>
+    </tbody>
+  </table></div>
+  <p>Every attempt records the outcome, scores, model/centroid version, photo hash, request
+  ID, IP/user agent, and resulting assurance. Every human view of a raw photo writes a
+  <code>photo_access_log</code> row with a reason and approver. Photos use Object Lock and
+  lifecycle deletion; legal hold blocks removal. The hash chain is periodically anchored in
+  immutable storage, and Snowflake <code>ACCESS_HISTORY</code> provides independent evidence.</p>
+</section>
+
+<section id="compliance">
+  <div class="section-kicker">Compliance</div>
+  <h2>Requirements before any real capture</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Area</th><th>Requirement</th></tr></thead>
+    <tbody>
+      <tr><td>Legal basis</td><td>Written informed consent where required (for example BIPA, Texas CUBI, Washington); a genuine alternative and no retaliation.</td></tr>
+      <tr><td>Notice</td><td>Purpose, data categories, retention, recipients, and rights explained before the first capture.</td></tr>
+      <tr><td>DPIA</td><td>Before pilot; refresh on model, vendor, or retention changes.</td></tr>
+      <tr><td>Minimization</td><td>No emotion, health, demographic, or surveillance data; do not retain rejected frames by default.</td></tr>
+      <tr><td>Vendor</td><td>DPA, subprocessors, security attestations, deletion terms, breach notice, transfer mechanism.</td></tr>
+      <tr><td>Access</td><td>Least privilege, two-person raw-photo access, break-glass with audit.</td></tr>
+      <tr><td>Bias &amp; accessibility</td><td>Evaluate error rates across lighting, cameras, age, and accessibility needs; provide assisted verification; never adjust scores with protected attributes.</td></tr>
+      <tr><td>AI governance</td><td>Model card, intended use, evaluation, human oversight, change control, incident response. Check EU AI Act and workplace-biometric rules with counsel.</td></tr>
+      <tr><td>Employment</td><td>Confirm voluntariness, works council/union consultation, and non-retaliation.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn"><strong>Jurisdictions differ materially</strong>
+    Some statutes require a written release and retention schedule; some restrict employer
+    collection; some create a private right of action. This table is not a legal opinion.</div>
+</section>
+
+<section id="implementation">
+  <div class="section-kicker">Implementation</div>
+  <h2>What to build, in order</h2>
+  <ol class="timeline">
+    <li data-step="0"><h4>Legal &amp; design gate</h4><p>DPIA, consent text, retention schedule, vendor selection, works council review, threat model. No real captures.</p></li>
+    <li data-step="1"><h4>Sandbox</h4><p>Integrate the model behind the reference interface; apply the <code>IDENTITY</code> DDL; calibrate thresholds; verify the audit chain and deletion workflow on synthetic data.</p></li>
+    <li data-step="2"><h4>20-person pilot</h4><p>Both camera types, accessibility testing, assisted path, FAR/FRR measurement, bias review. Do not scale on a single happy path.</p></li>
+    <li data-step="3"><h4>Privileged roles</h4><p>Compliance admin, auditors, and High-matter attorneys. Exercise step-up, break-glass, and rollback drills.</p></li>
+    <li data-step="4"><h4>General rollout</h4><p>Training, support runbook, quarterly access review, retention-job monitoring, board reporting.</p></li>
+  </ol>
+  <p><strong>Reference logic:</strong> <code>poc/face_verification.py</code> implements the
+  deterministic parts &mdash; normalization, cosine matching, centroid guards, quality/liveness
+  gates, three-band decisions, and a hash chain. It uses a test-only hashing embedder; replace
+  that with the approved model. Run <code>python3 -m unittest poc/test_face_verification.py -v</code>.</p>
+  <pre><code># Proposed API surface
+POST /v1/enrollment/start      -> challenge nonce + guidance
+POST /v1/enrollment/capture    -> quality / liveness / frames remaining
+POST /v1/enrollment/complete   -> template_id + centroid_version
+POST /v1/login/verify          -> decision + assurance_level + verification_id
+POST /v1/admin/photos/{id}/access -> short-lived URL + photo_access_log row</code></pre>
+</section>
+
+<section id="board">
+  <div class="section-kicker">Decisions requested</div>
+  <h2>What the board needs to settle</h2>
+  <ol>
+    <li>Mandatory, voluntary, or role-based participation &mdash; and the approved alternative for people who decline or cannot use a camera.</li>
+    <li>Self-hosted model vs. vendor API; if vendor, which regions and retention terms.</li>
+    <li>Raw-photo retention period and who may approve legal hold.</li>
+    <li>Which roles require <code>AAL2</code> vs. <code>AAL3</code>, and which matters require fresh step-up.</li>
+    <li>FAR/FRR risk appetite and who signs off on threshold calibration.</li>
+    <li>Re-enrollment approval path and the two break-glass approvers.</li>
+  </ol>
+  <p>Full design, data model, threat model, API contracts, rollout criteria, and cost sketch:
+  <code>docs/WEBCAM_LOGIN_RBAC.md</code> in the repository. Proposed DDL:
+  <code>sql/identity/01_identity_verification.sql</code>.</p>
+  <div class="callout ok"><strong>Status</strong>
+    Design only. No camera capture, photo storage, model inference, or recognition is
+    enabled in the current demo. The next step is the legal/DPIA gate, not a pilot.</div>
+</section>
+"""
+    page("identity-verification.html", "Verified login", header, content, [
+        ("warning", "Approval gate"), ("recommendation", "Recommendation"), ("flow", "User experience"),
+        ("architecture", "Architecture"), ("model", "Data model"), ("embeddings", "Embeddings & centroid"),
+        ("decision", "Decision bands"), ("rbac", "RBAC"), ("audit", "Audit & retention"),
+        ("compliance", "Compliance"), ("implementation", "Implementation"), ("board", "Decisions requested"),
     ])
 
 
@@ -1218,6 +1505,7 @@ if __name__ == "__main__":
     build_data()
     build_architecture()
     build_security()
+    build_identity()
     build_risk()
     build_audit()
     build_roadmap()

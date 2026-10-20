@@ -17,7 +17,9 @@ Any push to `main` republishes the site (GitHub Pages, legacy build from `/`).
 | `docs/PLAN.md` | Canonical Markdown plan (same content as the site). |
 | `docs/FULL_DATASET_ROADMAP.md` | Approved full-dataset report & recommendation. |
 | `docs/SNOWFLAKE_WALKTHROUGH.md` | Manual, no-API Snowsight runbook for the full dataset. |
+| `docs/WEBCAM_LOGIN_RBAC.md` | Proposed webcam-photo login verification: embeddings, centroid maintenance, audit, privacy, and RBAC. |
 | `sql/01…05*.sql` | Snowflake DDL: setup, model, security, risk, audit. |
+| `sql/identity/01_identity_verification.sql` | Proposed `IDENTITY` schema for verification attempts, templates, centroids, and photo audit. |
 | `sql/full_dataset/06_full_dataset.sql` | Consolidated full-dataset load/normalize/RBAC/risk SQL. |
 | `ingest/load_cuad.py` | Parses CUAD JSON into RAW CSVs. |
 | `ingest/split_cuad_json.py` | Splits the full CUAD JSON into NDJSON for the Snowflake `VARIANT` load. |
@@ -42,6 +44,9 @@ Users: `alice`, `bob`, `carol`, `admin`, `auditor` — password `demo`.
 - `poc/access.py` is the enforcement point (authorization check + audit).
 - `poc/snowflake_sim.py` simulates Snowflake role context, row access policy, masking,
   and query history offline — no Snowflake account required.
+- `poc/face_verification.py` is a dependency-free reference for the proposed webcam
+  login: cosine matching, centroid maintenance guards, quality/liveness gates, and a
+  hash-chained audit helper. It is design scaffolding, not a face model.
 - `poc/analysis/cuad_shape_report.md` documents the real CUAD shape vs. the plan.
 
 The Snowflake component is **simulated for now** (see `snowflake-options.html` on the site):
