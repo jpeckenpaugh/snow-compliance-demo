@@ -2,7 +2,9 @@
 
 Status: **proposal for board review (2026-10-20)** · Owner: CEO office · Applies to:
 `SNOW_COMPLIANCE_DEMO` · Companion artifacts: [`sql/identity/01_identity_verification.sql`](../sql/identity/01_identity_verification.sql),
-[`poc/face_verification.py`](../poc/face_verification.py)
+[`poc/face_verification.py`](../poc/face_verification.py) · Follow-up:
+[`SUPPORT_AGENT_INTEGRATION.md`](SUPPORT_AGENT_INTEGRATION.md) specifies the bounded
+customer-support agent that fields the predictable login/verification requests.
 
 > **Read this first.** This document describes a proposed capability. Nothing in the
 > current POC captures a webcam, stores a face image, or performs recognition. Facial
